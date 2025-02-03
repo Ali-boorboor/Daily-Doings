@@ -63,6 +63,14 @@ function SignupForm({ initialValues, onSubmitHandler }: signupFormPropsType) {
                 setFieldTouched={setFieldTouched}
               />
             </div>
+            <Input
+              name="agreeToTerms"
+              value={values.agreeToTerms}
+              styleInput="mr-4 checkbox-primary"
+              placeholder="I agree to the Terms & Conditions"
+              onChangeHandler={handleChange}
+              isCheckBox
+            />
             <div>
               <Button
                 style="btn-success w-full mb-4 md:mb-0"

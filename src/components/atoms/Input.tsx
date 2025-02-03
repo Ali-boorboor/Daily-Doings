@@ -88,9 +88,8 @@ function Input({
     );
   } else if (isCheckBox) {
     return (
-      <div className="form-control">
-        <label htmlFor={name} className={`label cursor-pointer ${styleLabel}`}>
-          <span className="label-text">{placeholder}</span>
+      <div className="form-control items-start">
+        <label className={`label cursor-pointer ${styleLabel}`}>
           <input
             name={name}
             value={value}
@@ -100,6 +99,7 @@ function Input({
             className={`checkbox ${styleInput}`}
             defaultChecked={isDefaultChecked}
           />
+          <span className="label-text">{placeholder}</span>
         </label>
       </div>
     );

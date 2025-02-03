@@ -14,6 +14,7 @@ type signupOnSubmitValues = {
   cover: any;
   password: string;
   submitPassword: string;
+  agreeToTerms: boolean;
 };
 
 export type {

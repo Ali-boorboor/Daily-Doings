@@ -20,9 +20,12 @@ function Signup() {
         cover: null,
         password: "",
         submitPassword: "",
+        agreeToTerms: false,
       }}
       onSubmitHandler={(values: signupOnSubmitValues) => {
-        console.log(values.cover);
+        if (values.agreeToTerms) {
+          console.log(values);
+        }
       }}
     />
   );
