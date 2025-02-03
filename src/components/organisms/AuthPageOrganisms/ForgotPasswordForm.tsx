@@ -1,26 +1,22 @@
 import Input from "@a/Input";
 import Button from "@a/Button";
 import Divider from "@a/Divider";
+import AuthPageHeading from "@m/AuthPageHeading";
+import { forgotPasswordFormPropsType } from "@type/organismsTypes";
 import { FaUserLarge } from "react-icons/fa6";
+import { MdEmail } from "react-icons/md";
 import { Form, Formik } from "formik";
 import { memo } from "react";
 
-function ForgotPasswordForm() {
-  const initialValues = {
-    username: "",
-    password: "",
-  };
-
+function ForgotPasswordForm({
+  initialValues,
+  onSubmitHandler,
+}: forgotPasswordFormPropsType) {
   return (
-    <Formik initialValues={initialValues} onSubmit={() => {}}>
+    <Formik initialValues={initialValues} onSubmit={onSubmitHandler}>
       {({ values, handleChange, setFieldTouched }) => (
         <Form className="h-full basis-full md:basis-1/2 w-full flex gap-4 flex-col justify-center items-center">
-          <h1 className="font-roboto-bold text-2xl sm:text-3xl md:text-5xl">
-            Welcome
-          </h1>
-          <h2 className="font-roboto-italic text-lg sm:text-xl">
-            Forgot Password
-          </h2>
+          <AuthPageHeading text="Forgot Password" />
           <div className="max-w-screen-md w-full overflow-hidden flex flex-col gap-4 md:gap-8 p-4">
             <Input
               name="username"
@@ -32,11 +28,12 @@ function ForgotPasswordForm() {
               setFieldTouched={setFieldTouched}
             />
             <Input
-              name="password"
-              type="password"
-              value={values.password}
+              name="email"
+              type="email"
+              value={values.email}
               onChangeHandler={handleChange}
-              placeholder="Password"
+              placeholder="Email"
+              icon={<MdEmail />}
               setFieldTouched={setFieldTouched}
             />
             <div>
@@ -49,17 +46,15 @@ function ForgotPasswordForm() {
               <Divider text="OR" style="hidden md:flex" />
               <div className="flex justify-center items-center gap-4 flex-wrap">
                 <Button
-                  style="btn-info w-1/3 grow"
+                  style="btn-secondary w-1/3 grow"
                   text="Login Page"
                   linkTo="/"
-                  isOutlineBtn
                   isLink
                 />
                 <Button
-                  style="btn-warning w-1/3 grow"
+                  style="btn-accent w-1/3 grow"
                   text="Signup Page"
                   linkTo="/signup"
-                  isOutlineBtn
                   isLink
                 />
               </div>

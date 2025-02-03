@@ -11,6 +11,8 @@ function Input({
   disabled,
   isSearch,
   isCheckBox,
+  styleInput,
+  styleLabel,
   isUploader,
   isTextArea,
   placeholder,
@@ -22,17 +24,40 @@ function Input({
   defaultOptionText,
 }: inputPropsType) {
   const [isPasswordShown, setIsPasswordShown] = useState(false);
+  const [file, setFile]: any = useState(null);
 
   if (isUploader) {
     return (
-      <input
-        type="file"
-        name={name}
-        value={value}
-        disabled={disabled}
-        onChange={setFieldValue}
-        className="file-input file-input-bordered file-input-primary w-full max-w-xs"
-      />
+      <div className="flex justify-start items-start gap-4">
+        <label
+          className={`form-control w-full ${
+            file ? "max-w-full w-4/5" : "max-w-full"
+          } ${styleLabel}`}
+        >
+          <input
+            type="file"
+            name={name}
+            value={value}
+            disabled={disabled}
+            accept="image/png, image/jpeg, image/jpg"
+            onChange={(e: any) => {
+              setFile(URL.createObjectURL(e.target.files[0]));
+              setFieldValue(e);
+            }}
+            className={`file-input file-input-bordered w-full  ${styleInput}`}
+          />
+          <div className="label">
+            <span className="label-text">{placeholder}</span>
+          </div>
+        </label>
+        {file && (
+          <img
+            src={file}
+            alt="uploaded-file"
+            className="w-1/5 h-20 object-cover rounded-md"
+          />
+        )}
+      </div>
     );
   } else if (isSelectBox) {
     return (
@@ -41,7 +66,7 @@ function Input({
         value={value}
         disabled={disabled}
         onChange={onChangeHandler}
-        className="select select-bordered w-full max-w-xs"
+        className={`select select-bordered w-full max-w-xs ${styleInput}`}
       >
         <option disabled selected>
           {defaultOptionText}
@@ -58,21 +83,21 @@ function Input({
         placeholder={placeholder}
         onChange={onChangeHandler}
         onKeyDown={() => setFieldTouched(name)}
-        className="textarea textarea-bordered"
+        className={`textarea textarea-bordered ${styleInput}`}
       ></textarea>
     );
   } else if (isCheckBox) {
     return (
       <div className="form-control">
-        <label htmlFor={name} className="label cursor-pointer">
+        <label htmlFor={name} className={`label cursor-pointer ${styleLabel}`}>
           <span className="label-text">{placeholder}</span>
           <input
             name={name}
             value={value}
             type="checkbox"
             disabled={disabled}
-            className="checkbox"
             onChange={onChangeHandler}
+            className={`checkbox ${styleInput}`}
             defaultChecked={isDefaultChecked}
           />
         </label>
@@ -82,19 +107,8 @@ function Input({
     return (
       <label
         htmlFor={name}
-        className="input input-bordered flex items-center gap-2"
+        className={`input input-bordered flex items-center gap-2 ${styleLabel}`}
       >
-        {isSearch || icon}
-        <input
-          name={name}
-          type={isPasswordShown ? "text" : "password"}
-          value={value}
-          className="grow"
-          disabled={disabled}
-          placeholder={placeholder}
-          onChange={onChangeHandler}
-          onKeyDown={() => setFieldTouched(name)}
-        />
         {isPasswordShown ? (
           <FaEyeSlash
             className="cursor-pointer"
@@ -106,23 +120,33 @@ function Input({
             onClick={() => setIsPasswordShown(true)}
           />
         )}
+        <input
+          name={name}
+          type={isPasswordShown ? "text" : "password"}
+          value={value}
+          disabled={disabled}
+          placeholder={placeholder}
+          onChange={onChangeHandler}
+          className={`grow ${styleInput}`}
+          onKeyDown={() => setFieldTouched(name)}
+        />
       </label>
     );
   }
   return (
     <label
       htmlFor={name}
-      className="input input-bordered flex items-center gap-2"
+      className={`input input-bordered flex items-center gap-2 ${styleLabel}`}
     >
       {isSearch || icon}
       <input
         name={name}
         type={type}
         value={value}
-        className="grow"
         disabled={disabled}
         placeholder={placeholder}
         onChange={onChangeHandler}
+        className={`grow ${styleInput}`}
         onKeyDown={() => setFieldTouched(name)}
       />
       {isSearch && icon}

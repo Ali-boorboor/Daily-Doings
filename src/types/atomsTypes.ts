@@ -5,29 +5,31 @@ type buttonPropsType = {
   style?: string;
   isLink?: boolean;
   linkTo?: To | any;
-  isOutlineBtn?: boolean;
   onClickHandler?: any;
+  isOutlineBtn?: boolean;
   type?: "button" | "submit";
 };
 
 type inputPropsType = {
-  type: "text" | "password" | "email" | "tel";
+  value?: any;
   name: string;
-  value: any;
   disabled?: boolean;
   isSearch?: boolean;
   icon?: JSX.Element;
+  styleLabel?: string;
+  styleInput?: string;
   isCheckBox?: boolean;
   isUploader?: boolean;
   isTextArea?: boolean;
-  placeholder: string;
+  placeholder?: string;
   isSelectBox?: boolean;
   options?: JSX.Element;
   setFieldValue?: any;
-  onChangeHandler: any;
+  onChangeHandler?: any;
   setFieldTouched?: any;
   isDefaultChecked?: boolean;
   defaultOptionText?: string;
+  type?: "text" | "password" | "email" | "tel";
 };
 
 type dividerPropsType = {

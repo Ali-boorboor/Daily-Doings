@@ -1,4 +1,5 @@
 import ForgotPasswordForm from "@o/AuthPageOrganisms/ForgotPasswordForm";
+import { forgotPassOnSubmitValues } from "@type/templatesTypes";
 import { AuthPagesCoverState } from "@st/organismsStates";
 import { useRecoilState } from "recoil";
 import { memo, useEffect } from "react";
@@ -11,7 +12,17 @@ function ForgotPassword() {
     setSrcIndex(3);
   }, []);
 
-  return <ForgotPasswordForm />;
+  return (
+    <ForgotPasswordForm
+      initialValues={{
+        username: "",
+        email: "",
+      }}
+      onSubmitHandler={(values: forgotPassOnSubmitValues) => {
+        console.log(values);
+      }}
+    />
+  );
 }
 
 export default memo(ForgotPassword);

@@ -21,7 +21,5 @@
   * {
     @apply font-roboto;
     @apply box-border;
-    @apply m-0;
-    @apply p-0;
   }
 }

@@ -13,7 +13,7 @@ export default {
     },
   },
   daisyui: {
-    themes: ["emerald", "fantasy", "dark", "drakula", "nord", "garden"],
+    themes: ["emerald", "retro", "dark", "dracula", "nord", "dim", "forest"],
   },
   plugins: [daisyui],
 };

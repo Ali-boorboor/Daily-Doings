@@ -1,4 +1,5 @@
 import SignupForm from "@o/AuthPageOrganisms/SignupForm";
+import { signupOnSubmitValues } from "@type/templatesTypes";
 import { AuthPagesCoverState } from "@st/organismsStates";
 import { useRecoilState } from "recoil";
 import { memo, useEffect } from "react";
@@ -11,7 +12,20 @@ function Signup() {
     setSrcIndex(2);
   }, []);
 
-  return <SignupForm />;
+  return (
+    <SignupForm
+      initialValues={{
+        username: "",
+        email: "",
+        cover: null,
+        password: "",
+        submitPassword: "",
+      }}
+      onSubmitHandler={(values: signupOnSubmitValues) => {
+        console.log(values.cover);
+      }}
+    />
+  );
 }
 
 export default memo(Signup);

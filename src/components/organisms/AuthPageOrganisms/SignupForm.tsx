@@ -1,26 +1,19 @@
 import Input from "@a/Input";
 import Button from "@a/Button";
 import Divider from "@a/Divider";
+import AuthPageHeading from "@m/AuthPageHeading";
+import { signupFormPropsType } from "@type/organismsTypes";
 import { FaUserLarge } from "react-icons/fa6";
+import { MdEmail } from "react-icons/md";
 import { Form, Formik } from "formik";
 import { memo } from "react";
 
-function SignupForm() {
-  const initialValues = {
-    username: "",
-    password: "",
-  };
-
+function SignupForm({ initialValues, onSubmitHandler }: signupFormPropsType) {
   return (
-    <Formik initialValues={initialValues} onSubmit={() => {}}>
-      {({ values, handleChange, setFieldTouched }) => (
+    <Formik initialValues={initialValues} onSubmit={onSubmitHandler}>
+      {({ values, handleChange, setFieldValue, setFieldTouched }) => (
         <Form className="h-full basis-full md:basis-1/2 w-full flex gap-4 flex-col justify-center items-center">
-          <h1 className="font-roboto-bold text-2xl sm:text-3xl md:text-5xl">
-            Welcome
-          </h1>
-          <h2 className="font-roboto-italic text-lg sm:text-xl">
-            Create an account
-          </h2>
+          <AuthPageHeading text="Create an account account" />
           <div className="max-w-screen-md w-full overflow-hidden flex flex-col gap-4 md:gap-8 p-4">
             <Input
               name="username"
@@ -32,13 +25,44 @@ function SignupForm() {
               setFieldTouched={setFieldTouched}
             />
             <Input
-              name="password"
-              type="password"
-              value={values.password}
+              name="email"
+              type="email"
+              value={values.email}
               onChangeHandler={handleChange}
-              placeholder="Password"
+              placeholder="Email"
+              icon={<MdEmail />}
               setFieldTouched={setFieldTouched}
             />
+            <Input
+              name="cover"
+              styleLabel="max-w-full"
+              styleInput="max-w-full file-input-bordered file-input-primary"
+              placeholder="Pick an Avatar (png, jpg)"
+              setFieldValue={(e: any) => {
+                setFieldValue("cover", e.target.files[0]);
+              }}
+              isUploader
+            />
+            <div className="flex justify-center items-center gap-4">
+              <Input
+                name="password"
+                type="password"
+                placeholder="Password"
+                styleLabel="w-1/3 grow"
+                value={values.password}
+                onChangeHandler={handleChange}
+                setFieldTouched={setFieldTouched}
+              />
+              <Input
+                type="password"
+                name="submitPassword"
+                styleLabel="w-1/3 grow"
+                value={values.submitPassword}
+                placeholder="Submit Password"
+                onChangeHandler={handleChange}
+                setFieldTouched={setFieldTouched}
+              />
+            </div>
             <div>
               <Button
                 style="btn-success w-full mb-4 md:mb-0"
@@ -49,17 +73,15 @@ function SignupForm() {
               <Divider text="OR" style="hidden md:flex" />
               <div className="flex justify-center items-center gap-4 flex-wrap">
                 <Button
-                  style="btn-info w-1/3 grow"
+                  style="btn-secondary w-1/3 grow"
                   text="Login Page"
                   linkTo="/"
-                  isOutlineBtn
                   isLink
-                  />
+                />
                 <Button
-                  style="btn-warning w-1/3 grow"
+                  style="btn-accent w-1/3 grow"
                   text="Forgot Password Page"
                   linkTo="/forgot-password"
-                  isOutlineBtn
                   isLink
                 />
               </div>

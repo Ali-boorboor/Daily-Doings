@@ -1,4 +1,5 @@
 import LoginForm from "@o/AuthPageOrganisms/LoginForm";
+import { loginOnSubmitValues } from "@type/templatesTypes";
 import { AuthPagesCoverState } from "@st/organismsStates";
 import { useRecoilState } from "recoil";
 import { memo, useEffect } from "react";
@@ -11,7 +12,17 @@ function Login() {
     setSrcIndex(1);
   }, []);
 
-  return <LoginForm />;
+  return (
+    <LoginForm
+      initialValues={{
+        username: "",
+        password: "",
+      }}
+      onSubmitHandler={(values: loginOnSubmitValues) => {
+        console.log(values);
+      }}
+    />
+  );
 }
 
 export default memo(Login);

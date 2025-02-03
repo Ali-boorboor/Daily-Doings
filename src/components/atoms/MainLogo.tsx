@@ -6,7 +6,7 @@ function MainLogo({ style, linkTo }: mainLogoPropsType) {
   return (
     <Link to={linkTo ? linkTo : "/dashboard"} className={style}>
       <img
-        src="/public/images/main-logo.png"
+        src="/images/main-logo.png"
         alt="main-logo"
         className="w-full h-full object-cover"
       />
