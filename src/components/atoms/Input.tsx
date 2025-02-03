@@ -21,6 +21,7 @@ function Input({
   onChangeHandler,
   setFieldTouched,
   isDefaultChecked,
+  onKeyDownHandler,
   defaultOptionText,
 }: inputPropsType) {
   const [isPasswordShown, setIsPasswordShown] = useState(false);
@@ -41,7 +42,11 @@ function Input({
             disabled={disabled}
             accept="image/png, image/jpeg, image/jpg"
             onChange={(e: any) => {
-              setFile(URL.createObjectURL(e.target.files[0]));
+              if (e.target.files[0]) {
+                setFile(URL.createObjectURL(e.target.files[0]));
+              } else {
+                setFile(null);
+              }
               setFieldValue(e);
             }}
             className={`file-input file-input-bordered w-full  ${styleInput}`}
@@ -128,7 +133,10 @@ function Input({
           placeholder={placeholder}
           onChange={onChangeHandler}
           className={`grow ${styleInput}`}
-          onKeyDown={() => setFieldTouched(name)}
+          onKeyDown={(e: any) => {
+            setFieldTouched(name);
+            onKeyDownHandler(e);
+          }}
         />
       </label>
     );
@@ -147,7 +155,10 @@ function Input({
         placeholder={placeholder}
         onChange={onChangeHandler}
         className={`grow ${styleInput}`}
-        onKeyDown={() => setFieldTouched(name)}
+        onKeyDown={(e: any) => {
+          setFieldTouched(name);
+          onKeyDownHandler(e);
+        }}
       />
       {isSearch && icon}
     </label>

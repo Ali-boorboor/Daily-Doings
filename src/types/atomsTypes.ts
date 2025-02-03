@@ -29,6 +29,7 @@ type inputPropsType = {
   setFieldTouched?: any;
   isDefaultChecked?: boolean;
   defaultOptionText?: string;
+  onKeyDownHandler?: any;
   type?: "text" | "password" | "email" | "tel";
 };
 

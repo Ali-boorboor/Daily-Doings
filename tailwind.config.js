@@ -10,6 +10,9 @@ export default {
         "roboto-bold": "roboto-bold",
         "roboto-italic": "roboto-italic",
       },
+      transitionTimingFunction: {
+        sidebar: "cubic-bezier(0, 0, 0.2, 1)",
+      },
     },
   },
   daisyui: {

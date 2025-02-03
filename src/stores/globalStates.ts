@@ -10,4 +10,9 @@ const fontSize = atom({
   default: localStorage.getItem("font-size") || "text-base",
 });
 
-export { theme, fontSize };
+const isSideBarCollapse = atom({
+  key: "isSideBarCollapse",
+  default: true,
+});
+
+export { theme, fontSize, isSideBarCollapse };
