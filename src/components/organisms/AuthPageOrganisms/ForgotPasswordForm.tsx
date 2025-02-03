@@ -1,0 +1,74 @@
+import Input from "@a/Input";
+import Button from "@a/Button";
+import Divider from "@a/Divider";
+import { FaUserLarge } from "react-icons/fa6";
+import { Form, Formik } from "formik";
+import { memo } from "react";
+
+function ForgotPasswordForm() {
+  const initialValues = {
+    username: "",
+    password: "",
+  };
+
+  return (
+    <Formik initialValues={initialValues} onSubmit={() => {}}>
+      {({ values, handleChange, setFieldTouched }) => (
+        <Form className="h-full basis-full md:basis-1/2 w-full flex gap-4 flex-col justify-center items-center">
+          <h1 className="font-roboto-bold text-2xl sm:text-3xl md:text-5xl">
+            Welcome
+          </h1>
+          <h2 className="font-roboto-italic text-lg sm:text-xl">
+            Forgot Password
+          </h2>
+          <div className="max-w-screen-md w-full overflow-hidden flex flex-col gap-4 md:gap-8 p-4">
+            <Input
+              name="username"
+              type="text"
+              value={values.username}
+              onChangeHandler={handleChange}
+              placeholder="Username"
+              icon={<FaUserLarge />}
+              setFieldTouched={setFieldTouched}
+            />
+            <Input
+              name="password"
+              type="password"
+              value={values.password}
+              onChangeHandler={handleChange}
+              placeholder="Password"
+              setFieldTouched={setFieldTouched}
+            />
+            <div>
+              <Button
+                style="btn-success w-full mb-4 md:mb-0"
+                text="Submit"
+                type="submit"
+                isOutlineBtn
+              />
+              <Divider text="OR" style="hidden md:flex" />
+              <div className="flex justify-center items-center gap-4 flex-wrap">
+                <Button
+                  style="btn-info w-1/3 grow"
+                  text="Login Page"
+                  linkTo="/"
+                  isOutlineBtn
+                  isLink
+                />
+                <Button
+                  style="btn-warning w-1/3 grow"
+                  text="Signup Page"
+                  linkTo="/signup"
+                  isOutlineBtn
+                  isLink
+                />
+              </div>
+            </div>
+          </div>
+        </Form>
+      )}
+    </Formik>
+  );
+}
+
+export default memo(ForgotPasswordForm);
