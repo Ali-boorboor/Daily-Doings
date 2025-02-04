@@ -20,7 +20,7 @@ function HomePage() {
             isSideBarOpen && "ml-0 md:ml-60 lg:ml-72 xl:ml-80"
           }`}
         >
-          {/* <StickyWall
+          <StickyWall
             subject="test todo"
             description="test todo text to see the component test todo text to see the component test todo text to see the component test todo text to see the component test todo text to see the component test todo text to see the component test todo text to see the component test todo text to see the component test todo text to see the component"
             isList={true}
@@ -34,7 +34,7 @@ function HomePage() {
               { title: "test text to see todo 6" },
             ]}
           />
-          <AddStickyWall /> */}
+          <AddStickyWall />
         </div>
       </div>
     </main>
