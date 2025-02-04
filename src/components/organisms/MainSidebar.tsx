@@ -18,7 +18,7 @@ function MainSidebar() {
 
   return (
     <aside
-      className={`fixed top-16 h-screen drop-shadow-lg transition-all duration-300 ease-sidebar overflow-hidden w-40 md:w-60 lg:w-72 xl:w-80 border-r-primary border-r ${
+      className={`fixed z-40 top-16 h-screen drop-shadow-lg transition-all duration-300 ease-sidebar overflow-hidden w-40 md:w-60 lg:w-72 xl:w-80 border-r-primary border-r ${
         isSideBarOpen
           ? "translate-x-0 opacity-100 visible"
           : "-translate-x-full opacity-0 invisible"
