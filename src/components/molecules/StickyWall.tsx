@@ -22,8 +22,11 @@ function StickyWall({
       <Divider style="m-1 divider-neutral" />
       {isList ? (
         <ul className="px-2 line-clamp-4 lg:line-clamp-5 xl:line-clamp-6">
-          {listItems?.map((item: stickyWallListItemsType) => (
-            <li className="relative before:absolute before:w-2 before:h-[0.1rem] before:bg-primary-content before:-left-2 before:top-0 before:bottom-0 before:my-auto pl-2">
+          {listItems?.map((item: stickyWallListItemsType, index) => (
+            <li
+              className="relative before:absolute before:w-2 before:h-[0.1rem] before:bg-primary-content before:-left-2 before:top-0 before:bottom-0 before:my-auto pl-2"
+              key={++index}
+            >
               {item.title}
             </li>
           ))}
