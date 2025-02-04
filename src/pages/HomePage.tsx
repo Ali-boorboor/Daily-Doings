@@ -13,8 +13,8 @@ function HomePage() {
       <div className="">
         <MainSidebar />
         <div
-          className={`p-4 transition-all duration-300 ease-sidebar ${
-            isSideBarOpen && "ml-80"
+          className={`p-4 transition-all duration-300 ease-sidebar overflow-hidden ${
+            isSideBarOpen && "ml-0 md:ml-60 lg:ml-72 xl:ml-80"
           }`}
         >
           HomePage

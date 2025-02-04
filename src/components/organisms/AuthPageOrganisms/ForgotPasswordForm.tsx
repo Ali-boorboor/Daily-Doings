@@ -16,7 +16,7 @@ function ForgotPasswordForm({
     <Formik initialValues={initialValues} onSubmit={onSubmitHandler}>
       {({ values, handleChange, setFieldTouched }) => (
         <Form className="h-full basis-full md:basis-1/2 w-full flex gap-4 flex-col justify-center items-center">
-          <AuthPageHeading text="Forgot Password" />
+          <AuthPageHeading name={values.username} text="Forgot Password" />
           <div className="max-w-screen-md w-full overflow-hidden flex flex-col gap-4 md:gap-8 p-4">
             <Input
               name="username"

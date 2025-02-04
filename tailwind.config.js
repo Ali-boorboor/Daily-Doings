@@ -16,7 +16,7 @@ export default {
     },
   },
   daisyui: {
-    themes: ["emerald", "retro", "dark", "dracula", "nord", "dim", "forest"],
+    themes: ["emerald", "retro", "dark", "dracula", "nord", "dim", "night"],
   },
   plugins: [daisyui],
 };

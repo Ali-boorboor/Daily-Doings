@@ -43,9 +43,20 @@ type mainLogoPropsType = {
   linkTo?: To | any;
 };
 
+type themeCircleHandlerPropsType = { themeName: string };
+
+type themeCirclePropsType = {
+  themeName: string;
+  bgc1: string;
+  bgc2: string;
+  title: string;
+};
+
 export type {
   buttonPropsType,
   inputPropsType,
   dividerPropsType,
   mainLogoPropsType,
+  themeCircleHandlerPropsType,
+  themeCirclePropsType,
 };

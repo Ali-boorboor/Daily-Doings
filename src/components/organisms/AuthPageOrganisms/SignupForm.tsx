@@ -13,7 +13,7 @@ function SignupForm({ initialValues, onSubmitHandler }: signupFormPropsType) {
     <Formik initialValues={initialValues} onSubmit={onSubmitHandler}>
       {({ values, handleChange, setFieldValue, setFieldTouched }) => (
         <Form className="h-full basis-full md:basis-1/2 w-full flex gap-4 flex-col justify-center items-center">
-          <AuthPageHeading text="Create an account account" />
+          <AuthPageHeading name={values.username} text="Create an account account" />
           <div className="max-w-screen-md w-full overflow-hidden flex flex-col gap-4 md:gap-8 p-4">
             <Input
               name="username"
@@ -43,12 +43,12 @@ function SignupForm({ initialValues, onSubmitHandler }: signupFormPropsType) {
               }}
               isUploader
             />
-            <div className="flex justify-center items-center gap-4">
+            <div className="flex flex-col md:flex-row justify-center items-center gap-4">
               <Input
                 name="password"
                 type="password"
                 placeholder="Password"
-                styleLabel="w-1/3 grow"
+                styleLabel="w-full md:w-1/3 grow"
                 value={values.password}
                 onChangeHandler={handleChange}
                 setFieldTouched={setFieldTouched}
@@ -56,7 +56,7 @@ function SignupForm({ initialValues, onSubmitHandler }: signupFormPropsType) {
               <Input
                 type="password"
                 name="submitPassword"
-                styleLabel="w-1/3 grow"
+                styleLabel="w-full md:w-1/3 grow"
                 value={values.submitPassword}
                 placeholder="Submit Password"
                 onChangeHandler={handleChange}

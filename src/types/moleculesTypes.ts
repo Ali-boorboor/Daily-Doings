@@ -1,5 +1,25 @@
 type authPageHeadingPropsType = {
   text: string;
+  name?: string;
 };
 
-export type { authPageHeadingPropsType };
+type searchInputPropsType = {
+  style: string;
+};
+
+type themePalettePropsType = {
+  style: string;
+};
+
+type sidebarLinksPropsType = {
+  icon: JSX.Element;
+  title: string;
+  href: string;
+};
+
+export type {
+  authPageHeadingPropsType,
+  searchInputPropsType,
+  themePalettePropsType,
+  sidebarLinksPropsType,
+};
