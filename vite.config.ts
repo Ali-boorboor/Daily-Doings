@@ -14,6 +14,7 @@ export default defineConfig({
       "@m": "/src/components/molecules",
       "@o": "/src/components/organisms",
       "@t": "/src/components/templates",
+      "@v": "/src/validations",
       "@type": "/src/types",
       "@st": "/src/stores",
     },

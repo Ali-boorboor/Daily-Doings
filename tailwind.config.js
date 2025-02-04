@@ -7,8 +7,7 @@ export default {
     extend: {
       fontFamily: {
         roboto: "roboto",
-        "roboto-bold": "roboto-bold",
-        "roboto-italic": "roboto-italic",
+        lalezar: "lalezar",
       },
       transitionTimingFunction: {
         sidebar: "cubic-bezier(0, 0, 0.2, 1)",

@@ -8,18 +8,14 @@
 }
 
 @font-face {
-  font-family: "roboto-bold";
-  src: url("/fonts/bold.ttf");
-}
-
-@font-face {
-  font-family: "roboto-italic";
-  src: url("/fonts/italic.ttf");
+  font-family: "lalezar";
+  src: url("/fonts/Lalezar-Regular.ttf");
 }
 
 @layer base {
   * {
     @apply font-roboto;
+    /* @apply font-lalezar; */
     @apply box-border;
   }
 }

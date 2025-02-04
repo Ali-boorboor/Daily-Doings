@@ -1,4 +1,5 @@
-import "./index.css";
+import "@/index.css";
+import "@/languages/index.ts";
 import App from "./App.tsx";
 import { StrictMode } from "react";
 import { RecoilRoot } from "recoil";

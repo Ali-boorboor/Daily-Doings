@@ -16,7 +16,7 @@ function StickyWall({
     <div
       className={`w-40 h-40 lg:w-52 lg:h-52 xl:w-60 xl:h-60 overflow-hidden rounded-lg ${bgTextColors} py-3 px-2 text-left`}
     >
-      <p className="font-roboto-bold text-lg lg:text-xl xl:text-2xl text-center">
+      <p className="font-bold text-lg lg:text-xl xl:text-2xl text-center">
         {subject}
       </p>
       <Divider style="m-1 divider-neutral" />

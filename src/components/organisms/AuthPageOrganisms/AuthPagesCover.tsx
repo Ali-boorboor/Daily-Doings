@@ -1,5 +1,6 @@
 import MainLogo from "@a/MainLogo";
 import { AuthPagesCoverState } from "@st/organismsStates";
+import { useTranslation } from "react-i18next";
 import { useLocation } from "react-router";
 import { useRecoilState } from "recoil";
 import { memo } from "react";
@@ -7,6 +8,7 @@ import { memo } from "react";
 function AuthPagesCover() {
   const [srcIndex, setSrcIndex] = useRecoilState(AuthPagesCoverState);
   const { pathname } = useLocation();
+  const { t } = useTranslation();
 
   return (
     <div className="relative overflow-hidden hidden md:block basis-1/2 h-full">
@@ -34,15 +36,15 @@ function AuthPagesCover() {
       <div className="absolute w-full flex items-center justify-between py-6 px-8">
         <MainLogo style="inline-block w-20 h-20" linkTo="/" />
         <p className="text-white text-lg sm:text-xl md:text-2xl hidden md:inline-block">
-          Daily Doings
+          {t("dailyDoingsText")}
         </p>
       </div>
       <p className="absolute bottom-20 text-center w-full text-2xl sm:text-3xl md:text-4xl text-white">
         {pathname === "/"
-          ? "Login Page"
+          ? t("navToLogin")
           : pathname === "/signup"
-          ? "Signup Page"
-          : "Forgot Password Page"}
+          ? t("navToSignup")
+          : t("navToForgotPass")}
       </p>
       <div className="absolute bottom-6 flex gap-6 justify-center items-center w-full">
         <span
