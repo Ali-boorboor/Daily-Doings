@@ -4,26 +4,26 @@ import Divider from "@a/Divider";
 import AuthPageHeading from "@m/AuthPageHeading";
 import { signupFormPropsType } from "@type/organismsTypes";
 import { FaUserLarge } from "react-icons/fa6";
+import { useTranslation } from "react-i18next";
 import { MdEmail } from "react-icons/md";
 import { Form, Formik } from "formik";
 import { memo } from "react";
 
 function SignupForm({ initialValues, onSubmitHandler }: signupFormPropsType) {
+  const { t } = useTranslation();
+
   return (
     <Formik initialValues={initialValues} onSubmit={onSubmitHandler}>
       {({ values, handleChange, setFieldValue, setFieldTouched }) => (
         <Form className="h-full basis-full md:basis-1/2 w-full flex gap-4 flex-col justify-center items-center">
-          <AuthPageHeading
-            name={values.username}
-            text="Create an account account"
-          />
+          <AuthPageHeading name={values.username} text={t("signupText")} />
           <div className="max-w-screen-md w-full overflow-hidden flex flex-col gap-4 md:gap-8 p-4">
             <Input
               name="username"
               type="text"
               value={values.username}
               onChangeHandler={handleChange}
-              placeholder="Username"
+              placeholder={t("usernameInput")}
               icon={<FaUserLarge />}
               setFieldTouched={setFieldTouched}
             />
@@ -32,7 +32,7 @@ function SignupForm({ initialValues, onSubmitHandler }: signupFormPropsType) {
               type="email"
               value={values.email}
               onChangeHandler={handleChange}
-              placeholder="Email"
+              placeholder={t("emailInput")}
               icon={<MdEmail />}
               setFieldTouched={setFieldTouched}
             />
@@ -40,7 +40,7 @@ function SignupForm({ initialValues, onSubmitHandler }: signupFormPropsType) {
               name="cover"
               styleLabel="max-w-full"
               styleInput="max-w-full file-input-bordered file-input-primary"
-              placeholder="Pick an Avatar (png, jpg)"
+              placeholder={t("signupFileUploaderText")}
               setFieldValue={(e: any) => {
                 setFieldValue("cover", e.target.files[0]);
               }}
@@ -50,7 +50,7 @@ function SignupForm({ initialValues, onSubmitHandler }: signupFormPropsType) {
               <Input
                 name="password"
                 type="password"
-                placeholder="Password"
+                placeholder={t("passwordInput")}
                 value={values.password}
                 onChangeHandler={handleChange}
                 setFieldTouched={setFieldTouched}
@@ -59,7 +59,7 @@ function SignupForm({ initialValues, onSubmitHandler }: signupFormPropsType) {
                 type="password"
                 name="submitPassword"
                 value={values.submitPassword}
-                placeholder="Submit Password"
+                placeholder={t("submitPasswordInput")}
                 onChangeHandler={handleChange}
                 setFieldTouched={setFieldTouched}
               />
@@ -68,28 +68,31 @@ function SignupForm({ initialValues, onSubmitHandler }: signupFormPropsType) {
               name="agreeToTerms"
               value={values.agreeToTerms}
               styleInput="mr-4 checkbox-primary"
-              placeholder="I agree to the Terms & Conditions"
+              placeholder={t("agreeToTerms")}
               onChangeHandler={handleChange}
               isCheckBox
             />
             <div>
               <Button
                 style="btn-success w-full mb-4 md:mb-0"
-                text="Signup"
+                text={t("signupBtn")}
                 type="submit"
                 isOutlineBtn
               />
-              <Divider text="OR" style="hidden md:flex" />
+              <Divider
+                text={t("authPagesDividerText")}
+                style="hidden md:flex"
+              />
               <div className="flex justify-center items-center gap-4 flex-wrap">
                 <Button
                   style="btn-secondary w-1/3 grow"
-                  text="Login Page"
+                  text={t("navToLogin")}
                   linkTo="/"
                   isLink
                 />
                 <Button
                   style="btn-accent w-1/3 grow"
-                  text="Forgot Password Page"
+                  text={t("navToForgotPass")}
                   linkTo="/forgot-password"
                   isLink
                 />
