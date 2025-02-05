@@ -3,6 +3,7 @@ import Button from "@a/Button";
 import Divider from "@a/Divider";
 import AuthPageHeading from "@m/AuthPageHeading";
 import { signupFormPropsType } from "@type/organismsTypes";
+import { signupValidation } from "@v/Validations";
 import { FaUserLarge } from "react-icons/fa6";
 import { useTranslation } from "react-i18next";
 import { MdEmail } from "react-icons/md";
@@ -13,7 +14,11 @@ function SignupForm({ initialValues, onSubmitHandler }: signupFormPropsType) {
   const { t } = useTranslation();
 
   return (
-    <Formik initialValues={initialValues} onSubmit={onSubmitHandler}>
+    <Formik
+      initialValues={initialValues}
+      onSubmit={onSubmitHandler}
+      validationSchema={() => signupValidation(t)}
+    >
       {({ values, handleChange, setFieldValue, setFieldTouched }) => (
         <Form className="h-full basis-full md:basis-1/2 w-full flex gap-4 flex-col justify-center items-center">
           <AuthPageHeading name={values.username} text={t("signupText")} />

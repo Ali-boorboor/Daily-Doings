@@ -157,7 +157,7 @@ function Input({
             className={`grow ${styleInput}`}
             onKeyDown={(e: any) => {
               setFieldTouched(name);
-              onKeyDownHandler(e);
+              onKeyDownHandler && onKeyDownHandler(e);
             }}
           />
         </label>
@@ -184,7 +184,7 @@ function Input({
           className={`grow ${styleInput}`}
           onKeyDown={(e: any) => {
             setFieldTouched(name);
-            onKeyDownHandler(e);
+            onKeyDownHandler && onKeyDownHandler(e);
           }}
         />
         {isSearch && icon}

@@ -2,8 +2,8 @@ import Input from "@a/Input";
 import Button from "@a/Button";
 import Divider from "@a/Divider";
 import AuthPageHeading from "@m/AuthPageHeading";
-import loginValidation from "@v/loginValidations";
 import { loginFormPropsType } from "@type/organismsTypes";
+import { loginValidation } from "@v/Validations";
 import { useTranslation } from "react-i18next";
 import { FaUserLarge } from "react-icons/fa6";
 import { Form, Formik } from "formik";
@@ -16,7 +16,7 @@ function LoginForm({ initialValues, onSubmitHandler }: loginFormPropsType) {
     <Formik
       initialValues={initialValues}
       onSubmit={onSubmitHandler}
-      validationSchema={loginValidation}
+      validationSchema={() => loginValidation(t)}
     >
       {({ values, handleChange, setFieldTouched }) => (
         <Form className="h-full basis-full md:basis-1/2 w-full flex gap-4 flex-col justify-center items-center">

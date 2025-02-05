@@ -3,6 +3,7 @@ import Button from "@a/Button";
 import Divider from "@a/Divider";
 import AuthPageHeading from "@m/AuthPageHeading";
 import { forgotPasswordFormPropsType } from "@type/organismsTypes";
+import { forgotPassValidation } from "@v/Validations";
 import { useTranslation } from "react-i18next";
 import { FaUserLarge } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
@@ -16,7 +17,11 @@ function ForgotPasswordForm({
   const { t } = useTranslation();
 
   return (
-    <Formik initialValues={initialValues} onSubmit={onSubmitHandler}>
+    <Formik
+      initialValues={initialValues}
+      onSubmit={onSubmitHandler}
+      validationSchema={() => forgotPassValidation(t)}
+    >
       {({ values, handleChange, setFieldTouched }) => (
         <Form className="h-full basis-full md:basis-1/2 w-full flex gap-4 flex-col justify-center items-center">
           <AuthPageHeading name={values.username} text={t("forgotPassText")} />
