@@ -9,6 +9,7 @@ const en = {
   usernameInput: "Username",
   passwordInput: "Password",
   emailInput: "Email",
+  searchInput: "Search",
   agreeToTerms: "I agree to the Terms & Conditions",
   agreeToTermsValidation: "You Must Accept The Terms & Conditions To Proceed",
   usernameRequiredValidation: "Please Enter Your Username",

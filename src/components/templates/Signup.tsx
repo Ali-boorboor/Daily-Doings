@@ -1,3 +1,4 @@
+import docTitle from "@/utils/documentTitle";
 import SignupForm from "@o/AuthPageOrganisms/SignupForm";
 import { signupOnSubmitValues } from "@type/templatesTypes";
 import { AuthPagesCoverState } from "@st/organismsStates";
@@ -8,7 +9,7 @@ function Signup() {
   const [, setSrcIndex] = useRecoilState(AuthPagesCoverState);
 
   useEffect(() => {
-    document.title = "Signup Page";
+    docTitle("Signup Page");
     setSrcIndex(2);
   }, []);
 

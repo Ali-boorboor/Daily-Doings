@@ -1,3 +1,4 @@
+import docTitle from "@/utils/documentTitle";
 import LoginForm from "@o/AuthPageOrganisms/LoginForm";
 import { loginOnSubmitValues } from "@type/templatesTypes";
 import { AuthPagesCoverState } from "@st/organismsStates";
@@ -8,7 +9,7 @@ function Login() {
   const [, setSrcIndex] = useRecoilState(AuthPagesCoverState);
 
   useEffect(() => {
-    document.title = "Login Page";
+    docTitle("Login Page");
     setSrcIndex(1);
   }, []);
 

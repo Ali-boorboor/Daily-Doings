@@ -9,6 +9,7 @@ const fa = {
   passwordInput: "کلمه عبور",
   submitPasswordInput: "تایید کلمه عبور",
   emailInput: "ایمیل",
+  searchInput: "جستجو",
   agreeToTerms: "من با شرایط و ضوابط موافقم",
   agreeToTermsValidation: "برای ادامه باید شرایط و ضوابط را بپذیرید",
   usernameRequiredValidation: "لطفا نام کاربری خود را وارد کنید",

@@ -1,3 +1,4 @@
+import docTitle from "@/utils/documentTitle";
 import ForgotPasswordForm from "@o/AuthPageOrganisms/ForgotPasswordForm";
 import { forgotPassOnSubmitValues } from "@type/templatesTypes";
 import { AuthPagesCoverState } from "@st/organismsStates";
@@ -8,7 +9,7 @@ function ForgotPassword() {
   const [, setSrcIndex] = useRecoilState(AuthPagesCoverState);
 
   useEffect(() => {
-    document.title = "Forgot Password Page";
+    docTitle("Forgot Password Page");
     setSrcIndex(3);
   }, []);
 

@@ -2,6 +2,7 @@ import {
   themeCircleHandlerPropsType,
   themeCirclePropsType,
 } from "@type/atomsTypes";
+import { set } from "@/utils/localStorage";
 import { theme } from "@st/globalStates";
 import { useRecoilState } from "recoil";
 import { memo } from "react";
@@ -10,7 +11,7 @@ function ThemeCircle({ themeName, bgc1, bgc2, title }: themeCirclePropsType) {
   const [, setTheme] = useRecoilState(theme);
 
   const themeChangeHandler = ({ themeName }: themeCircleHandlerPropsType) => {
-    localStorage.setItem("theme", themeName);
+    set("theme", themeName);
     setTheme(themeName);
   };
 
