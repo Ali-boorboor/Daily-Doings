@@ -1,13 +1,16 @@
 import ThemeCircle from "@a/ThemeCircle";
 import { themePalettePropsType } from "@type/moleculesTypes";
+import { useTranslation } from "react-i18next";
 import { memo } from "react";
 
 function ThemePalette({ style }: themePalettePropsType) {
+  const { t } = useTranslation();
+
   return (
     <div
       className={`flex flex-col justify-center items-start gap-2 mb-2 ${style}`}
     >
-      <p className="">Theme</p>
+      <p className="">{t("themeTextSidebar")}</p>
       <div className="flex justify-center md:justify-between items-center gap-2 md:gap-1 w-full px-4 flex-wrap">
         <ThemeCircle
           bgc1="bg-[#282a36]"

@@ -13,7 +13,7 @@ function HomePage() {
   return (
     <main className="flex flex-col">
       <MainHeader />
-      <div className="">
+      <div className="pt-16">
         <MainSidebar />
         <div
           className={`p-4 transition-all duration-300 ease-sidebar overflow-hidden ${

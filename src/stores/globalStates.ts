@@ -1,3 +1,7 @@
+import {
+  validateDefaultFontSize,
+  validateDefaultLang,
+} from "@/utils/validateSettings";
 import { get } from "@/utils/localStorage";
 import { atom } from "recoil";
 
@@ -8,7 +12,7 @@ const theme = atom({
 
 const fontSize = atom({
   key: "fontSize",
-  default: get("font-size") || "text-base",
+  default: validateDefaultFontSize(),
 });
 
 const isSideBarCollapse = atom({
@@ -16,4 +20,9 @@ const isSideBarCollapse = atom({
   default: true,
 });
 
-export { theme, fontSize, isSideBarCollapse };
+const lang = atom({
+  key: "lang",
+  default: validateDefaultLang(),
+});
+
+export { theme, fontSize, isSideBarCollapse, lang };

@@ -11,11 +11,3 @@
   font-family: "lalezar";
   src: url("/fonts/Lalezar-Regular.ttf");
 }
-
-@layer base {
-  * {
-    @apply font-roboto;
-    /* @apply font-lalezar; */
-    @apply box-border;
-  }
-}

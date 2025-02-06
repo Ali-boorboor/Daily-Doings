@@ -12,7 +12,7 @@ function SidebarLinks({ icon, title, href }: sidebarLinksPropsType) {
     <div className="tooltip" data-tip={title}>
       <NavLink to={href} className={activeLinkStyle}>
         {icon}
-        <span className="hidden md:inline-block">{title}</span>
+        <span className="min-w-20">{title}</span>
       </NavLink>
     </div>
   );

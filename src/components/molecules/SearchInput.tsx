@@ -11,13 +11,15 @@ function SearchInput({ style }: searchInputPropsType) {
   return (
     <Formik initialValues={{ search: "" }} onSubmit={() => {}}>
       {({ values, handleChange, setFieldTouched }) => (
-        <Form className="tooltip tooltip-bottom" data-tip="Search">
+        <Form className="tooltip tooltip-bottom w-full" data-tip={t("searchInput")}>
           <Input
             name="search"
             value={values.search}
             onChangeHandler={handleChange}
             setFieldTouched={setFieldTouched}
-            icon={<IoSearchOutline className="cursor-pointer" />}
+            icon={
+              <IoSearchOutline className="hidden lg:inline-block cursor-pointer" />
+            }
             styleInput={style}
             styleLabel={`${style} input-secondary`}
             placeholder={t("searchInput")}

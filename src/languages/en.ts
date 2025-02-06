@@ -1,6 +1,9 @@
 const en = {
+  langEnBtn: "English",
+  langFaBtn: "Persian",
   loginBtn: "Login",
   signupBtn: "Signup",
+  addStickyWall: "Add Sticky Wall",
   forgotPassBtn: "Submit",
   authPagesDividerText: "OR",
   navToLogin: "Login Page",
@@ -30,6 +33,18 @@ const en = {
   signupText: "Create an account account",
   navToForgotPass: "Forgot Password Page",
   dailyDoingsText: "Daily Doings",
+  dashboardLink: "Dashboard",
+  calendarLink: "Calendar",
+  stickyWallLink: "Sticky Wall",
+  tableLink: "Table",
+  todayLink: "Today",
+  formLink: "Form",
+  foldersLink: "Folders",
+  settingsLink: "Settings",
+  profileTitle: "Profile",
+  sideBarCloseTitleBtn: "Close Sidebar",
+  sideBarOpenTitleBtn: "Open Sidebar",
+  themeTextSidebar: "Theme",
 };
 
 export default en;

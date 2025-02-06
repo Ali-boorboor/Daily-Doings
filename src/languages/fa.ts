@@ -1,4 +1,6 @@
 const fa = {
+  langEnBtn: "انگلیسی",
+  langFaBtn: "فارسی",
   loginBtn: "ورود",
   signupBtn: "ثبت نام",
   forgotPassBtn: "تایید",
@@ -7,6 +9,7 @@ const fa = {
   loginWelcomeText: "خوش آمدید",
   navToSignup: "صفحه ثبت نام",
   passwordInput: "کلمه عبور",
+  addStickyWall: "اضافه کردن برچسب",
   submitPasswordInput: "تایید کلمه عبور",
   emailInput: "ایمیل",
   searchInput: "جستجو",
@@ -30,6 +33,18 @@ const fa = {
   usernameInput: "نام کاربری",
   dailyDoingsText: "کارهای روزانه",
   navToForgotPass: "صفحه فراموشی کلمه عبور",
+  dashboardLink: "داشبورد",
+  calendarLink: "تقویم",
+  stickyWallLink: "برچسب",
+  tableLink: "جدول",
+  todayLink: "امروز",
+  formLink: "فرم",
+  foldersLink: "پوشه ها",
+  settingsLink: "تنظیمات",
+  profileTitle: "پروفایل",
+  sideBarCloseTitleBtn: "بستن منو کناری",
+  sideBarOpenTitleBtn: "باز کردن منو کناری",
+  themeTextSidebar: "تم",
 };
 
 export default fa;
