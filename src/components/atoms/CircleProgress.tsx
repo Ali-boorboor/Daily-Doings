@@ -2,17 +2,18 @@ import { circleProgressPropsType } from "@type/atomsTypes";
 import { memo } from "react";
 
 function CircleProgress({
-  percent,
-  ringColor,
-  textColor,
+  text,
+  style,
+  size,
+  value,
 }: circleProgressPropsType) {
   return (
     <div
-      className={`radial-progress ${textColor} badge-ghost ring ring-offset-2 ${ringColor} ring-offset-base-100`}
-      style={{ "--value": percent } as Record<number, number>}
+      className={`radial-progress ${style} badge-ghost ring ring-offset-2 ring-offset-base-100`}
+      style={{ "--value": value, "--size": size } as Record<number, number>}
       role="progressbar"
     >
-      {`${percent}%`}
+      {text}
     </div>
   );
 }

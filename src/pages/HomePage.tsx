@@ -14,7 +14,7 @@ function HomePage() {
       <div className="pt-16">
         <MainSidebar />
         <div
-          className={`p-4 transition-all duration-300 ease-sidebar overflow-hidden ${
+          className={`px-4 pb-4 pt-8 transition-all duration-300 ease-sidebar ${
             isSideBarOpen &&
             "mx-0 ltr:md:ml-60 ltr:lg:ml-72 ltr:xl:ml-80 rtl:md:mr-60 rtl:lg:mr-72 rtl:xl:mr-80"
           }`}

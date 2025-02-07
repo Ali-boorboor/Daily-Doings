@@ -29,6 +29,15 @@ type stickyWallListItemsType = {
   title: string;
 };
 
+type overviewProgressPropsType = {
+  style: string;
+  title: string;
+  count: number;
+  totalCount: number;
+  text: string;
+  value: number;
+};
+
 export type {
   authPageHeadingPropsType,
   searchInputPropsType,
@@ -36,4 +45,5 @@ export type {
   sidebarLinksPropsType,
   stickyWallPropsType,
   stickyWallListItemsType,
+  overviewProgressPropsType,
 };

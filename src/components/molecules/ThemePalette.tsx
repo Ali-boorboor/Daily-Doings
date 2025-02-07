@@ -10,7 +10,7 @@ function ThemePalette({ style }: themePalettePropsType) {
     <div
       className={`flex flex-col justify-center items-start gap-2 mb-2 ${style}`}
     >
-      <p className="">{t("themeTextSidebar")}</p>
+      <p>{t("themeTextSidebar")}</p>
       <div className="flex justify-center md:justify-between items-center gap-2 md:gap-1 w-full px-4 flex-wrap">
         <ThemeCircle
           bgc1="bg-[#282a36]"

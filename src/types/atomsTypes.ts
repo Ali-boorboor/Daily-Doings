@@ -54,8 +54,14 @@ type themeCirclePropsType = {
 };
 
 type circleProgressPropsType = {
-  percent: number;
-  ringColor: string;
+  text?: string;
+  value: number;
+  style: string;
+  size?: string;
+};
+
+type headerTitlePropsType = {
+  title: string;
   textColor: string;
 };
 
@@ -67,4 +73,5 @@ export type {
   themeCircleHandlerPropsType,
   themeCirclePropsType,
   circleProgressPropsType,
+  headerTitlePropsType,
 };

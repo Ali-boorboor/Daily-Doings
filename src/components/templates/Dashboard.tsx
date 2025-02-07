@@ -1,4 +1,4 @@
-import Dashboard from "@o/Dashboard";
+import Overview from "@o/DashboardOrganisms/Overview";
 import docTitle from "@/utils/documentTitle";
 import { memo, useEffect } from "react";
 
@@ -7,7 +7,11 @@ function DashboardPage() {
     docTitle("Dashboard Page");
   }, []);
 
-  return <Dashboard />;
+  return (
+    <div className="flex justify-center items-center">
+      <Overview />
+    </div>
+  );
 }
 
 export default memo(DashboardPage);

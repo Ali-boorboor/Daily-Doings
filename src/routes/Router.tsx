@@ -5,7 +5,7 @@ import { lazy } from "react";
 const Login = lazy(() => import("@t/Login"));
 const Signup = lazy(() => import("@t/Signup"));
 const ForgotPassword = lazy(() => import("@t/ForgotPassword"));
-const DashboardPage = lazy(() => import("@t/DashboardPage"));
+const Dashboard = lazy(() => import("@/components/templates/Dashboard"));
 const AuthPage = lazy(() => import("@/pages/AuthPage"));
 const HomePage = lazy(() => import("@/pages/HomePage"));
 
@@ -33,7 +33,7 @@ const Routes = [
     ),
     children: [
       { index: true, element: <Navigate to="dashboard" replace /> },
-      { path: "dashboard", element: <DashboardPage /> },
+      { path: "dashboard", element: <Dashboard /> },
     ],
   },
 ];
