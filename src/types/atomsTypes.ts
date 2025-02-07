@@ -53,6 +53,12 @@ type themeCirclePropsType = {
   title: string;
 };
 
+type circleProgressPropsType = {
+  percent: number;
+  ringColor: string;
+  textColor: string;
+};
+
 export type {
   buttonPropsType,
   inputPropsType,
@@ -60,4 +66,5 @@ export type {
   mainLogoPropsType,
   themeCircleHandlerPropsType,
   themeCirclePropsType,
+  circleProgressPropsType,
 };

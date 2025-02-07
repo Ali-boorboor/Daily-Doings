@@ -20,7 +20,7 @@ function MainSidebar() {
 
   return (
     <div
-      className={`h-screen z-10 fixed top-16 drop-shadow-lg transition-all duration-300 ease-sidebar overflow-hidden border-r-primary border-r rtl:border-l-primary rtl:border-l w-44 md:w-60 lg:w-72 xl:w-80     
+      className={`h-screen z-10 fixed top-16 drop-shadow-lg transition-all duration-300 ease-sidebar overflow-hidden ltr:border-r-primary ltr:border-r rtl:border-l-primary rtl:border-l w-44 md:w-60 lg:w-72 xl:w-80     
         ${
           !isSideBarOpen
             ? "w-0 opacity-0 invisible -translate-x-full rtl:translate-x-full"

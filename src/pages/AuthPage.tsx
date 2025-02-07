@@ -1,8 +1,7 @@
+import LangTogleBtn from "@m/LangTogleBtn";
 import AuthPagesCover from "@o/AuthPageOrganisms/AuthPagesCover";
 import { Outlet } from "react-router";
 import { memo } from "react";
-
-import LangTogleBtn from "@/components/molecules/LangTogleBtn";
 
 function AuthPage() {
   return (
