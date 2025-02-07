@@ -111,7 +111,7 @@ function Input({
     return (
       <div className="flex flex-col gap-2 w-full">
         <div className="form-control items-start">
-          <label className={`label cursor-pointer ${styleLabel}`}>
+          <label className={`label flex gap-2 cursor-pointer ${styleLabel}`}>
             <input
               name={name}
               value={value}

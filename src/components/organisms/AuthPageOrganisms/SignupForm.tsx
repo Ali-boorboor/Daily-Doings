@@ -72,7 +72,7 @@ function SignupForm({ initialValues, onSubmitHandler }: signupFormPropsType) {
             <Input
               name="agreeToTerms"
               value={values.agreeToTerms}
-              styleInput="mr-4 checkbox-primary"
+              styleInput="checkbox-primary"
               placeholder={t("agreeToTerms")}
               onChangeHandler={handleChange}
               isCheckBox

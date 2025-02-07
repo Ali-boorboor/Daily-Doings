@@ -45,6 +45,7 @@ const en = {
   sideBarCloseTitleBtn: "Close Sidebar",
   sideBarOpenTitleBtn: "Open Sidebar",
   themeTextSidebar: "Theme",
+  profileLogoutBtn: "Logout",
 };
 
 export default en;

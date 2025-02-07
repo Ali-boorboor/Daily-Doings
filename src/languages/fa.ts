@@ -45,6 +45,7 @@ const fa = {
   sideBarCloseTitleBtn: "بستن منو کناری",
   sideBarOpenTitleBtn: "باز کردن منو کناری",
   themeTextSidebar: "تم",
+  profileLogoutBtn: "خروج",
 };
 
 export default fa;

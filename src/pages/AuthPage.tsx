@@ -7,7 +7,7 @@ import LangTogleBtn from "@/components/molecules/LangTogleBtn";
 function AuthPage() {
   return (
     <>
-      <div className="flex relative justify-between gap-4 items-center w-screen h-screen flex-wrap md:flex-nowrap">
+      <div className="flex rtl:flex-row-reverse relative justify-between gap-4 items-center w-screen h-screen flex-wrap md:flex-nowrap">
         <AuthPagesCover />
         <div className="absolute top-6 right-6">
           <LangTogleBtn />

@@ -17,7 +17,8 @@ function HomePage() {
         <MainSidebar />
         <div
           className={`p-4 transition-all duration-300 ease-sidebar overflow-hidden ${
-            isSideBarOpen && "ml-0 md:ml-60 lg:ml-72 xl:ml-80"
+            isSideBarOpen &&
+            "ml-0 md:ml-60 lg:ml-72 xl:ml-80 rtl:md:mr-60 rtl:lg:mr-72 rtl:xl:mr-80"
           }`}
         >
           <StickyWall

@@ -61,7 +61,7 @@ function MainHeader() {
             >
               <Button
                 style="btn-ghost"
-                text="Settings"
+                text={t("settingsLink")}
                 isOutlineBtn
                 linkTo="/"
                 isLink
@@ -71,7 +71,7 @@ function MainHeader() {
                 onClickHandler={() => {}}
                 style="btn-error"
                 type="button"
-                text="Logout"
+                text={t("profileLogoutBtn")}
                 isOutlineBtn
               />
             </nav>
