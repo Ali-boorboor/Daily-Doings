@@ -1,13 +1,20 @@
-import Login from "@t/Login";
-import Signup from "@t/Signup";
-import AuthPage from "@/pages/AuthPage";
-import HomePage from "@/pages/HomePage";
-import ForgotPassword from "@t/ForgotPassword";
+import SuspenseWrapper from "@/routes/SuspenseWrapper";
+import { lazy } from "react";
+
+const Login = lazy(() => import("@t/Login"));
+const Signup = lazy(() => import("@t/Signup"));
+const ForgotPassword = lazy(() => import("@t/ForgotPassword"));
+const AuthPage = lazy(() => import("@/pages/AuthPage"));
+const HomePage = lazy(() => import("@/pages/HomePage"));
 
 const Routes = [
   {
     path: "/",
-    element: <AuthPage />,
+    element: (
+      <SuspenseWrapper>
+        <AuthPage />
+      </SuspenseWrapper>
+    ),
     children: [
       { path: "", element: <Login /> },
       { path: "signup", element: <Signup /> },
@@ -15,8 +22,12 @@ const Routes = [
     ],
   },
   {
-    path: "/dashboard",
-    element: <HomePage />,
+    path: "/doings",
+    element: (
+      <SuspenseWrapper>
+        <HomePage />
+      </SuspenseWrapper>
+    ),
     // children: [
     //   { path: "", element: <Login /> },
     //   { path: "signup", element: <Signup /> },

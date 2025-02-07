@@ -14,6 +14,7 @@ function Input({
   isCheckBox,
   styleInput,
   styleLabel,
+  maxLength,
   isUploader,
   isTextArea,
   placeholder,
@@ -101,6 +102,7 @@ function Input({
           onChange={onChangeHandler}
           onKeyDown={() => setFieldTouched(name)}
           className={`textarea textarea-bordered ${styleInput}`}
+          maxLength={maxLength}
         ></textarea>
         <p className="text-error">
           <ErrorMessage name={name} />
@@ -155,6 +157,7 @@ function Input({
             placeholder={placeholder}
             onChange={onChangeHandler}
             className={`grow ${styleInput}`}
+            maxLength={maxLength}
             onKeyDown={(e: any) => {
               setFieldTouched(name);
               onKeyDownHandler && onKeyDownHandler(e);
@@ -182,6 +185,7 @@ function Input({
           placeholder={placeholder}
           onChange={onChangeHandler}
           className={`grow ${styleInput}`}
+          maxLength={maxLength}
           onKeyDown={(e: any) => {
             setFieldTouched(name);
             onKeyDownHandler && onKeyDownHandler(e);

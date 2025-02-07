@@ -34,6 +34,7 @@ function ForgotPasswordForm({
               placeholder={t("usernameInput")}
               icon={<FaUserLarge />}
               setFieldTouched={setFieldTouched}
+              maxLength={20}
             />
             <Input
               name="email"

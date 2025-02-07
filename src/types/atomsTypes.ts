@@ -15,6 +15,7 @@ type inputPropsType = {
   name: string;
   disabled?: boolean;
   isSearch?: boolean;
+  maxLength?: number;
   icon?: JSX.Element;
   styleLabel?: string;
   styleInput?: string;
