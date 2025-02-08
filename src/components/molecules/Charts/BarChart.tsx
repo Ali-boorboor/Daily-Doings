@@ -23,7 +23,10 @@ function BarChart() {
   ];
 
   return (
-    <div className="p-4 badge-ghost flex-grow basis-1/2 rounded-lg ring ring-primary ring-offset-2 ring-offset-base-100 drop-shadow-lg">
+    <div
+      dir="ltr"
+      className="p-4 badge-ghost flex-grow basis-1/2 rounded-lg ring ring-primary ring-offset-2 ring-offset-base-100 drop-shadow-lg"
+    >
       <HeaderTitle
         style="text-xl font-bold mb-1 text-center"
         title={t("dashboardActivityOverview")}
