@@ -12,11 +12,11 @@ function OverviewProgress({
 }: overviewProgressPropsType) {
   return (
     <div
-      className={`flex flex-col-reverse md:flex-row items-center justify-center md:justify-between gap-4 max-w-64 w-full bg-neutral ${style} p-4 rounded-lg ring ring-offset-2 ring-offset-base-100 drop-shadow-lg`}
+      className={`flex flex-col-reverse md:flex-row items-center justify-center md:justify-between gap-4 max-w-64 w-full badge-ghost ${style} p-4 rounded-lg ring ring-offset-2 ring-offset-base-100 drop-shadow-lg`}
     >
       <div className="flex flex-col text-center">
         <p>{title}</p>
-        <p>{`${count} / ${totalCount}`}</p>
+        <p dir="ltr">{`${count} / ${totalCount}`}</p>
       </div>
       <CircleProgress text={text} value={value} style={style} />
     </div>

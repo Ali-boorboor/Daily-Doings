@@ -1,9 +1,9 @@
 import { headerTitlePropsType } from "@type/atomsTypes";
 import { memo } from "react";
 
-function HeaderTitle({ title, textColor }: headerTitlePropsType) {
+function HeaderTitle({ title, style }: headerTitlePropsType) {
   return (
-    <p className={`text-xl md:text-2xl ${textColor} font-bold drop-shadow-lg`}>{title}</p>
+    <p className={`${style} font-bold drop-shadow-lg`}>{title}</p>
   );
 }
 

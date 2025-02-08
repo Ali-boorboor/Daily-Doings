@@ -46,6 +46,19 @@ const fa = {
   sideBarOpenTitleBtn: "باز کردن منو کناری",
   themeTextSidebar: "تم",
   profileLogoutBtn: "خروج",
+  dashboardStatusText: "وضعیت کارها",
+  dashboardStatusBtn: "اضافه کردن کار",
+  doneTodos: "کارهای انجام شده",
+  notDoneTodos: "کارهای انجام نشده",
+  inProgressTodos: "کارهای در دست انجام",
+  awaitTodos: "کارهای در حالت انتظار",
+  dashboardActivityOverview: "نمای کلی فعالیت",
+  dashboardTodosOverview: "نمای کلی کارها (%)",
+  dashboardRecentTodos: "کارهای اخیر",
+  dashboardTableNumber: "شماره",
+  dashboardTableName: "اسم کار",
+  dashboardTableStatus: "وضعیت کار",
+  dashboardTableFolder: "پوشه کار",
 };
 
 export default fa;

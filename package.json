@@ -20,6 +20,7 @@
     "react-query": "^3.39.3",
     "react-router": "^7.1.5",
     "react-router-dom": "^7.1.5",
+    "recharts": "^2.15.1",
     "recoil": "^0.7.7",
     "yup": "^1.6.1"
   },

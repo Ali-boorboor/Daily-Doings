@@ -47,10 +47,10 @@ type mainLogoPropsType = {
 type themeCircleHandlerPropsType = { themeName: string };
 
 type themeCirclePropsType = {
-  themeName: string;
+  themeName?: string;
   bgc1: string;
-  bgc2: string;
-  title: string;
+  bgc2?: string;
+  title?: string;
 };
 
 type circleProgressPropsType = {
@@ -62,7 +62,7 @@ type circleProgressPropsType = {
 
 type headerTitlePropsType = {
   title: string;
-  textColor: string;
+  style: string;
 };
 
 export type {

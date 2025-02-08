@@ -46,6 +46,19 @@ const en = {
   sideBarOpenTitleBtn: "Open Sidebar",
   themeTextSidebar: "Theme",
   profileLogoutBtn: "Logout",
+  dashboardStatusText: "Todos Status",
+  dashboardStatusBtn: "Add Todo",
+  doneTodos: "Done Todos",
+  notDoneTodos: "Not Done Todos",
+  inProgressTodos: "In Progress Todos",
+  awaitTodos: "Await Todos",
+  dashboardActivityOverview: "Activity Overview",
+  dashboardTodosOverview: "Todos Overview ( % )",
+  dashboardRecentTodos: "Recent Todos",
+  dashboardTableNumber: "Number",
+  dashboardTableName: "Todo Name",
+  dashboardTableStatus: "Todo Status",
+  dashboardTableFolder: "Todo Folder",
 };
 
 export default en;
