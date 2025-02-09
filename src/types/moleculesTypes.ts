@@ -20,7 +20,7 @@ type sidebarLinksPropsType = {
 type stickyWallPropsType = {
   subject: string;
   description?: string;
-  bgTextColors: string;
+  style: string;
   isList?: boolean;
   listItems?: stickyWallListItemsType[];
 };

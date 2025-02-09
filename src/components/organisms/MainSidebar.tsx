@@ -41,7 +41,7 @@ function MainSidebar() {
           icon={<IoCalendarNumber className="w-6 h-6" />}
         />
         <SidebarLinks
-          href="/"
+          href="/sticky-wall"
           title={t("stickyWallLink")}
           icon={<FaNoteSticky className="w-6 h-6" />}
         />

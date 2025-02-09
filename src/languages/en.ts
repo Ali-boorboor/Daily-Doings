@@ -64,6 +64,7 @@ const en = {
   todayBtnCalendar: "Today",
   monthBtnCalendar: "Month",
   weekBtnCalendar: "Week",
+  stickyWallTitle: "Sticky Walls",
 };
 
 export default en;

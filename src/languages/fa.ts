@@ -64,6 +64,7 @@ const fa = {
   nextBtnCalendar: "بعدی",
   monthBtnCalendar: "ماه",
   weekBtnCalendar: "هفته",
+  stickyWallTitle: "برچسب ها",
 };
 
 export default fa;
