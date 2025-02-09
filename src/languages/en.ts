@@ -59,6 +59,11 @@ const en = {
   dashboardTableName: "Todo Name",
   dashboardTableStatus: "Todo Status",
   dashboardTableFolder: "Todo Folder",
+  prevBtnCalendar: "Prev",
+  nextBtnCalendar: "Next",
+  todayBtnCalendar: "Today",
+  monthBtnCalendar: "Month",
+  weekBtnCalendar: "Week",
 };
 
 export default en;

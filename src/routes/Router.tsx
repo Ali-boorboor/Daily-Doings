@@ -6,6 +6,7 @@ const Login = lazy(() => import("@t/Login"));
 const Signup = lazy(() => import("@t/Signup"));
 const ForgotPassword = lazy(() => import("@t/ForgotPassword"));
 const Dashboard = lazy(() => import("@/components/templates/Dashboard"));
+const Calendar = lazy(() => import("@/components/templates/Calendar"));
 const AuthPage = lazy(() => import("@/pages/AuthPage"));
 const HomePage = lazy(() => import("@/pages/HomePage"));
 
@@ -34,6 +35,7 @@ const Routes = [
     children: [
       { index: true, element: <Navigate to="dashboard" replace /> },
       { path: "dashboard", element: <Dashboard /> },
+      { path: "calendar", element: <Calendar /> },
     ],
   },
 ];

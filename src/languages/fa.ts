@@ -59,6 +59,11 @@ const fa = {
   dashboardTableName: "اسم کار",
   dashboardTableStatus: "وضعیت کار",
   dashboardTableFolder: "پوشه کار",
+  todayBtnCalendar: "امروز",
+  prevBtnCalendar: "قبلی",
+  nextBtnCalendar: "بعدی",
+  monthBtnCalendar: "ماه",
+  weekBtnCalendar: "هفته",
 };
 
 export default fa;

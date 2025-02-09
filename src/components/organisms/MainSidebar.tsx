@@ -36,7 +36,7 @@ function MainSidebar() {
           icon={<MdSpaceDashboard className="w-6 h-6" />}
         />
         <SidebarLinks
-          href="/"
+          href="/calendar"
           title={t("calendarLink")}
           icon={<IoCalendarNumber className="w-6 h-6" />}
         />
