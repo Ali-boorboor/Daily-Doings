@@ -12,7 +12,7 @@ const fa = {
   addStickyWall: "اضافه کردن برچسب",
   submitPasswordInput: "تایید کلمه عبور",
   emailInput: "ایمیل",
-  searchInput: "جستجو",
+  searchInput: "جستجو کارها",
   agreeToTerms: "من با شرایط و ضوابط موافقم",
   agreeToTermsValidation: "برای ادامه باید شرایط و ضوابط را بپذیرید",
   usernameRequiredValidation: "لطفا نام کاربری خود را وارد کنید",
@@ -69,6 +69,9 @@ const fa = {
   weekBtnCalendar: "هفته",
   stickyWallTitle: "برچسب ها",
   paginationText: "صفحه",
+  notFoundPageTitle: "صفحه یافت نشد",
+  notFoundPageText: "بنظر میاد شما در مسیر اشتباهی هستید",
+  notFoundPageBtn: "صفحه داشبورد",
 };
 
 export default fa;

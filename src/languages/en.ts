@@ -12,7 +12,7 @@ const en = {
   usernameInput: "Username",
   passwordInput: "Password",
   emailInput: "Email",
-  searchInput: "Search",
+  searchInput: "Search Todos",
   agreeToTerms: "I agree to the Terms & Conditions",
   agreeToTermsValidation: "You Must Accept The Terms & Conditions To Proceed",
   usernameRequiredValidation: "Please Enter Your Username",
@@ -69,6 +69,9 @@ const en = {
   weekBtnCalendar: "Week",
   stickyWallTitle: "Sticky Walls",
   paginationText: "Page",
+  notFoundPageTitle: "Page Not Found",
+  notFoundPageText: "It Seems You Are On The Wrong Track",
+  notFoundPageBtn: "Dashboard Page",
 };
 
 export default en;

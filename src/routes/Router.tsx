@@ -9,6 +9,7 @@ const Calendar = lazy(() => import("@t/Calendar"));
 const Signup = lazy(() => import("@t/Signup"));
 const Table = lazy(() => import("@t/Table"));
 const Login = lazy(() => import("@t/Login"));
+const Page404 = lazy(() => import("@/pages/Page404"));
 const AuthPage = lazy(() => import("@/pages/AuthPage"));
 const HomePage = lazy(() => import("@/pages/HomePage"));
 
@@ -42,6 +43,7 @@ const Routes = [
       { path: "table", element: <Table /> },
     ],
   },
+  { path: "*", element: <Page404 /> },
 ];
 
 export default Routes;

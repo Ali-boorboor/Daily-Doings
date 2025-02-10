@@ -4,7 +4,7 @@ import { memo } from "react";
 
 function MainLogo({ style, linkTo }: mainLogoPropsType) {
   return (
-    <Link to={linkTo ? linkTo : "/dashboard"} className={style}>
+    <Link to={linkTo ? linkTo : "/"} className={style}>
       <img
         src="/images/main-logo.png"
         alt="main-logo"

@@ -34,7 +34,7 @@ function AuthPagesCover() {
         }`}
       />
       <div className="absolute w-full flex items-center justify-between py-6 px-8">
-        <MainLogo style="inline-block w-20 h-20" linkTo="/" />
+        <MainLogo style="inline-block w-20 h-20" linkTo="/auth/login" />
         <p className="text-white text-lg sm:text-xl md:text-2xl hidden md:inline-block">
           {t("dailyDoingsText")}
         </p>

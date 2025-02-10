@@ -21,7 +21,7 @@ function LangTogleBtn() {
   };
 
   return (
-    <label className="flex items-center cursor-pointer gap-2">
+    <label dir="rtl" className="flex items-center cursor-pointer gap-2">
       <div className="tooltip tooltip-bottom" data-tip={t("langEnBtn")}>
         <RiEnglishInput className="w-5 h-5" />
       </div>
@@ -29,7 +29,7 @@ function LangTogleBtn() {
         onChange={langChangeHandler}
         type="checkbox"
         value="synthwave"
-        className="toggle theme-controller toggle-secondary"
+        className="toggle toggle-secondary"
         defaultChecked={Lang === "fa"}
       />
       <div className="tooltip tooltip-bottom" data-tip={t("langFaBtn")}>
