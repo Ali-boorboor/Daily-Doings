@@ -23,6 +23,8 @@ type stickyWallPropsType = {
   style: string;
   isList?: boolean;
   listItems?: stickyWallListItemsType[];
+  dataSwapyItem?: string;
+  dataSwapySlot?: string;
 };
 
 type stickyWallListItemsType = {
