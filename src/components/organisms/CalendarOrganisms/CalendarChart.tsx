@@ -12,7 +12,9 @@ const Calendar = () => {
   useEffect(() => {
     const timeout = setTimeout(() => {
       document
-        .querySelectorAll(".fc-prev-button, .fc-next-button, .fc-today-button")
+        .querySelectorAll(
+          ".fc-prev-button, .fc-next-button, .fc-today-button, .fc-dayGridMonth-button, .fc-dayGridWeek-button"
+        )
         .forEach((btn) => {
           btn.removeAttribute("title");
         });

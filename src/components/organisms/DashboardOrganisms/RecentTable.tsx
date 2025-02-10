@@ -1,31 +1,32 @@
+import TableWrapper from "@m/TableWrapper";
 import { useTranslation } from "react-i18next";
 import { memo } from "react";
 
-function Table() {
+function RecentTable() {
   const { t } = useTranslation();
 
   return (
-    <div className="overflow-x-auto badge-ghost w-full p-4 rounded-lg ring ring-primary ring-offset-2 ring-offset-base-100 drop-shadow-lg">
-      <h3 className="text-xl font-bold mb-4 text-center sticky left-0 right-0">
-        {t("dashboardRecentTodos")}
-      </h3>
-      <table className="table table-lg text-center">
-        <thead className="">
+    <TableWrapper
+      headerTitle={t("dashboardRecentTodos")}
+      thead={
+        <thead>
           <tr className="border text-base border-primary-content drop-shadow-lg bg-primary text-primary-content">
             <th className="border border-primary-content drop-shadow-lg">
-              {t("dashboardTableNumber")}
+              {t("tablesNumberField")}
             </th>
             <th className="border border-primary-content drop-shadow-lg">
-              {t("dashboardTableName")}
+              {t("tablesNameField")}
             </th>
             <th className="border border-primary-content drop-shadow-lg">
-              {t("dashboardTableStatus")}
+              {t("tablesStatusField")}
             </th>
             <th className="border border-primary-content drop-shadow-lg">
-              {t("dashboardTableFolder")}
+              {t("tablesFolderField")}
             </th>
           </tr>
         </thead>
+      }
+      tbody={
         <tbody>
           <tr className="border border-base-content drop-shadow-lg">
             <th>1</th>
@@ -60,9 +61,9 @@ function Table() {
             <td className="border border-base-content drop-shadow-lg">Red</td>
           </tr>
         </tbody>
-      </table>
-    </div>
+      }
+    />
   );
 }
 
-export default memo(Table);
+export default memo(RecentTable);

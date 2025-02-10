@@ -5,7 +5,7 @@ import {
 } from "@type/moleculesTypes";
 import { memo } from "react";
 
-function StickyWall({
+function TodoStickyWall({
   subject,
   description,
   style,
@@ -40,4 +40,4 @@ function StickyWall({
   );
 }
 
-export default memo(StickyWall);
+export default memo(TodoStickyWall);

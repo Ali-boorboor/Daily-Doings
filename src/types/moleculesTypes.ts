@@ -38,6 +38,15 @@ type overviewProgressPropsType = {
   value: number;
 };
 
+type tableWrapperPropsType = {
+  tbody: JSX.Element;
+  thead: JSX.Element;
+  headerTitle: string;
+  pagination?: JSX.Element;
+};
+
+type paginationPropsType = { style?: string };
+
 export type {
   authPageHeadingPropsType,
   searchInputPropsType,
@@ -46,4 +55,6 @@ export type {
   stickyWallPropsType,
   stickyWallListItemsType,
   overviewProgressPropsType,
+  tableWrapperPropsType,
+  paginationPropsType,
 };

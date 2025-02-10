@@ -1,8 +1,8 @@
-import Table from "@m/Table";
 import PieChart from "@m/Charts/PieChart";
 import BarChart from "@m/Charts/BarChart";
 import docTitle from "@/utils/documentTitle";
-import Overview from "@/components/organisms/DashboardOrganisms/Overview";
+import Overview from "@o/DashboardOrganisms/Overview";
+import RecentTable from "@o/DashboardOrganisms/RecentTable";
 import { memo, useEffect } from "react";
 
 function DashboardPage() {
@@ -17,7 +17,7 @@ function DashboardPage() {
         <PieChart />
         <BarChart />
       </div>
-      <Table />
+      <RecentTable />
     </div>
   );
 }

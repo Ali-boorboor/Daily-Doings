@@ -1,40 +1,44 @@
-import AddStickyWall from "@a/AddStickyWall";
+import Pagination from "@m/Pagination";
 import HeaderTitle from "@a/HeaderTitle";
-import StickyWall from "@m/StickyWall";
+import AddStickyWall from "@a/AddStickyWall";
+import TodoStickyWall from "@m/TodoStickyWall";
 import { useTranslation } from "react-i18next";
 import { memo } from "react";
 
-function StickyWalls() {
+function TodosStickyWalls() {
   const { t } = useTranslation();
 
   return (
-    <div className="max-w-screen-2xl m-auto badge-ghost rounded-lg ring ring-primary ring-offset-2 ring-offset-base-100 drop-shadow-lg">
+    <div
+      dir="ltr"
+      className="max-w-screen-2xl m-auto badge-ghost rounded-lg ring ring-primary ring-offset-2 ring-offset-base-100 drop-shadow-lg"
+    >
       <HeaderTitle
         style="bg-primary text-primary-content text-xl md:text-2xl p-2 text-center rounded-b-full"
         title={t("stickyWallTitle")}
       />
       <div className="grid gap-4 lg:gap-10 grid-cols-[repeat(auto-fit,_minmax(200px,1fr))] justify-items-center p-4 lg:p-8">
-        <StickyWall
+        <TodoStickyWall
           style="bg-primary text-primary-content"
           subject="Test 1"
           description="Test Text To See Todo"
         />
-        <StickyWall
+        <TodoStickyWall
           style="bg-secondary text-secondary-content"
           subject="Test 2"
           description="Test Text To See Todo"
         />
-        <StickyWall
+        <TodoStickyWall
           style="bg-primary text-primary-content"
           subject="Test 3"
           description="Test Text To See Todo"
         />
-        <StickyWall
+        <TodoStickyWall
           style="bg-secondary text-secondary-content"
           subject="Test 4"
           description="Test Text To See Todo"
         />
-        <StickyWall
+        <TodoStickyWall
           style="bg-secondary text-secondary-content"
           subject="Test 5"
           listItems={[
@@ -43,7 +47,7 @@ function StickyWalls() {
           ]}
           isList
         />
-        <StickyWall
+        <TodoStickyWall
           style="bg-primary text-primary-content"
           subject="Test 6"
           listItems={[
@@ -52,7 +56,7 @@ function StickyWalls() {
           ]}
           isList
         />
-        <StickyWall
+        <TodoStickyWall
           style="bg-secondary text-secondary-content"
           subject="Test 7"
           listItems={[
@@ -61,7 +65,7 @@ function StickyWalls() {
           ]}
           isList
         />
-        <StickyWall
+        <TodoStickyWall
           style="bg-primary text-primary-content"
           subject="Test 8"
           listItems={[
@@ -70,7 +74,7 @@ function StickyWalls() {
           ]}
           isList
         />
-        <StickyWall
+        <TodoStickyWall
           style="bg-accent text-accent-content"
           subject="Test 9"
           listItems={[
@@ -79,7 +83,7 @@ function StickyWalls() {
           ]}
           isList
         />
-        <StickyWall
+        <TodoStickyWall
           style="bg-info text-info-content"
           subject="Test 10"
           listItems={[
@@ -88,7 +92,7 @@ function StickyWalls() {
           ]}
           isList
         />
-        <StickyWall
+        <TodoStickyWall
           style="bg-warning text-warning-content"
           subject="Test 11"
           listItems={[
@@ -97,10 +101,41 @@ function StickyWalls() {
           ]}
           isList
         />
+        <TodoStickyWall
+          style="bg-primary text-primary-content"
+          subject="Test 12"
+          description="Test Text To See Todo"
+        />
+        <TodoStickyWall
+          style="bg-secondary text-secondary-content"
+          subject="Test 13"
+          description="Test Text To See Todo"
+        />
+        <TodoStickyWall
+          style="bg-primary text-primary-content"
+          subject="Test 14"
+          description="Test Text To See Todo"
+        />
+        <TodoStickyWall
+          style="bg-secondary text-secondary-content"
+          subject="Test 15"
+          description="Test Text To See Todo"
+        />
+        <TodoStickyWall
+          style="bg-primary text-primary-content"
+          subject="Test 16"
+          description="Test Text To See Todo"
+        />
+        <TodoStickyWall
+          style="bg-secondary text-secondary-content"
+          subject="Test 17"
+          description="Test Text To See Todo"
+        />
         <AddStickyWall />
       </div>
+      <Pagination />
     </div>
   );
 }
 
-export default memo(StickyWalls);
+export default memo(TodosStickyWalls);

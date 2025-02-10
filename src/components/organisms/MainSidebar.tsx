@@ -47,7 +47,7 @@ function MainSidebar() {
         />
         <Divider style="m-0 md:m-1" />
         <SidebarLinks
-          href="/"
+          href="/table"
           title={t("tableLink")}
           icon={<BsTable className="w-6 h-6" />}
         />
