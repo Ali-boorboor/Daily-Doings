@@ -1,11 +1,16 @@
 import Button from "@a/Button";
 import MainLogo from "@a/MainLogo";
 import LangTogleBtn from "@m/LangTogleBtn";
+import docTitle from "@/utils/documentTitle";
 import { useTranslation } from "react-i18next";
-import { memo } from "react";
+import { memo, useEffect } from "react";
 
 function Page404() {
   const { t } = useTranslation();
+
+  useEffect(() => {
+    docTitle("Not Found (404)");
+  }, []);
 
   return (
     <div className="bg-[url(/images/login-page-cover.jpg)] h-screen w-screen bg-cover bg-center">
