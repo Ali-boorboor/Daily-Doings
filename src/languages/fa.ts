@@ -3,7 +3,7 @@ const fa = {
   langFaBtn: "فارسی",
   loginBtn: "ورود",
   signupBtn: "ثبت نام",
-  forgotPassBtn: "تایید",
+  submitBtn: "تایید",
   navToLogin: "صفحه ورود",
   authPagesDividerText: "یا",
   loginWelcomeText: "خوش آمدید",
@@ -72,6 +72,15 @@ const fa = {
   notFoundPageTitle: "صفحه یافت نشد",
   notFoundPageText: "بنظر میاد شما در مسیر اشتباهی هستید",
   notFoundPageBtn: "صفحه داشبورد",
+  todayTodosTitle: "کار های امروز",
+  todayCheckAllBtn: "چک کردن همه کارها",
+  todayRemoveAllBtn: "حذف همه کارها",
+  todayTodosPriorityTitle: "اولویت",
+  todayTodosVeryLowPriority: "خیلی کم",
+  todayTodosLowPriority: "کم",
+  todayTodosMediumPriority: "متوسط",
+  todayTodosHighPriority: "بالا",
+  addTodayTodosInputText: "اضافه کردن کار",
 };
 
 export default fa;

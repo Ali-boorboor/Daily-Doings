@@ -28,9 +28,11 @@ type inputPropsType = {
   setFieldValue?: any;
   onChangeHandler?: any;
   setFieldTouched?: any;
+  isCheckBoxCenter?: boolean;
   isDefaultChecked?: boolean;
   defaultOptionText?: string;
   onKeyDownHandler?: any;
+  hasNoError?: boolean;
   type?: "text" | "password" | "email" | "tel";
 };
 

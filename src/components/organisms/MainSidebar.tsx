@@ -52,7 +52,7 @@ function MainSidebar() {
           icon={<BsTable className="w-6 h-6" />}
         />
         <SidebarLinks
-          href="/"
+          href="/today"
           title={t("todayLink")}
           icon={<PiListChecks className="w-6 h-6" />}
         />

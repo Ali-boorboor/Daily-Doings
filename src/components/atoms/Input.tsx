@@ -21,7 +21,9 @@ function Input({
   isSelectBox,
   setFieldValue,
   onChangeHandler,
+  hasNoError,
   setFieldTouched,
+  isCheckBoxCenter,
   isDefaultChecked,
   onKeyDownHandler,
   defaultOptionText,
@@ -112,7 +114,11 @@ function Input({
   } else if (isCheckBox) {
     return (
       <div className="flex flex-col gap-2 w-full">
-        <div className="form-control items-start">
+        <div
+          className={`form-control ${
+            isCheckBoxCenter ? "items-center" : "items-start"
+          }`}
+        >
           <label className={`label flex gap-2 cursor-pointer ${styleLabel}`}>
             <input
               name={name}
@@ -126,7 +132,7 @@ function Input({
             <span className="label-text">{placeholder}</span>
           </label>
         </div>
-        <p className="text-error">
+        <p className={`text-error ${hasNoError && "hidden"}`}>
           <ErrorMessage name={name} />
         </p>
       </div>

@@ -4,7 +4,7 @@ const en = {
   loginBtn: "Login",
   signupBtn: "Signup",
   addStickyWall: "Add Sticky Wall",
-  forgotPassBtn: "Submit",
+  submitBtn: "Submit",
   authPagesDividerText: "OR",
   navToLogin: "Login Page",
   loginWelcomeText: "Welcome",
@@ -72,6 +72,15 @@ const en = {
   notFoundPageTitle: "Page Not Found",
   notFoundPageText: "It Seems You Are On The Wrong Track",
   notFoundPageBtn: "Dashboard Page",
+  todayTodosTitle: "Today Todos",
+  todayCheckAllBtn: "Check All Todos",
+  todayRemoveAllBtn: "Remove All Todos",
+  todayTodosPriorityTitle: "Priority",
+  todayTodosVeryLowPriority: "Very Low",
+  todayTodosLowPriority: "Low",
+  todayTodosMediumPriority: "Medium",
+  todayTodosHighPriority: "High",
+  addTodayTodosInputText: "Add Todo",
 };
 
 export default en;

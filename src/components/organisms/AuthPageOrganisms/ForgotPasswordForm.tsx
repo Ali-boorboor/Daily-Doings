@@ -48,7 +48,7 @@ function ForgotPasswordForm({
             <div>
               <Button
                 style="btn-success w-full mb-4 md:mb-0"
-                text={t("forgotPassBtn")}
+                text={t("submitBtn")}
                 type="submit"
                 isOutlineBtn
               />

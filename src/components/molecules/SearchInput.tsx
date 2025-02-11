@@ -8,10 +8,17 @@ import { Form, Formik } from "formik";
 function SearchInput({ style }: searchInputPropsType) {
   const { t } = useTranslation();
 
+  const initialValues = { search: "" };
+
+  const onSubmitHandler = () => {};
+
   return (
-    <Formik initialValues={{ search: "" }} onSubmit={() => {}}>
+    <Formik initialValues={initialValues} onSubmit={onSubmitHandler}>
       {({ values, handleChange, setFieldTouched }) => (
-        <Form className="tooltip tooltip-bottom w-full" data-tip={t("searchInput")}>
+        <Form
+          className="tooltip tooltip-bottom w-full"
+          data-tip={t("searchInput")}
+        >
           <Input
             name="search"
             value={values.search}
