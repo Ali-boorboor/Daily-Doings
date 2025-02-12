@@ -1,3 +1,4 @@
+import Button from "@a/Button";
 import Pagination from "@m/Pagination";
 import PieChart from "@m/Charts/PieChart";
 import TableWrapper from "@m/TableWrapper";
@@ -11,6 +12,14 @@ function TodosTable() {
     <div className="max-w-screen-2xl m-auto flex flex-col gap-4 lg:gap-10">
       <TableWrapper
         headerTitle={t("tableTitle")}
+        headerLink={
+          <Button
+            text={t("dashboardStatusBtn")}
+            style="btn-accent drop-shadow-lg"
+            linkTo="/form"
+            isLink
+          />
+        }
         thead={
           <thead>
             <tr className="border text-base border-primary-content drop-shadow-lg bg-primary text-primary-content">

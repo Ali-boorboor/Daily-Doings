@@ -7,7 +7,7 @@ function NavigateBtns() {
   const { t } = useTranslation();
 
   return (
-    <div className="flex justify-center items-center gap-4">
+    <div className="flex flex-wrap justify-center items-center gap-4">
       <Button
         style="btn-primary grow"
         text={t("settingsChangePasswordBtn")}
@@ -15,7 +15,10 @@ function NavigateBtns() {
         linkTo="/"
         isLink
       />
-      <Divider text={t("authPagesDividerText")} style="divider-horizontal" />
+      <Divider
+        text={t("authPagesDividerText")}
+        style="hidden md:flex divider-horizontal"
+      />
       <Button
         style="btn-secondary grow"
         text={t("settingsChangeUsernameBtn")}

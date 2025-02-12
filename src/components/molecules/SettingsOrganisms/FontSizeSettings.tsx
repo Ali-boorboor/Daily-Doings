@@ -9,7 +9,7 @@ function FontSizeSettings() {
   const [, setFontSize] = useRecoilState(fontSize);
 
   return (
-    <div>
+    <div className="hidden lg:block">
       <p>{t("settingsFontSizeTitle")} :</p>
       <div className="flex justify-start items-center gap-4 w-full pt-4 flex-wrap">
         <div

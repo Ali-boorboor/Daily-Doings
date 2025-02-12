@@ -43,6 +43,7 @@ type tableWrapperPropsType = {
   tbody: JSX.Element;
   thead: JSX.Element;
   headerTitle: string;
+  headerLink?: JSX.Element;
   pagination?: JSX.Element;
 };
 
