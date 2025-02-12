@@ -26,7 +26,6 @@ function Input({
   isCheckBoxCenter,
   isDefaultChecked,
   onKeyDownHandler,
-  defaultOptionText,
 }: inputPropsType) {
   const [isPasswordShown, setIsPasswordShown] = useState(false);
   const [file, setFile]: any = useState(null);
@@ -81,11 +80,8 @@ function Input({
           value={value}
           disabled={disabled}
           onChange={onChangeHandler}
-          className={`select select-bordered w-full max-w-xs ${styleInput}`}
+          className={`select select-bordered ${styleInput}`}
         >
-          <option disabled selected>
-            {defaultOptionText}
-          </option>
           {options}
         </select>
         <p className="text-error">
@@ -102,7 +98,7 @@ function Input({
           disabled={disabled}
           placeholder={placeholder}
           onChange={onChangeHandler}
-          onKeyDown={() => setFieldTouched(name)}
+          onKeyDown={() => setFieldTouched && setFieldTouched(name)}
           className={`textarea textarea-bordered ${styleInput}`}
           maxLength={maxLength}
         ></textarea>
@@ -165,7 +161,7 @@ function Input({
             className={`grow ${styleInput}`}
             maxLength={maxLength}
             onKeyDown={(e: any) => {
-              setFieldTouched(name);
+              setFieldTouched && setFieldTouched(name);
               onKeyDownHandler && onKeyDownHandler(e);
             }}
           />
@@ -193,7 +189,7 @@ function Input({
           className={`grow ${styleInput}`}
           maxLength={maxLength}
           onKeyDown={(e: any) => {
-            setFieldTouched(name);
+            setFieldTouched && setFieldTouched(name);
             onKeyDownHandler && onKeyDownHandler(e);
           }}
         />

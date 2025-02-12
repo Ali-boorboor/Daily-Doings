@@ -1,6 +1,8 @@
 import Input from "@a/Input";
 import Button from "@a/Button";
+import Divider from "@a/Divider";
 import { useTranslation } from "react-i18next";
+import { MdDelete } from "react-icons/md";
 import { Form, Formik } from "formik";
 import { memo } from "react";
 
@@ -10,79 +12,94 @@ function TodayTodosForm() {
   return (
     <Formik
       initialValues={{
-        testTodo1: false,
-        testTodo2: false,
-        testTodo3: false,
-        testTodo4: true,
+        checkedTodos: [] as string[],
       }}
       onSubmit={(values) => console.log(values)}
     >
-      {({ values, handleChange }) => (
+      {({ values, handleChange, setFieldValue }) => (
         <Form className="p-6">
           <div className="grid gap-4 grid-cols-[repeat(auto-fit,_minmax(200px,1fr))] justify-items-center items-center p-4 mt-4 rounded-lg ring ring-primary ring-offset-2 ring-offset-base-100 drop-shadow-lg">
-            <Input
-              name="testTodo1"
-              placeholder="Test Todo Text 1"
-              onChangeHandler={handleChange}
-              value={values.testTodo1}
-              styleInput="checkbox-success"
-              styleLabel={`${
-                values.testTodo1 && "opacity-70 line-through"
-              } transition-all duration-300 ease-linear`}
-              isDefaultChecked={values.testTodo1}
-              isCheckBoxCenter
-              hasNoError
-              isCheckBox
-            />
-            <Input
-              name="testTodo2"
-              placeholder="Test Todo Text 2"
-              onChangeHandler={handleChange}
-              value={values.testTodo2}
-              styleInput="checkbox-error"
-              styleLabel={`${
-                values.testTodo2 && "opacity-70 line-through"
-              } transition-all duration-300 ease-linear`}
-              isDefaultChecked={values.testTodo2}
-              isCheckBoxCenter
-              hasNoError
-              isCheckBox
-            />
-            <Input
-              name="testTodo3"
-              placeholder="Test Todo Text 3"
-              onChangeHandler={handleChange}
-              value={values.testTodo3}
-              styleInput="checkbox-warning"
-              styleLabel={`${
-                values.testTodo3 && "opacity-70 line-through"
-              } transition-all duration-300 ease-linear`}
-              isDefaultChecked={values.testTodo3}
-              isCheckBoxCenter
-              hasNoError
-              isCheckBox
-            />
-            <Input
-              name="testTodo4"
-              placeholder="Test Todo Text 4"
-              onChangeHandler={handleChange}
-              value={values.testTodo4}
-              styleInput="checkbox-info line-through"
-              styleLabel={`${
-                values.testTodo4 && "opacity-70 line-through"
-              } transition-all duration-300 ease-linear`}
-              isDefaultChecked={values.testTodo4}
-              isCheckBoxCenter
-              hasNoError
-              isCheckBox
-            />
+            <div className="flex items-center justify-between gap-4 bg-base-100 rounded-full px-4 ring ring-success ring-offset-1 ring-offset-base-100 drop-shadow-lg">
+              <Input
+                name="checkedTodos"
+                placeholder="Test Todo Text num 1"
+                onChangeHandler={handleChange}
+                value="0"
+                styleInput="checkbox-success"
+                styleLabel={`${
+                  values.checkedTodos.includes("0") && "opacity-70 line-through"
+                } transition-all duration-300 ease-linear`}
+                isDefaultChecked={values.checkedTodos.includes("0")}
+                isCheckBoxCenter
+                hasNoError
+                isCheckBox
+              />
+              <Divider style="divider-horizontal  m-0" />
+              <MdDelete className="w-6 h-6 fill-error cursor-pointer" />
+            </div>
+            <div className="flex items-center justify-between gap-4 bg-base-100 rounded-full px-4 ring ring-error ring-offset-1 ring-offset-base-100 drop-shadow-lg">
+              <Input
+                name="checkedTodos"
+                placeholder="Test Todo Text num 2"
+                onChangeHandler={handleChange}
+                value="1"
+                styleInput="checkbox-error"
+                styleLabel={`${
+                  values.checkedTodos.includes("1") && "opacity-70 line-through"
+                } transition-all duration-300 ease-linear`}
+                isDefaultChecked={values.checkedTodos.includes("1")}
+                isCheckBoxCenter
+                hasNoError
+                isCheckBox
+              />
+              <Divider style="divider-horizontal  m-0" />
+              <MdDelete className="w-6 h-6 fill-error cursor-pointer" />
+            </div>
+            <div className="flex items-center justify-between gap-4 bg-base-100 rounded-full px-4 ring ring-warning ring-offset-1 ring-offset-base-100 drop-shadow-lg">
+              <Input
+                name="checkedTodos"
+                placeholder="Test Todo Text num 3"
+                onChangeHandler={handleChange}
+                value="2"
+                styleInput="checkbox-warning"
+                styleLabel={`${
+                  values.checkedTodos.includes("2") && "opacity-70 line-through"
+                } transition-all duration-300 ease-linear`}
+                isDefaultChecked={values.checkedTodos.includes("2")}
+                isCheckBoxCenter
+                hasNoError
+                isCheckBox
+              />
+              <Divider style="divider-horizontal  m-0" />
+              <MdDelete className="w-6 h-6 fill-error cursor-pointer" />
+            </div>
+            <div className="flex items-center justify-between gap-4 bg-base-100 rounded-full px-4 ring ring-info ring-offset-1 ring-offset-base-100 drop-shadow-lg">
+              <Input
+                name="checkedTodos"
+                placeholder="Test Todo Text num 4"
+                onChangeHandler={handleChange}
+                value="3"
+                styleInput="checkbox-info line-through"
+                styleLabel={`${
+                  values.checkedTodos.includes("3") && "opacity-70 line-through"
+                } transition-all duration-300 ease-linear`}
+                isDefaultChecked={values.checkedTodos.includes("3")}
+                isCheckBoxCenter
+                hasNoError
+                isCheckBox
+              />
+              <Divider style="divider-horizontal  m-0" />
+              <MdDelete className="w-6 h-6 fill-error cursor-pointer" />
+            </div>
           </div>
           <div className="flex flex-wrap gap-4 mt-8 mb-4">
             <Button
               style="btn-primary basis-1/3 grow"
               text={t("todayCheckAllBtn")}
               type="button"
-              onClickHandler={() => {}}
+              onClickHandler={() => {
+                setFieldValue("checkedTodos", ["0", "1", "2", "3"]);
+              }}
               isOutlineBtn
             />
             <Button
