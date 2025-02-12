@@ -6,6 +6,7 @@ const ForgotPassword = lazy(() => import("@t/ForgotPassword"));
 const StickyWall = lazy(() => import("@t/StickyWall"));
 const Dashboard = lazy(() => import("@t/Dashboard"));
 const Calendar = lazy(() => import("@t/Calendar"));
+const Settings = lazy(() => import("@t/Settings"));
 const Signup = lazy(() => import("@t/Signup"));
 const Table = lazy(() => import("@t/Table"));
 const Today = lazy(() => import("@t/Today"));
@@ -45,6 +46,7 @@ const Routes = [
       { path: "table", element: <Table /> },
       { path: "today", element: <Today /> },
       { path: "form", element: <Form /> },
+      { path: "settings", element: <Settings /> },
     ],
   },
   { path: "*", element: <Page404 /> },

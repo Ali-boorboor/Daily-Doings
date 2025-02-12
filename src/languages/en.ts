@@ -94,6 +94,13 @@ const en = {
   formIsListTodoText: "Is List Todo ?",
   formDescriptionToggleBtn: "Description",
   formListToggleBtn: "List",
+  settingsChangePasswordBtn: "Change Password",
+  settingsChangeUsernameBtn: "Change Username",
+  settingsLanguageTitle: "Language",
+  settingsFontSizeTitle: "Font Size",
+  settingsFontSizeNormal: "Normal",
+  settingsFontSizeLarge: "Large",
+  settingsFontSizeExtraLarge: "Extra Large",
 };
 
 export default en;

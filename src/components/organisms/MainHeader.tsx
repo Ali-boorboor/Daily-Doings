@@ -63,7 +63,7 @@ function MainHeader() {
                 style="btn-ghost"
                 text={t("settingsLink")}
                 isOutlineBtn
-                linkTo="/"
+                linkTo="/settings"
                 isLink
               />
               <Divider style="m-1" />

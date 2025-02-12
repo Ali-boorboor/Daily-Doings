@@ -6,8 +6,14 @@ const validLangs = ["en", "fa"];
 
 const validateFontSize = (FontSize: string) => {
   if (validFontSizes.includes(FontSize)) {
+    document.documentElement.classList.remove("text-base");
+    document.documentElement.classList.remove("text-lg");
+    document.documentElement.classList.remove("text-xl");
     document.documentElement.classList.add(FontSize);
   } else {
+    document.documentElement.classList.remove("text-base");
+    document.documentElement.classList.remove("text-lg");
+    document.documentElement.classList.remove("text-xl");
     document.documentElement.classList.add("text-base");
   }
 };

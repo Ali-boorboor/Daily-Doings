@@ -67,9 +67,9 @@ function MainSidebar() {
           icon={<AiFillFolder className="w-6 h-6" />}
         />
         <Divider style="m-0 md:m-1" />
-        <ThemePalette style="hidden md:flex" />
+        <ThemePalette styleWrapper="hidden md:flex" />
         <SidebarLinks
-          href="/"
+          href="/settings"
           title={t("settingsLink")}
           icon={<IoSettingsSharp className="w-6 h-6" />}
         />

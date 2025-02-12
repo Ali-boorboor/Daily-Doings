@@ -25,14 +25,14 @@ function TodosStickyWalls() {
   return (
     <div
       dir="ltr"
-      className="container max-w-screen-2xl m-auto badge-ghost rounded-lg ring ring-primary ring-offset-2 ring-offset-base-100 drop-shadow-lg"
+      className="max-w-screen-2xl m-auto badge-ghost rounded-lg ring ring-primary ring-offset-2 ring-offset-base-100 drop-shadow-lg"
       ref={containerRef}
     >
       <HeaderTitle
         style="bg-primary text-primary-content text-xl md:text-2xl p-2 text-center rounded-b-full"
         title={t("stickyWallTitle")}
       />
-      <div className="grid gap-4 lg:gap-10 grid-cols-[repeat(auto-fit,_minmax(200px,1fr))] justify-items-center p-4 lg:p-8">
+      <div className="grid gap-4 lg:gap-10 grid-cols-[repeat(auto-fit,_minmax(260px,1fr))] justify-items-center p-4 lg:p-8">
         <TodoStickyWall
           style="bg-primary text-primary-content"
           subject="Test 1"
@@ -72,7 +72,7 @@ function TodosStickyWalls() {
         <TodoStickyWall
           style="bg-primary text-primary-content"
           subject="Test 6"
-          dataSwapySlot="Test 6"  
+          dataSwapySlot="Test 6"
           dataSwapyItem="Test 6"
           listItems={["test text todo list", "test text todo list"]}
           isList
@@ -136,27 +136,6 @@ function TodosStickyWalls() {
           subject="Test 14"
           dataSwapySlot="Test 14"
           dataSwapyItem="Test 14"
-          description="Test Text To See Todo"
-        />
-        <TodoStickyWall
-          style="bg-secondary text-secondary-content"
-          subject="Test 15"
-          dataSwapySlot="Test 15"
-          dataSwapyItem="Test 15"
-          description="Test Text To See Todo"
-        />
-        <TodoStickyWall
-          style="bg-primary text-primary-content"
-          subject="Test 16"
-          dataSwapySlot="Test 16"
-          dataSwapyItem="Test 16"
-          description="Test Text To See Todo"
-        />
-        <TodoStickyWall
-          style="bg-secondary text-secondary-content"
-          subject="Test 17"
-          dataSwapySlot="Test 17"
-          dataSwapyItem="Test 17"
           description="Test Text To See Todo"
         />
         <AddStickyWall />

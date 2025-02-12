@@ -3,15 +3,24 @@ import { themePalettePropsType } from "@type/moleculesTypes";
 import { useTranslation } from "react-i18next";
 import { memo } from "react";
 
-function ThemePalette({ style }: themePalettePropsType) {
+function ThemePalette({
+  styleWrapper,
+  styleThemesContainer,
+}: themePalettePropsType) {
   const { t } = useTranslation();
 
   return (
     <div
-      className={`flex flex-col justify-center items-start gap-2 mb-2 ${style}`}
+      className={`flex flex-col justify-center items-start gap-2 mb-2 ${styleWrapper}`}
     >
-      <p>{t("themeTextSidebar")}</p>
-      <div className="flex justify-center md:justify-between items-center gap-2 md:gap-1 w-full px-4 flex-wrap">
+      <p>{t("themeTextSidebar")} :</p>
+      <div
+        className={`flex items-center w-full px-4 flex-wrap ${
+          styleThemesContainer
+            ? styleThemesContainer
+            : "justify-center md:justify-between gap-2 md:gap-1"
+        }`}
+      >
         <ThemeCircle
           bgc1="bg-[#282a36]"
           bgc2="after:bg-[#de68ac]"

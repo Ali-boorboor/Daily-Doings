@@ -8,7 +8,8 @@ type searchInputPropsType = {
 };
 
 type themePalettePropsType = {
-  style: string;
+  styleWrapper?: string;
+  styleThemesContainer?: string;
 };
 
 type sidebarLinksPropsType = {

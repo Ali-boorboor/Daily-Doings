@@ -94,6 +94,13 @@ const fa = {
   formIsListTodoText: "آیا کار بصورت لیست است ؟",
   formDescriptionToggleBtn: "توضیحات",
   formListToggleBtn: "لیست",
+  settingsChangePasswordBtn: "تغییر کلمه عبور",
+  settingsChangeUsernameBtn: "تغییر نام کاربری",
+  settingsLanguageTitle: "زبان",
+  settingsFontSizeTitle: "سایز فونت",
+  settingsFontSizeNormal: "متوسط",
+  settingsFontSizeLarge: "بزرگ",
+  settingsFontSizeExtraLarge: "خیلی بزرگ",
 };
 
 export default fa;
