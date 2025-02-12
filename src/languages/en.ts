@@ -81,6 +81,19 @@ const en = {
   todayTodosMediumPriority: "Medium",
   todayTodosHighPriority: "High",
   addTodayTodosInputText: "Add Todo",
+  formTitle: "Add Todo Form",
+  formDescription: "Todo Description",
+  formAddItemToListBtn: "Add Item To List",
+  formPreviewTitle: "Preview",
+  formTodoItem: "Todo Item",
+  formSubject: "Todo Subject",
+  formFolder: "Todo Folder",
+  formNoFolderOption: "No Folder",
+  formPriority: "Todo Priority",
+  formColor: "Todo Color",
+  formIsListTodoText: "Is List Todo ?",
+  formDescriptionToggleBtn: "Description",
+  formListToggleBtn: "List",
 };
 
 export default en;

@@ -9,6 +9,7 @@ const Calendar = lazy(() => import("@t/Calendar"));
 const Signup = lazy(() => import("@t/Signup"));
 const Table = lazy(() => import("@t/Table"));
 const Today = lazy(() => import("@t/Today"));
+const Form = lazy(() => import("@t/Form"));
 const Login = lazy(() => import("@t/Login"));
 const Page404 = lazy(() => import("@/pages/Page404"));
 const AuthPage = lazy(() => import("@/pages/AuthPage"));
@@ -43,6 +44,7 @@ const Routes = [
       { path: "sticky-wall", element: <StickyWall /> },
       { path: "table", element: <Table /> },
       { path: "today", element: <Today /> },
+      { path: "form", element: <Form /> },
     ],
   },
   { path: "*", element: <Page404 /> },

@@ -67,7 +67,7 @@ function Input({
             />
           )}
         </div>
-        <p className="text-error">
+        <p className={`text-error ${hasNoError && "hidden"}`}>
           <ErrorMessage name={name} />
         </p>
       </div>
@@ -84,7 +84,7 @@ function Input({
         >
           {options}
         </select>
-        <p className="text-error">
+        <p className={`text-error ${hasNoError && "hidden"}`}>
           <ErrorMessage name={name} />
         </p>
       </div>
@@ -102,7 +102,7 @@ function Input({
           className={`textarea textarea-bordered ${styleInput}`}
           maxLength={maxLength}
         ></textarea>
-        <p className="text-error">
+        <p className={`text-error ${hasNoError && "hidden"}`}>
           <ErrorMessage name={name} />
         </p>
       </div>
@@ -166,7 +166,7 @@ function Input({
             }}
           />
         </label>
-        <p className="text-error">
+        <p className={`text-error ${hasNoError && "hidden"}`}>
           <ErrorMessage name={name} />
         </p>
       </div>
@@ -195,7 +195,7 @@ function Input({
         />
         {isSearch && icon}
       </label>
-      <p className="text-error">
+      <p className={`text-error ${hasNoError && "hidden"}`}>
         <ErrorMessage name={name} />
       </p>
     </div>

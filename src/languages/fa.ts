@@ -81,6 +81,19 @@ const fa = {
   todayTodosMediumPriority: "متوسط",
   todayTodosHighPriority: "بالا",
   addTodayTodosInputText: "اضافه کردن کار",
+  formTitle: " فرم اضافه کردن کار",
+  formDescription: "توضیحات کار",
+  formAddItemToListBtn: "اضافه کردن آیتم به لیست",
+  formPreviewTitle: "پیش نمایش",
+  formTodoItem: "آیتم کار",
+  formSubject: "موضوع کار",
+  formFolder: "پوشه کار",
+  formNoFolderOption: "هیچ کدام",
+  formPriority: "اولویت کار",
+  formColor: "رنگ برچسب کار",
+  formIsListTodoText: "آیا کار بصورت لیست است ؟",
+  formDescriptionToggleBtn: "توضیحات",
+  formListToggleBtn: "لیست",
 };
 
 export default fa;

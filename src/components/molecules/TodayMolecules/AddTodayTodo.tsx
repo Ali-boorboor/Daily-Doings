@@ -27,7 +27,6 @@ function AddTodayTodo() {
             name="addTodoPriorityInput"
             value={values.addTodoPriorityInput}
             onChangeHandler={handleChange}
-            placeholder={t("addTodayTodosInputText")}
             styleLabel="grow"
             styleInput="select-primary"
             options={

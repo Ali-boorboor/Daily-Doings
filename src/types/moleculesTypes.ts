@@ -18,7 +18,7 @@ type sidebarLinksPropsType = {
 };
 
 type stickyWallPropsType = {
-  subject: string;
+  subject?: string;
   description?: string;
   style: string;
   isList?: boolean;
@@ -27,9 +27,7 @@ type stickyWallPropsType = {
   dataSwapySlot?: string;
 };
 
-type stickyWallListItemsType = {
-  title: string;
-};
+type stickyWallListItemsType = string;
 
 type overviewProgressPropsType = {
   style: string;

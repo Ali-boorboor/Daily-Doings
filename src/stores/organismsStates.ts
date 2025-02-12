@@ -5,4 +5,14 @@ const AuthPagesCoverState = atom({
   default: 1,
 });
 
-export { AuthPagesCoverState };
+const TodoItem = atom({
+  key: "TodoItem",
+  default: "",
+});
+
+const TodoItemsList = atom({
+  key: "TodoItemsList",
+  default: [],
+});
+
+export { AuthPagesCoverState, TodoItem, TodoItemsList };

@@ -57,7 +57,7 @@ function MainSidebar() {
           icon={<PiListChecks className="w-6 h-6" />}
         />
         <SidebarLinks
-          href="/"
+          href="/form"
           title={t("formLink")}
           icon={<FaClipboardList className="w-6 h-6" />}
         />

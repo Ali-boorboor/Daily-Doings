@@ -66,21 +66,15 @@ function TodosStickyWalls() {
           subject="Test 5"
           dataSwapySlot="Test 5"
           dataSwapyItem="Test 5"
-          listItems={[
-            { title: "test text todo list" },
-            { title: "test text todo list" },
-          ]}
+          listItems={["test text todo list", "test text todo list"]}
           isList
         />
         <TodoStickyWall
           style="bg-primary text-primary-content"
           subject="Test 6"
-          dataSwapySlot="Test 6"
+          dataSwapySlot="Test 6"  
           dataSwapyItem="Test 6"
-          listItems={[
-            { title: "test text todo list" },
-            { title: "test text todo list" },
-          ]}
+          listItems={["test text todo list", "test text todo list"]}
           isList
         />
         <TodoStickyWall
@@ -88,10 +82,7 @@ function TodosStickyWalls() {
           subject="Test 7"
           dataSwapySlot="Test 7"
           dataSwapyItem="Test 7"
-          listItems={[
-            { title: "test text todo list" },
-            { title: "test text todo list" },
-          ]}
+          listItems={["test text todo list", "test text todo list"]}
           isList
         />
         <TodoStickyWall
@@ -99,10 +90,7 @@ function TodosStickyWalls() {
           subject="Test 8"
           dataSwapySlot="Test 8"
           dataSwapyItem="Test 8"
-          listItems={[
-            { title: "test text todo list" },
-            { title: "test text todo list" },
-          ]}
+          listItems={["test text todo list", "test text todo list"]}
           isList
         />
         <TodoStickyWall
@@ -110,10 +98,7 @@ function TodosStickyWalls() {
           subject="Test 9"
           dataSwapySlot="Test 9"
           dataSwapyItem="Test 9"
-          listItems={[
-            { title: "test text todo list" },
-            { title: "test text todo list" },
-          ]}
+          listItems={["test text todo list", "test text todo list"]}
           isList
         />
         <TodoStickyWall
@@ -121,10 +106,7 @@ function TodosStickyWalls() {
           subject="Test 10"
           dataSwapySlot="Test 10"
           dataSwapyItem="Test 10"
-          listItems={[
-            { title: "test text todo list" },
-            { title: "test text todo list" },
-          ]}
+          listItems={["test text todo list", "test text todo list"]}
           isList
         />
         <TodoStickyWall
@@ -132,10 +114,7 @@ function TodosStickyWalls() {
           subject="Test 11"
           dataSwapySlot="Test 11"
           dataSwapyItem="Test 11"
-          listItems={[
-            { title: "test text todo list" },
-            { title: "test text todo list" },
-          ]}
+          listItems={["test text todo list", "test text todo list"]}
           isList
         />
         <TodoStickyWall
