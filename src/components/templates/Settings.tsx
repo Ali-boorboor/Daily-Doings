@@ -3,7 +3,6 @@ import HeaderTitle from "@a/HeaderTitle";
 import ThemePalette from "@m/ThemePalette";
 import docTitle from "@/utils/documentTitle";
 import NavigateBtns from "@m/SettingsOrganisms/NavigateBtns";
-import FontSizeSettings from "@m/SettingsOrganisms/FontSizeSettings";
 import LanguageSettings from "@m/SettingsOrganisms/LanguageSettings";
 import { useTranslation } from "react-i18next";
 import { memo, useEffect } from "react";
@@ -22,7 +21,6 @@ function Settings() {
         title={t("settingsLink")}
       />
       <div className="p-4 mt-4">
-        <FontSizeSettings />
         <Divider />
         <ThemePalette styleThemesContainer="justify-start gap-4 px-1" />
         <Divider />
