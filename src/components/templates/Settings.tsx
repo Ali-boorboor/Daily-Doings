@@ -21,7 +21,6 @@ function Settings() {
         title={t("settingsLink")}
       />
       <div className="p-4 mt-4">
-        <Divider />
         <ThemePalette styleThemesContainer="justify-start gap-4 px-1" />
         <Divider />
         <LanguageSettings />

@@ -2,6 +2,12 @@ import SuspenseWrapper from "@/routes/SuspenseWrapper";
 import { Navigate } from "react-router";
 import { lazy } from "react";
 
+const ChangePasswordForm = lazy(
+  () => import("@o/SettingsOrganisms/ChangePasswordForm")
+);
+const ChangeUsernameForm = lazy(
+  () => import("@o/SettingsOrganisms/ChangeUsernameForm")
+);
 const ForgotPassword = lazy(() => import("@t/ForgotPassword"));
 const StickyWall = lazy(() => import("@t/StickyWall"));
 const Dashboard = lazy(() => import("@t/Dashboard"));
@@ -46,7 +52,23 @@ const Routes = [
       { path: "table", element: <Table /> },
       { path: "today", element: <Today /> },
       { path: "form", element: <Form /> },
-      { path: "settings", element: <Settings /> },
+      {
+        path: "settings",
+        children: [
+          {
+            path: "",
+            element: <Settings />,
+          },
+          {
+            path: "change-password",
+            element: <ChangePasswordForm />,
+          },
+          {
+            path: "change-username",
+            element: <ChangeUsernameForm />,
+          },
+        ],
+      },
     ],
   },
   { path: "*", element: <Page404 /> },

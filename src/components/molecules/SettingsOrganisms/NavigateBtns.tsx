@@ -12,7 +12,7 @@ function NavigateBtns() {
         style="btn-primary grow"
         text={t("settingsChangePasswordBtn")}
         isOutlineBtn
-        linkTo="/"
+        linkTo="change-password"
         isLink
       />
       <Divider
@@ -23,7 +23,7 @@ function NavigateBtns() {
         style="btn-secondary grow"
         text={t("settingsChangeUsernameBtn")}
         isOutlineBtn
-        linkTo="/"
+        linkTo="change-username"
         isLink
       />
     </div>
