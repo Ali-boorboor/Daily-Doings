@@ -101,6 +101,9 @@ const fa = {
   changePasswordNewInput: "کلمه عبور جدید",
   changePasswordSubmitInput: "تایید کلمه عبور جدید",
   changeUsernameInput: "نام کاربری جدید",
+  folderNameInput: "نام پوشه",
+  addFolderBtn: "افزودن پوشه",
+  seeFolderTodosBtn: "دیدن کارهای پوشه",
 };
 
 export default fa;

@@ -1,4 +1,5 @@
 import { validateDefaultLang } from "@/utils/validateSettings";
+import { modalDetailsStateType } from "@type/globalTypes";
 import { get } from "@/utils/localStorage";
 import { atom } from "recoil";
 
@@ -17,4 +18,9 @@ const lang = atom({
   default: validateDefaultLang(),
 });
 
-export { theme, isSideBarCollapse, lang };
+const modalDetails = atom<modalDetailsStateType>({
+  key: "modalDetails",
+  default: { elements: null, isShown: false },
+});
+
+export { theme, isSideBarCollapse, lang, modalDetails };

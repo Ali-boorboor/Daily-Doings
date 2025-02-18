@@ -101,6 +101,9 @@ const en = {
   changePasswordNewInput: "New Password",
   changePasswordSubmitInput: "Submit Password",
   changeUsernameInput: "New Username",
+  folderNameInput: "Folder Name",
+  addFolderBtn: "Add Folder",
+  seeFolderTodosBtn: "See Folder Todos",
 };
 
 export default en;

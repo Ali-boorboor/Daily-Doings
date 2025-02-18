@@ -62,7 +62,7 @@ function MainSidebar() {
           icon={<FaClipboardList className="w-6 h-6" />}
         />
         <SidebarLinks
-          href="/"
+          href="/folder"
           title={t("foldersLink")}
           icon={<AiFillFolder className="w-6 h-6" />}
         />

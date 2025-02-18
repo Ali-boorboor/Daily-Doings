@@ -14,6 +14,7 @@ const Dashboard = lazy(() => import("@t/Dashboard"));
 const Calendar = lazy(() => import("@t/Calendar"));
 const Settings = lazy(() => import("@t/Settings"));
 const Signup = lazy(() => import("@t/Signup"));
+const Folder = lazy(() => import("@t/Folder"));
 const Table = lazy(() => import("@t/Table"));
 const Today = lazy(() => import("@t/Today"));
 const Form = lazy(() => import("@t/Form"));
@@ -46,12 +47,19 @@ const Routes = [
     ),
     children: [
       { index: true, element: <Navigate to="dashboard" replace /> },
+      { path: "sticky-wall", element: <StickyWall /> },
       { path: "dashboard", element: <Dashboard /> },
       { path: "calendar", element: <Calendar /> },
-      { path: "sticky-wall", element: <StickyWall /> },
       { path: "table", element: <Table /> },
       { path: "today", element: <Today /> },
       { path: "form", element: <Form /> },
+      {
+        path: "folder",
+        children: [
+          { path: "", element: <Folder /> },
+          { path: ":folderID", element: <Folder /> },
+        ],
+      },
       {
         path: "settings",
         children: [

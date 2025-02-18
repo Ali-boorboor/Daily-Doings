@@ -1,3 +1,4 @@
+import Modal from "@a/Modal";
 import Router from "@/routes/Router";
 import langChangeHandler from "@/utils/langChangeHandler";
 import { validateLang } from "@/utils/validateSettings";
@@ -17,7 +18,12 @@ function App() {
     langChangeHandler(Lang);
   }, [Theme, Lang]);
 
-  return <>{routes}</>;
+  return (
+    <>
+      {routes}
+      <Modal />
+    </>
+  );
 }
 
 export default memo(App);
