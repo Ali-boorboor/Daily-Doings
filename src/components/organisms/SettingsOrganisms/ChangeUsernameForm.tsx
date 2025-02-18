@@ -11,39 +11,30 @@ function ChangeUsernameForm() {
   return (
     <Formik
       initialValues={{
-        currentPassword: "",
-        newPassword: "",
-        submitPassword: "",
+        newUsername: "",
+        password: "",
       }}
       onSubmit={() => {}}
     >
       {({ values, handleChange, setFieldTouched }) => (
         <Form className="h-full m-auto max-w-screen-lg overflow-hidden flex flex-col gap-4 justify-center items-center badge-ghost ring ring-primary rounded-lg drop-shadow-lg ring-offset-2 ring-offset-base-100">
           <HeaderTitle
-            title="Change Password"
+            title={t("settingsChangeUsernameBtn")}
             style="bg-primary text-primary-content text-xl md:text-2xl p-2 text-center rounded-b-full w-full"
           />
           <div className="flex flex-col gap-4 md:gap-8 justify-center items-center p-4 w-full">
             <Input
-              type="password"
-              name="currentPassword"
-              value={values.currentPassword}
+              type="text"
+              name="newUsername"
+              value={values.newUsername}
               onChangeHandler={handleChange}
-              placeholder={t("passwordInput")}
+              placeholder={t("changeUsernameInput")}
               setFieldTouched={setFieldTouched}
             />
             <Input
               type="password"
-              name="newPassword"
-              value={values.newPassword}
-              onChangeHandler={handleChange}
-              placeholder={t("passwordInput")}
-              setFieldTouched={setFieldTouched}
-            />
-            <Input
-              type="password"
-              name="submitPassword"
-              value={values.submitPassword}
+              name="password"
+              value={values.password}
               onChangeHandler={handleChange}
               placeholder={t("passwordInput")}
               setFieldTouched={setFieldTouched}

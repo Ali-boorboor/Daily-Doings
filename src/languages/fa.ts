@@ -97,10 +97,10 @@ const fa = {
   settingsChangePasswordBtn: "تغییر کلمه عبور",
   settingsChangeUsernameBtn: "تغییر نام کاربری",
   settingsLanguageTitle: "زبان",
-  settingsFontSizeTitle: "سایز فونت",
-  settingsFontSizeNormal: "متوسط",
-  settingsFontSizeLarge: "بزرگ",
-  settingsFontSizeExtraLarge: "خیلی بزرگ",
+  changePasswordCurrentInput: "کلمه عبور فعلی",
+  changePasswordNewInput: "کلمه عبور جدید",
+  changePasswordSubmitInput: "تایید کلمه عبور جدید",
+  changeUsernameInput: "نام کاربری جدید",
 };
 
 export default fa;

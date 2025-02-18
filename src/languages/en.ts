@@ -97,10 +97,10 @@ const en = {
   settingsChangePasswordBtn: "Change Password",
   settingsChangeUsernameBtn: "Change Username",
   settingsLanguageTitle: "Language",
-  settingsFontSizeTitle: "Font Size",
-  settingsFontSizeNormal: "Normal",
-  settingsFontSizeLarge: "Large",
-  settingsFontSizeExtraLarge: "Extra Large",
+  changePasswordCurrentInput: "Current Password",
+  changePasswordNewInput: "New Password",
+  changePasswordSubmitInput: "Submit Password",
+  changeUsernameInput: "New Username",
 };
 
 export default en;
