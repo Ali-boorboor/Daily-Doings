@@ -8,6 +8,9 @@ const ChangePasswordForm = lazy(
 const ChangeUsernameForm = lazy(
   () => import("@o/SettingsOrganisms/ChangeUsernameForm")
 );
+const FolderTodosTable = lazy(
+  () => import("@o/FoldersOrganisms/FolderTodosTable")
+);
 const ForgotPassword = lazy(() => import("@t/ForgotPassword"));
 const StickyWall = lazy(() => import("@t/StickyWall"));
 const Dashboard = lazy(() => import("@t/Dashboard"));
@@ -57,7 +60,7 @@ const Routes = [
         path: "folder",
         children: [
           { path: "", element: <Folder /> },
-          { path: ":folderID", element: <Folder /> },
+          { path: ":folderID", element: <FolderTodosTable /> },
         ],
       },
       {

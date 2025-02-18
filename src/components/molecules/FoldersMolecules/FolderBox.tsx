@@ -2,7 +2,7 @@ import Button from "@a/Button";
 import { useTranslation } from "react-i18next";
 import { memo } from "react";
 
-function FolderBox({ folderName, folderProgressValue, index }: any) {
+function FolderBox({ folderName, folderProgressValue, folderID, index }: any) {
   const { t } = useTranslation();
 
   return (
@@ -25,7 +25,7 @@ function FolderBox({ folderName, folderProgressValue, index }: any) {
         } grow w-full`}
         text={t("seeFolderTodosBtn")}
         isOutlineBtn
-        linkTo="#"
+        linkTo={folderID}
         isLink
       />
     </div>
