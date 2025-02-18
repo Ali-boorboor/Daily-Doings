@@ -19,7 +19,7 @@ function FormInputs({ values, handleChange, setFieldTouched }: any) {
           setFieldTouched={setFieldTouched}
           styleLabel="input-primary grow"
           placeholder={t("formSubject")}
-          maxLength={18}
+          maxLength={10}
           type="text"
           hasNoError
         />

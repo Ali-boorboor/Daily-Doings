@@ -2,8 +2,8 @@ import Divider from "@a/Divider";
 import HeaderTitle from "@a/HeaderTitle";
 import ThemePalette from "@m/ThemePalette";
 import docTitle from "@/utils/documentTitle";
-import NavigateBtns from "@m/SettingsOrganisms/NavigateBtns";
-import LanguageSettings from "@m/SettingsOrganisms/LanguageSettings";
+import NavigateBtns from "@m/SettingsMolecules/NavigateBtns";
+import LanguageSettings from "@m/SettingsMolecules/LanguageSettings";
 import { useTranslation } from "react-i18next";
 import { memo, useEffect } from "react";
 

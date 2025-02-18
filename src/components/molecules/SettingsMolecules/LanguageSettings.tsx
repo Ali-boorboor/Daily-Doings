@@ -1,5 +1,5 @@
-import { useTranslation } from "react-i18next";
 import LangTogleBtn from "@m/LangTogleBtn";
+import { useTranslation } from "react-i18next";
 import { memo } from "react";
 
 function LanguageSettings() {

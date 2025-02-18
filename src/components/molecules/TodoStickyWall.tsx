@@ -5,6 +5,9 @@ import {
 } from "@type/moleculesTypes";
 import { memo } from "react";
 
+import RemoveModal from "./ModalsMolecules/RemoveModal";
+import { FaTrashAlt } from "react-icons/fa";
+
 function TodoStickyWall({
   subject,
   description,
@@ -17,7 +20,7 @@ function TodoStickyWall({
   return (
     <div data-swapy-slot={dataSwapySlot}>
       <div
-        className={`w-40 cursor-move h-40 lg:w-52 lg:h-52 xl:w-60 xl:h-60 overflow-hidden rounded-lg ${style} py-3 px-2 ltr:text-left rtl:text-right drop-shadow-lg slot top`}
+        className={`w-40 cursor-move h-40 lg:w-52 lg:h-52 xl:w-60 xl:h-60 overflow-hidden rounded-lg ${style} py-3 px-2 ltr:text-left rtl:text-right drop-shadow-lg slot top relative`}
         data-swapy-item={dataSwapyItem}
       >
         {subject && (
@@ -42,6 +45,9 @@ function TodoStickyWall({
             {description}
           </span>
         )}
+        <div className="absolute top-1 right-1">
+          <RemoveModal btnIcon={<FaTrashAlt className="w-5 h-5" />} />
+        </div>
       </div>
     </div>
   );
