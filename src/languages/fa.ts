@@ -61,6 +61,7 @@ const fa = {
   tablesFolderField: "پوشه کار",
   tablesCreatedAtField: "تاریخ ساخته شدن",
   tablesUpdatedAtField: "تاریخ ویرایش",
+  tablesEditField: "ویرایش کار",
   tableTitle: "کارها",
   todayBtnCalendar: "امروز",
   prevBtnCalendar: "قبلی",
@@ -104,6 +105,12 @@ const fa = {
   folderNameInput: "نام پوشه",
   addFolderBtn: "افزودن پوشه",
   seeFolderTodosBtn: "دیدن کارهای پوشه",
+  editTodosTitle: "ویرایش کار",
+  cancelBtn: "انصراف",
+  removeTodoBtn: "حذف کار",
+  removeModalTitle: "آیا مطمعن هستید ؟",
+  removeModalYesBtn: "بله",
+  removeModalNoBtn: "خیر",
 };
 
 export default fa;

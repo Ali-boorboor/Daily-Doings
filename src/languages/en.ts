@@ -61,6 +61,7 @@ const en = {
   tablesFolderField: "Todo Folder",
   tablesCreatedAtField: "Created At",
   tablesUpdatedAtField: "Updated At",
+  tablesEditField: "Edit Todo",
   tableTitle: "Todos",
   prevBtnCalendar: "Prev",
   nextBtnCalendar: "Next",
@@ -104,6 +105,12 @@ const en = {
   folderNameInput: "Folder Name",
   addFolderBtn: "Add Folder",
   seeFolderTodosBtn: "See Folder Todos",
+  editTodosTitle: "Edit Todo",
+  cancelBtn: "Cancel",
+  removeTodoBtn: "Remove Todo",
+  removeModalTitle: "Are You Sure ?",
+  removeModalYesBtn: "Yes",
+  removeModalNoBtn: "No",
 };
 
 export default en;

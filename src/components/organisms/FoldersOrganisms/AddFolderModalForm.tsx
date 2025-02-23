@@ -1,11 +1,14 @@
 import Input from "@a/Input";
 import Button from "@a/Button";
 import HeaderTitle from "@a/HeaderTitle";
+import { modalDetails } from "@st/globalStates";
+import { useTranslation } from "react-i18next";
+import { useRecoilState } from "recoil";
 import { Form, Formik } from "formik";
 import { memo } from "react";
-import { useTranslation } from "react-i18next";
 
 function AddFolderModalForm() {
+  const [ModalDetails, setModalDetails] = useRecoilState(modalDetails);
   const { t } = useTranslation();
 
   return (
@@ -25,12 +28,23 @@ function AddFolderModalForm() {
               placeholder={t("folderNameInput")}
               setFieldTouched={setFieldTouched}
             />
-            <Button
-              style="btn-success w-full"
-              text={t("submitBtn")}
-              type="submit"
-              isOutlineBtn
-            />
+            <div className="flex justify-center items-center flex-wrap w-full gap-4">
+              <Button
+                style="btn-success grow basis-full md:basis-1/3"
+                text={t("submitBtn")}
+                type="submit"
+                isOutlineBtn
+              />
+              <Button
+                style="btn-error grow basis-full md:basis-1/3"
+                onClickHandler={() =>
+                  setModalDetails({ ...ModalDetails, isShown: false })
+                }
+                text={t("cancelBtn")}
+                type="button"
+                isOutlineBtn
+              />
+            </div>
           </div>
         </Form>
       )}

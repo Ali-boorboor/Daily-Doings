@@ -1,7 +1,10 @@
 import { validateDefaultLang } from "@/utils/validateSettings";
-import { modalDetailsStateType } from "@type/globalTypes";
 import { get } from "@/utils/localStorage";
 import { atom } from "recoil";
+import {
+  modalDetailsStateType,
+  toastDetailsStateType,
+} from "@type/globalTypes";
 
 const theme = atom({
   key: "theme",
@@ -23,4 +26,9 @@ const modalDetails = atom<modalDetailsStateType>({
   default: { elements: null, isShown: false },
 });
 
-export { theme, isSideBarCollapse, lang, modalDetails };
+const toastDetails = atom<toastDetailsStateType>({
+  key: "toastDetails",
+  default: { title: "", toastState: "alert-success", isShown: false },
+});
+
+export { theme, isSideBarCollapse, lang, modalDetails, toastDetails };

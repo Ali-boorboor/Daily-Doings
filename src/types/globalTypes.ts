@@ -3,4 +3,10 @@ type modalDetailsStateType = {
   isShown: boolean;
 };
 
-export type { modalDetailsStateType };
+type toastDetailsStateType = {
+  title: String;
+  toastState: "alert-success" | "alert-error" | "alert-info" | "alert-warning";
+  isShown: boolean;
+};
+
+export type { modalDetailsStateType, toastDetailsStateType };

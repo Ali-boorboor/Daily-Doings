@@ -2,10 +2,14 @@ import Button from "@a/Button";
 import Pagination from "@m/Pagination";
 import PieChart from "@m/Charts/PieChart";
 import TableWrapper from "@m/TableWrapper";
+import EditModal from "@m/ModalsMolecules/EditModal";
+import { modalDetails } from "@st/globalStates";
 import { useTranslation } from "react-i18next";
+import { useRecoilState } from "recoil";
 import { memo } from "react";
 
 function FolderTodosTable() {
+  const [, setModalDetails] = useRecoilState(modalDetails);
   const { t } = useTranslation();
 
   return (
@@ -41,6 +45,9 @@ function FolderTodosTable() {
               <th className="border border-primary-content drop-shadow-lg">
                 {t("tablesUpdatedAtField")}
               </th>
+              <th className="border border-primary-content drop-shadow-lg">
+                {t("tablesEditField")}
+              </th>
             </tr>
           </thead>
         }
@@ -62,6 +69,19 @@ function FolderTodosTable() {
               </td>
               <td className="border border-base-content drop-shadow-lg">
                 2024/02/11
+              </td>
+              <td className="border border-base-content drop-shadow-lg">
+                <Button
+                  type="button"
+                  style="btn-info w-full grow ring ring-info ring-offset-2 ring-offset-base-100 drop-shadow-lg"
+                  text={t("tablesEditField")}
+                  onClickHandler={() => {
+                    setModalDetails({
+                      elements: <EditModal />,
+                      isShown: true,
+                    });
+                  }}
+                />
               </td>
             </tr>
             <tr className="border border-base-content drop-shadow-lg">

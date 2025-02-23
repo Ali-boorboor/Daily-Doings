@@ -53,9 +53,6 @@ importers:
       recoil:
         specifier: ^0.7.7
         version: 0.7.7(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      swapy:
-        specifier: ^1.0.5
-        version: 1.0.5
       yup:
         specifier: ^1.6.1
         version: 1.6.1
@@ -1587,9 +1584,6 @@ packages:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
 
-  swapy@1.0.5:
-    resolution: {integrity: sha512-XEzy5HCw7yESb7QajKTBJ+NA/BL0kAKlE7XhSMPZawF740X4ws/5CFtXRsVDQ+EztISC759a9+DJM9mxjz4hXg==}
-
   tailwindcss@3.4.17:
     resolution: {integrity: sha512-w33E2aCvSDP0tW9RZuNXadXlkHXqFzSkQew/aIa2i/Sj8fThxwovwlXHSPXTbAHwEIhBFXAedUhP2tueAKP8Og==}
     engines: {node: '>=14.0.0'}
@@ -3101,8 +3095,6 @@ snapshots:
       has-flag: 4.0.0
 
   supports-preserve-symlinks-flag@1.0.0: {}
-
-  swapy@1.0.5: {}
 
   tailwindcss@3.4.17:
     dependencies:

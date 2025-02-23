@@ -1,3 +1,4 @@
+import Toast from "@a/Toast";
 import Modal from "@a/Modal";
 import Router from "@/routes/Router";
 import langChangeHandler from "@/utils/langChangeHandler";
@@ -22,6 +23,7 @@ function App() {
     <>
       {routes}
       <Modal />
+      <Toast />
     </>
   );
 }
