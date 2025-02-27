@@ -20,14 +20,14 @@ function MainSidebar() {
 
   return (
     <div
-      className={`h-screen z-10 fixed top-16 drop-shadow-lg transition-all duration-300 ease-sidebar overflow-hidden ltr:border-r-primary ltr:border-r rtl:border-l-primary rtl:border-l w-44 md:w-60 lg:w-72 xl:w-80     
+      className={`h-screen z-10 fixed overflow-y-auto scrollbar-hidden top-16 drop-shadow-lg transition-all duration-300 ease-sidebar ltr:border-r-primary ltr:border-r rtl:border-l-primary rtl:border-l w-44 md:w-60 lg:w-72 xl:w-80     
         ${
           !isSideBarOpen
             ? "w-0 opacity-0 invisible -translate-x-full rtl:translate-x-full"
             : "w-44 opacity-100 visible translate-x-0"
         }`}
     >
-      <nav className="fixed flex flex-col gap-2 md:gap-4 bg-base-200 text-base-content h-full w-full p-2 md:px-4 md:py-8">
+      <nav className="flex flex-col gap-2 md:gap-4 bg-base-200 text-base-content w-full min-h-screen p-2 md:px-4 md:py-8 md:pb-20">
         <SearchInput style="" />
         <Divider style="m-0 md:m-1" />
         <SidebarLinks
@@ -46,11 +46,7 @@ function MainSidebar() {
           icon={<FaNoteSticky className="w-6 h-6" />}
         />
         <Divider style="m-0 md:m-1" />
-        <SidebarLinks
-          href="/table"
-          title={t("tableLink")}
-          icon={<BsTable className="w-6 h-6" />}
-        />
+        <SidebarLinks href="/table" title={t("tableLink")} icon={<BsTable className="w-6 h-6" />} />
         <SidebarLinks
           href="/today"
           title={t("todayLink")}

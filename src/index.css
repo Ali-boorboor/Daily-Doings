@@ -11,3 +11,14 @@
   font-family: "lalezar";
   src: url("/fonts/Lalezar-Regular.ttf");
 }
+
+@layer utilities {
+  .scrollbar-hidden::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollbar-hidden {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+}
