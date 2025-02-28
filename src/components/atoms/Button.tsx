@@ -1,5 +1,5 @@
 import { buttonPropsType } from "@type/atomsTypes";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import { memo } from "react";
 
 function Button({

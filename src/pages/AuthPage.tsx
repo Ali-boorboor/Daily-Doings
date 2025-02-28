@@ -1,6 +1,6 @@
 import LangTogleBtn from "@m/LangTogleBtn";
 import AuthPagesCover from "@o/AuthPageOrganisms/AuthPagesCover";
-import { Outlet } from "react-router";
+import { Outlet } from "react-router-dom";
 import { memo } from "react";
 
 function AuthPage() {

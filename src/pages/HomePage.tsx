@@ -2,7 +2,7 @@ import MainHeader from "@o/MainHeader";
 import MainSidebar from "@o/MainSidebar";
 import { isSideBarCollapse } from "@st/globalStates";
 import { useRecoilValue } from "recoil";
-import { Outlet } from "react-router";
+import { Outlet } from "react-router-dom";
 import { memo } from "react";
 
 function HomePage() {

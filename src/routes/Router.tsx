@@ -1,5 +1,5 @@
 import SuspenseWrapper from "@/routes/SuspenseWrapper";
-import { Navigate } from "react-router";
+import { Navigate } from "react-router-dom";
 import { lazy } from "react";
 
 const ChangePasswordForm = lazy(() => import("@o/SettingsOrganisms/ChangePasswordForm"));

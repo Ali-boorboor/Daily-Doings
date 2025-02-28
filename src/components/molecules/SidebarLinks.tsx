@@ -1,5 +1,5 @@
 import { sidebarLinksPropsType } from "@type/moleculesTypes";
-import { NavLink } from "react-router";
+import { NavLink } from "react-router-dom";
 import { memo } from "react";
 
 function SidebarLinks({ icon, title, href }: sidebarLinksPropsType) {

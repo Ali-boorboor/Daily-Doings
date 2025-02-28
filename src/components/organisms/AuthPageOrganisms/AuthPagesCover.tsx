@@ -1,7 +1,7 @@
 import MainLogo from "@a/MainLogo";
 import { AuthPagesCoverState } from "@st/organismsStates";
 import { useTranslation } from "react-i18next";
-import { useLocation } from "react-router";
+import { useLocation } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import { memo } from "react";
 

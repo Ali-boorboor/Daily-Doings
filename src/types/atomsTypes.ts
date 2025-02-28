@@ -1,4 +1,4 @@
-import { To } from "react-router";
+import { To } from "react-router-dom";
 
 type buttonPropsType = {
   text: string;

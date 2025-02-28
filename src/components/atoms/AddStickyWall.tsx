@@ -1,6 +1,6 @@
 import { RiAddCircleLine } from "react-icons/ri";
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import { memo } from "react";
 
 function AddStickyWall() {
