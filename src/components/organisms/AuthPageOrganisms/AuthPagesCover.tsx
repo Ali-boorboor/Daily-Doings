@@ -40,34 +40,28 @@ function AuthPagesCover() {
         </p>
       </div>
       <p className="absolute bottom-20 text-center w-full text-2xl sm:text-3xl md:text-4xl text-white">
-        {pathname === "/"
+        {pathname === "/auth/login"
           ? t("navToLogin")
-          : pathname === "/signup"
+          : pathname === "/auth/signup"
           ? t("navToSignup")
           : t("navToForgotPass")}
       </p>
       <div className="absolute bottom-6 flex gap-6 justify-center items-center w-full">
         <span
           className={`h-2 bg-white inline-block rounded-md cursor-pointer transition-all duration-500 ease-linear ${
-            srcIndex === 1
-              ? "bg-opacity-100 w-10 md:w-16"
-              : "bg-opacity-25 w-8 md:w-14"
+            srcIndex === 1 ? "bg-opacity-100 w-10 md:w-16" : "bg-opacity-25 w-8 md:w-14"
           }`}
           onClick={() => setSrcIndex(1)}
         ></span>
         <span
           className={`h-2 bg-white inline-block rounded-md cursor-pointer transition-all duration-500 ease-linear ${
-            srcIndex === 2
-              ? "bg-opacity-100 w-10 md:w-16"
-              : "bg-opacity-25 w-8 md:w-14"
+            srcIndex === 2 ? "bg-opacity-100 w-10 md:w-16" : "bg-opacity-25 w-8 md:w-14"
           }`}
           onClick={() => setSrcIndex(2)}
         ></span>
         <span
           className={`h-2 bg-white inline-block rounded-md cursor-pointer transition-all duration-500 ease-linear ${
-            srcIndex === 3
-              ? "bg-opacity-100 w-10 md:w-16"
-              : "bg-opacity-25 w-8 md:w-14"
+            srcIndex === 3 ? "bg-opacity-100 w-10 md:w-16" : "bg-opacity-25 w-8 md:w-14"
           }`}
           onClick={() => setSrcIndex(3)}
         ></span>
