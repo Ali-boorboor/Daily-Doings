@@ -92,7 +92,7 @@ function TodayTodosForm() {
               <MdDelete className="w-6 h-6 fill-error cursor-pointer" />
             </div>
           </div>
-          <div className="flex flex-wrap gap-4 mt-8 mb-4">
+          <div className="flex flex-wrap gap-4 mt-8">
             <Button
               style="btn-primary basis-1/3 grow"
               text={t("todayCheckAllBtn")}
@@ -110,12 +110,6 @@ function TodayTodosForm() {
               isOutlineBtn
             />
           </div>
-          <Button
-            style="btn-success w-full"
-            text={t("submitBtn")}
-            type="submit"
-            isOutlineBtn
-          />
         </Form>
       )}
     </Formik>
