@@ -2,15 +2,10 @@ import SuspenseWrapper from "@/routes/SuspenseWrapper";
 import { Navigate } from "react-router";
 import { lazy } from "react";
 
-const ChangePasswordForm = lazy(
-  () => import("@o/SettingsOrganisms/ChangePasswordForm")
-);
-const ChangeUsernameForm = lazy(
-  () => import("@o/SettingsOrganisms/ChangeUsernameForm")
-);
-const FolderTodosTable = lazy(
-  () => import("@o/FoldersOrganisms/FolderTodosTable")
-);
+const ChangePasswordForm = lazy(() => import("@o/SettingsOrganisms/ChangePasswordForm"));
+const ChangeUsernameForm = lazy(() => import("@o/SettingsOrganisms/ChangeUsernameForm"));
+const ChangeCoverForm = lazy(() => import("@o/SettingsOrganisms/ChangeCoverForm"));
+const FolderTodosTable = lazy(() => import("@o/FoldersOrganisms/FolderTodosTable"));
 const ForgotPassword = lazy(() => import("@t/ForgotPassword"));
 const StickyWall = lazy(() => import("@t/StickyWall"));
 const Dashboard = lazy(() => import("@t/Dashboard"));
@@ -77,6 +72,10 @@ const Routes = [
           {
             path: "change-username",
             element: <ChangeUsernameForm />,
+          },
+          {
+            path: "change-cover",
+            element: <ChangeCoverForm />,
           },
         ],
       },

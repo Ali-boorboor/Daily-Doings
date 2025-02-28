@@ -15,15 +15,20 @@ function NavigateBtns() {
         linkTo="change-password"
         isLink
       />
-      <Divider
-        text={t("authPagesDividerText")}
-        style="hidden md:flex divider-horizontal"
-      />
+      <Divider text={t("authPagesDividerText")} style="hidden md:flex divider-horizontal" />
       <Button
         style="btn-secondary grow"
         text={t("settingsChangeUsernameBtn")}
         isOutlineBtn
         linkTo="change-username"
+        isLink
+      />
+      <Divider text={t("authPagesDividerText")} style="hidden md:flex divider-horizontal" />
+      <Button
+        style="btn-accent grow"
+        text={t("settingsChangeCoverBtn")}
+        isOutlineBtn
+        linkTo="change-cover"
         isLink
       />
     </div>

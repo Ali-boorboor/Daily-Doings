@@ -97,6 +97,7 @@ const fa = {
   formListToggleBtn: "لیست",
   settingsChangePasswordBtn: "تغییر کلمه عبور",
   settingsChangeUsernameBtn: "تغییر نام کاربری",
+  settingsChangeCoverBtn: "تغییر عکس پروفایل",
   settingsLanguageTitle: "زبان",
   changePasswordCurrentInput: "کلمه عبور فعلی",
   changePasswordNewInput: "کلمه عبور جدید",
@@ -111,6 +112,8 @@ const fa = {
   removeModalTitle: "آیا مطمعن هستید ؟",
   removeModalYesBtn: "بله",
   removeModalNoBtn: "خیر",
+  editFolderTitle: "ویرایش پوشه",
+  removeFolderBtn: "حذف پوشه",
 };
 
 export default fa;

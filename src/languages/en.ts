@@ -97,6 +97,7 @@ const en = {
   formListToggleBtn: "List",
   settingsChangePasswordBtn: "Change Password",
   settingsChangeUsernameBtn: "Change Username",
+  settingsChangeCoverBtn: "Change Cover",
   settingsLanguageTitle: "Language",
   changePasswordCurrentInput: "Current Password",
   changePasswordNewInput: "New Password",
@@ -111,6 +112,8 @@ const en = {
   removeModalTitle: "Are You Sure ?",
   removeModalYesBtn: "Yes",
   removeModalNoBtn: "No",
+  editFolderTitle: "Edit Folder",
+  removeFolderBtn: "Remove Folder",
 };
 
 export default en;
