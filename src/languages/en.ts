@@ -120,6 +120,8 @@ const en = {
   privateRouteFailed: "Access Denied",
   successSignupToast: "Signed up Successfully",
   errorSignupToast: "Signup Failed",
+  successLogoutToast: "Logged out Successfully",
+  errorLogoutToast: "Logout Failed",
 };
 
 export default en;

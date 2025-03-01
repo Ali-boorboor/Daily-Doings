@@ -4,6 +4,7 @@ import Divider from "@a/Divider";
 import MainLogo from "@a/MainLogo";
 import SearchInput from "@m/SearchInput";
 import LangTogleBtn from "@m/LangTogleBtn";
+import usePostReq from "@/hooks/usePostReq";
 import { userDetails, isSideBarCollapse } from "@st/globalStates";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { useTranslation } from "react-i18next";
@@ -16,6 +17,12 @@ function MainHeader() {
   const userInfo = useRecoilValue(userDetails);
   const { t } = useTranslation();
   const { language } = i18next;
+  const { mutate: postReq } = usePostReq({
+    successTitle: t("successLogoutToast"),
+    errorTitle: t("errorLogoutToast"),
+    navigateTo: "/auth/login",
+    url: "/logout",
+  });
 
   return (
     <div className="navbar z-50 fixed top-0 px-4 lg:px-6 bg-base-100 drop-shadow-lg border-b-primary border-b">
@@ -71,7 +78,7 @@ function MainHeader() {
               />
               <Divider style="m-1" />
               <Button
-                onClickHandler={() => {}}
+                onClickHandler={() => postReq({})}
                 style="btn-error"
                 type="button"
                 text={t("profileLogoutBtn")}

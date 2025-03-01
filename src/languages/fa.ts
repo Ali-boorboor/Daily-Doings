@@ -120,6 +120,8 @@ const fa = {
   privateRouteFailed: "دسترسی ممنوع شد",
   successSignupToast: "با موفقیت ثبت نام شدید",
   errorSignupToast: "ثبت نام ناموفق",
+  successLogoutToast: "با موفقیت خارج شدید",
+  errorLogoutToast: "خروج ناموفق",
 };
 
 export default fa;
