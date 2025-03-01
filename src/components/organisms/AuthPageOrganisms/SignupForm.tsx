@@ -23,25 +23,27 @@ function SignupForm({ initialValues, onSubmitHandler }: signupFormPropsType) {
         <Form className="h-full basis-full md:basis-1/2 w-full flex gap-4 flex-col justify-center items-center">
           <AuthPageHeading name={values.username} text={t("signupText")} />
           <div className="max-w-screen-md w-full overflow-hidden flex flex-col gap-4 md:gap-8 p-4">
-            <Input
-              name="username"
-              type="text"
-              value={values.username}
-              onChangeHandler={handleChange}
-              placeholder={t("usernameInput")}
-              icon={<FaUserLarge />}
-              setFieldTouched={setFieldTouched}
-              maxLength={20}
-            />
-            <Input
-              name="email"
-              type="email"
-              value={values.email}
-              onChangeHandler={handleChange}
-              placeholder={t("emailInput")}
-              icon={<MdEmail />}
-              setFieldTouched={setFieldTouched}
-            />
+            <div className="flex flex-col md:flex-row justify-center items-center gap-4">
+              <Input
+                name="username"
+                type="text"
+                value={values.username}
+                onChangeHandler={handleChange}
+                placeholder={t("usernameInput")}
+                icon={<FaUserLarge />}
+                setFieldTouched={setFieldTouched}
+                maxLength={20}
+              />
+              <Input
+                name="email"
+                type="email"
+                value={values.email}
+                onChangeHandler={handleChange}
+                placeholder={t("emailInput")}
+                icon={<MdEmail />}
+                setFieldTouched={setFieldTouched}
+              />
+            </div>
             <Input
               name="cover"
               styleLabel="max-w-full"

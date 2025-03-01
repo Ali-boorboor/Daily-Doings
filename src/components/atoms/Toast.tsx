@@ -1,9 +1,18 @@
 import { toastDetails } from "@st/globalStates";
-import { useRecoilValue } from "recoil";
-import { memo } from "react";
+import { useRecoilState } from "recoil";
+import { memo, useEffect } from "react";
 
 function Toast() {
-  const ToastDetails = useRecoilValue(toastDetails);
+  const [ToastDetails, setToastDetails] = useRecoilState(toastDetails);
+
+  useEffect(() => {
+    if (ToastDetails.isShown) {
+      const timeOut = setTimeout(() => {
+        setToastDetails({ ...ToastDetails, isShown: false });
+        clearTimeout(timeOut);
+      }, 3000);
+    }
+  }, [ToastDetails]);
 
   return (
     <div
@@ -14,7 +23,7 @@ function Toast() {
       }`}
     >
       <div
-        className={`alert ${ToastDetails.toastState} ring ring-inherit ring-offset-2 ring-offset-base-100 drop-shadow-lg`}
+        className={`alert ${ToastDetails.toastState} ring ${ToastDetails.ringState} ring-offset-2 ring-offset-base-100 drop-shadow-lg`}
       >
         <span>{ToastDetails.title}</span>
       </div>

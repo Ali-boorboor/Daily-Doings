@@ -9,6 +9,7 @@ const en = {
   navToLogin: "Login Page",
   loginWelcomeText: "Welcome",
   navToSignup: "Signup Page",
+  identifierInput: "Username Or Email",
   usernameInput: "Username",
   passwordInput: "Password",
   emailInput: "Email",
@@ -114,6 +115,9 @@ const en = {
   removeModalNoBtn: "No",
   editFolderTitle: "Edit Folder",
   removeFolderBtn: "Remove Folder",
+  successLoginToast: "Logged In Successfully",
+  errorLoginToast: "Login Failed",
+  privateRouteFailed: "Access Denied",
 };
 
 export default en;

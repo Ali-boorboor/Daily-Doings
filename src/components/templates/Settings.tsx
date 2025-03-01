@@ -4,11 +4,14 @@ import ThemePalette from "@m/ThemePalette";
 import docTitle from "@/utils/documentTitle";
 import NavigateBtns from "@m/SettingsMolecules/NavigateBtns";
 import LanguageSettings from "@m/SettingsMolecules/LanguageSettings";
+import { userDetails } from "@st/globalStates";
 import { useTranslation } from "react-i18next";
 import { memo, useEffect } from "react";
+import { useRecoilValue } from "recoil";
 
 function Settings() {
   const { t } = useTranslation();
+  const userInfo = useRecoilValue(userDetails);
 
   useEffect(() => {
     docTitle("Settings Page");
@@ -20,6 +23,14 @@ function Settings() {
         style="badge-primary rounded-b-full drop-shadow-lg text-xl md:text-2xl p-2 text-center"
         title={t("settingsLink")}
       />
+      <div className="ring-accent ring-offset-base-100 w-40 h-40 my-6 mx-auto rounded-full overflow-hidden ring ring-offset-2">
+        <img
+          crossOrigin="anonymous"
+          className="object-cover w-full h-full"
+          src={userInfo?.cover}
+        />
+      </div>
+      <p className="text-center text-lg font-bold">{userInfo?.username}</p>
       <div className="p-4 mt-4">
         <ThemePalette styleThemesContainer="justify-start gap-4 px-1" />
         <Divider />

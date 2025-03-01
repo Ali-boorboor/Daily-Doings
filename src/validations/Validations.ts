@@ -8,7 +8,9 @@ import {
 
 const loginValidation = (t: (key: string) => string) => {
   return Yup.object().shape({
-    username: username(t),
+    identifier: Yup.string()
+      .matches(/^(([^@\s]+)@([\w-]+\.)+[\w-]{2,5})|^[a-zA-Z0-9_.]{1,20}$/)
+      .required(),
     password: password(t),
   });
 };

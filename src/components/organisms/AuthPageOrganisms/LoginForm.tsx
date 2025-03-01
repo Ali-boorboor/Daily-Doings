@@ -20,14 +20,14 @@ function LoginForm({ initialValues, onSubmitHandler }: loginFormPropsType) {
     >
       {({ values, handleChange, setFieldTouched }) => (
         <Form className="h-full basis-full md:basis-1/2 w-full flex gap-4 flex-col justify-center items-center">
-          <AuthPageHeading name={values.username} text={t("loginText")} />
+          <AuthPageHeading text={t("loginText")} />
           <div className="max-w-screen-md w-full overflow-hidden flex flex-col gap-4 md:gap-8 p-4">
             <Input
-              name="username"
+              name="identifier"
               type="text"
-              value={values.username}
+              value={values.identifier}
               onChangeHandler={handleChange}
-              placeholder={t("usernameInput")}
+              placeholder={t("identifierInput")}
               icon={<FaUserLarge />}
               setFieldTouched={setFieldTouched}
               maxLength={20}

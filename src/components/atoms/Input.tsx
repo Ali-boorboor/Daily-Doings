@@ -32,7 +32,7 @@ function Input({
 
   if (isUploader) {
     return (
-      <div className="flex flex-col gap-2 w-full">
+      <div className="flex flex-col w-full">
         <div className="flex justify-start items-start gap-4">
           <label
             className={`form-control w-full ${
@@ -109,7 +109,7 @@ function Input({
     );
   } else if (isCheckBox) {
     return (
-      <div className="flex flex-col gap-2 w-full">
+      <div className="flex flex-col w-full">
         <div
           className={`form-control ${
             isCheckBoxCenter ? "items-center" : "items-start"

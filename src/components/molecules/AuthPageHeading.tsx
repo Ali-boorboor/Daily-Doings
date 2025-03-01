@@ -8,7 +8,7 @@ function AuthPageHeading({ text, name }: authPageHeadingPropsType) {
   return (
     <>
       <h1 className="font-bold text-2xl sm:text-3xl md:text-5xl">
-        {`${t("loginWelcomeText")} ${name}`}
+        {`${t("loginWelcomeText")} ${name || ""}`}
       </h1>
       <h2 className="text-lg sm:text-xl">{text}</h2>
     </>

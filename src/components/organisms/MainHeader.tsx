@@ -4,15 +4,16 @@ import Divider from "@a/Divider";
 import MainLogo from "@a/MainLogo";
 import SearchInput from "@m/SearchInput";
 import LangTogleBtn from "@m/LangTogleBtn";
-import { isSideBarCollapse } from "@st/globalStates";
+import { userDetails, isSideBarCollapse } from "@st/globalStates";
+import { useRecoilState, useRecoilValue } from "recoil";
 import { useTranslation } from "react-i18next";
 import { IoClose } from "react-icons/io5";
-import { useRecoilState } from "recoil";
 import { LuMenu } from "react-icons/lu";
 import { memo } from "react";
 
 function MainHeader() {
   const [isSideBarOpen, setIsSideBarOpen] = useRecoilState(isSideBarCollapse);
+  const userInfo = useRecoilValue(userDetails);
   const { t } = useTranslation();
   const { language } = i18next;
 
@@ -52,13 +53,15 @@ function MainHeader() {
           <div className="dropdown dropdown-end">
             <div tabIndex={0} role="button" className="avatar online">
               <div className="ring-accent ring-offset-base-100 w-10 rounded-full ring ring-offset-2">
-                <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+                <img crossOrigin="anonymous" src={userInfo?.cover} />
               </div>
             </div>
             <nav
               tabIndex={0}
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow ring-accent ring-offset-2 ring-offset-base-100 ring"
             >
+              <p className="text-lg font-bold">{userInfo?.username}</p>
+              <Divider style="m-1" />
               <Button
                 style="btn-ghost"
                 text={t("settingsLink")}

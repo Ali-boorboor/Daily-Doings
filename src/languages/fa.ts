@@ -8,6 +8,7 @@ const fa = {
   authPagesDividerText: "یا",
   loginWelcomeText: "خوش آمدید",
   navToSignup: "صفحه ثبت نام",
+  identifierInput: "ایمیل یا نام کاربری",
   passwordInput: "کلمه عبور",
   addStickyWall: "اضافه کردن برچسب",
   submitPasswordInput: "تایید کلمه عبور",
@@ -114,6 +115,9 @@ const fa = {
   removeModalNoBtn: "خیر",
   editFolderTitle: "ویرایش پوشه",
   removeFolderBtn: "حذف پوشه",
+  successLoginToast: "با موفقیت وارد شدید",
+  errorLoginToast: "ورود ناموفق",
+  privateRouteFailed: "دسترسی ممنوع شد",
 };
 
 export default fa;

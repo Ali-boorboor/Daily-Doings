@@ -6,6 +6,11 @@ import {
   toastDetailsStateType,
 } from "@type/globalTypes";
 
+const hasLoading = atom({
+  key: "hasLoading",
+  default: false,
+});
+
 const theme = atom({
   key: "theme",
   default: get("theme") || "dark",
@@ -28,7 +33,28 @@ const modalDetails = atom<modalDetailsStateType>({
 
 const toastDetails = atom<toastDetailsStateType>({
   key: "toastDetails",
-  default: { title: "", toastState: "alert-success", isShown: false },
+  default: {
+    title: "",
+    toastState: "alert-success",
+    ringState: "ring-success",
+    isShown: false,
+  },
 });
 
-export { theme, isSideBarCollapse, lang, modalDetails, toastDetails };
+const userDetails = atom({
+  key: "userDetails",
+  default: {
+    username: "",
+    cover: "",
+  },
+});
+
+export {
+  hasLoading,
+  theme,
+  isSideBarCollapse,
+  lang,
+  modalDetails,
+  toastDetails,
+  userDetails,
+};

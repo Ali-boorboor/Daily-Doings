@@ -1,5 +1,5 @@
 type loginOnSubmitValues = {
-  username: string;
+  identifier: string;
   password: string;
 };
 
