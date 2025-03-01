@@ -18,7 +18,7 @@ function TodayTodosForm() {
     >
       {({ values, handleChange, setFieldValue }) => (
         <Form className="p-6">
-          <div className="grid gap-4 grid-cols-[repeat(auto-fit,_minmax(200px,1fr))] justify-items-center items-center p-4 mt-4 rounded-lg ring ring-primary ring-offset-2 ring-offset-base-100 drop-shadow-lg">
+          <div className="flex flex-wrap gap-4 justify-center lg:justify-between items-center p-4 mt-4 rounded-lg ring ring-primary ring-offset-2 ring-offset-base-100 drop-shadow-lg">
             <div className="flex items-center justify-between gap-4 bg-base-100 rounded-full px-4 ring ring-success ring-offset-1 ring-offset-base-100 drop-shadow-lg">
               <Input
                 name="checkedTodos"

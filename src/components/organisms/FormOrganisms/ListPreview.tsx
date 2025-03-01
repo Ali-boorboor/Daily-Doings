@@ -53,6 +53,7 @@ function ListPreview({ values, setFieldValue }: any) {
             subject={values.todoSubject}
             style={`cursor-auto ${values.todoLabel}`}
             listItems={todoItemsList}
+            hasNoOnClickModal
             isList
           />
         </div>

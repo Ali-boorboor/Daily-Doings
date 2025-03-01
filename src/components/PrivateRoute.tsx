@@ -29,7 +29,7 @@ function PrivateRoute({ children }: any) {
       setIsAuth(true);
       setUserInfo({ username: data?.data?.username, cover: data?.data?.cover });
     } else if (isError) {
-      navigate("/auth/login");
+      navigate("/login");
     }
   }, [data, isSuccess, isError]);
 

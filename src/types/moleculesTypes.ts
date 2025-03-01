@@ -24,7 +24,7 @@ type stickyWallPropsType = {
   style: string;
   isList?: boolean;
   listItems?: stickyWallListItemsType[];
-  onClickHandler?: any;
+  hasNoOnClickModal?: boolean;
 };
 
 type stickyWallListItemsType = string;
@@ -48,6 +48,8 @@ type tableWrapperPropsType = {
 
 type paginationPropsType = { style?: string };
 
+type EditModalPropsType = { hasRemoveModal?: boolean };
+
 export type {
   authPageHeadingPropsType,
   searchInputPropsType,
@@ -58,4 +60,5 @@ export type {
   overviewProgressPropsType,
   tableWrapperPropsType,
   paginationPropsType,
+  EditModalPropsType,
 };

@@ -2,14 +2,10 @@ import Pagination from "@m/Pagination";
 import HeaderTitle from "@a/HeaderTitle";
 import AddStickyWall from "@a/AddStickyWall";
 import TodoStickyWall from "@m/TodoStickyWall";
-import EditModal from "@m/ModalsMolecules/EditModal";
-import { modalDetails } from "@st/globalStates";
 import { useTranslation } from "react-i18next";
-import { useRecoilState } from "recoil";
 import { memo } from "react";
 
 function TodosStickyWalls() {
-  const [, setModalDetails] = useRecoilState(modalDetails);
   const { t } = useTranslation();
 
   return (
@@ -21,14 +17,11 @@ function TodosStickyWalls() {
         style="bg-primary text-primary-content text-xl md:text-2xl p-2 text-center rounded-b-full"
         title={t("stickyWallTitle")}
       />
-      <div className="grid gap-4 lg:gap-10 grid-cols-[repeat(auto-fit,_minmax(260px,1fr))] justify-items-center p-4 lg:p-8">
+      <div className="flex flex-wrap gap-4 lg:gap-10 justify-center items-center p-4 lg:p-8">
         <TodoStickyWall
           style="bg-primary text-primary-content"
           subject="Test 1"
           description="Test Text To See Todo"
-          onClickHandler={() => {
-            setModalDetails({ elements: <EditModal />, isShown: true });
-          }}
         />
         <TodoStickyWall
           style="bg-secondary text-secondary-content"

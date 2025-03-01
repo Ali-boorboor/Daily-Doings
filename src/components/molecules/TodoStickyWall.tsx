@@ -1,4 +1,7 @@
 import Divider from "@a/Divider";
+import EditModal from "@m/ModalsMolecules/EditModal";
+import { modalDetails } from "@st/globalStates";
+import { useRecoilState } from "recoil";
 import {
   stickyWallListItemsType,
   stickyWallPropsType,
@@ -6,17 +9,25 @@ import {
 import { memo } from "react";
 
 function TodoStickyWall({
-  subject,
+  hasNoOnClickModal,
   description,
-  style,
-  isList,
   listItems,
-  onClickHandler,
+  subject,
+  isList,
+  style,
 }: stickyWallPropsType) {
+  const [, setModalDetails] = useRecoilState(modalDetails);
+
   return (
     <div
       className={`w-40 cursor-pointer h-40 lg:w-52 lg:h-52 xl:w-60 xl:h-60 overflow-hidden rounded-lg ${style} py-3 px-2 ltr:text-left rtl:text-right drop-shadow-lg slot top relative`}
-      onClick={onClickHandler}
+      onClick={() => {
+        hasNoOnClickModal ||
+          setModalDetails({
+            elements: <EditModal hasRemoveModal />,
+            isShown: true,
+          });
+      }}
     >
       {subject && (
         <p className="font-bold text-lg lg:text-xl xl:text-2xl text-center">

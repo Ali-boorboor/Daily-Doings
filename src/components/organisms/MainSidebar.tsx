@@ -31,41 +31,45 @@ function MainSidebar() {
         <SearchInput style="" />
         <Divider style="m-0 md:m-1" />
         <SidebarLinks
-          href="/dashboard"
+          href="/home/dashboard"
           title={t("dashboardLink")}
           icon={<MdSpaceDashboard className="w-6 h-6" />}
         />
         <SidebarLinks
-          href="/calendar"
+          href="/home/calendar"
           title={t("calendarLink")}
           icon={<IoCalendarNumber className="w-6 h-6" />}
         />
         <SidebarLinks
-          href="/sticky-wall"
+          href="/home/sticky-wall"
           title={t("stickyWallLink")}
           icon={<FaNoteSticky className="w-6 h-6" />}
         />
         <Divider style="m-0 md:m-1" />
-        <SidebarLinks href="/table" title={t("tableLink")} icon={<BsTable className="w-6 h-6" />} />
         <SidebarLinks
-          href="/today"
+          href="/home/table"
+          title={t("tableLink")}
+          icon={<BsTable className="w-6 h-6" />}
+        />
+        <SidebarLinks
+          href="/home/today"
           title={t("todayLink")}
           icon={<PiListChecks className="w-6 h-6" />}
         />
         <SidebarLinks
-          href="/form"
+          href="/home/form"
           title={t("formLink")}
           icon={<FaClipboardList className="w-6 h-6" />}
         />
         <SidebarLinks
-          href="/folder"
+          href="/home/folder"
           title={t("foldersLink")}
           icon={<AiFillFolder className="w-6 h-6" />}
         />
         <Divider style="m-0 md:m-1" />
         <ThemePalette styleWrapper="hidden md:flex" />
         <SidebarLinks
-          href="/settings"
+          href="/home/settings"
           title={t("settingsLink")}
           icon={<IoSettingsSharp className="w-6 h-6" />}
         />

@@ -63,6 +63,7 @@ const fa = {
   tablesCreatedAtField: "تاریخ ساخته شدن",
   tablesUpdatedAtField: "تاریخ ویرایش",
   tablesEditField: "ویرایش کار",
+  tablesRemoveField: "حذف کار",
   tableTitle: "کارها",
   todayBtnCalendar: "امروز",
   prevBtnCalendar: "قبلی",

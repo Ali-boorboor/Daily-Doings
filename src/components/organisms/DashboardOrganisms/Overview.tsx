@@ -17,7 +17,7 @@ function Overview() {
         <Button
           text={t("dashboardStatusBtn")}
           style="btn-accent drop-shadow-lg"
-          linkTo="/form"
+          linkTo="/home/form"
           isLink
         />
       </div>

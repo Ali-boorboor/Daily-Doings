@@ -1,7 +1,6 @@
 import Input from "@a/Input";
 import Button from "@a/Button";
 import HeaderTitle from "@a/HeaderTitle";
-import RemoveModal from "@m/ModalsMolecules/RemoveModal";
 import { modalDetails } from "@st/globalStates";
 import { useTranslation } from "react-i18next";
 import { useRecoilState } from "recoil";
@@ -58,14 +57,6 @@ function EditFolderModal() {
                 }}
               />
             </div>
-            <Button
-              type="button"
-              style="btn-error w-full grow ring ring-error ring-offset-2 ring-offset-base-100 drop-shadow-lg"
-              text={t("removeFolderBtn")}
-              onClickHandler={() => {
-                setModalDetails({ elements: <RemoveModal />, isShown: true });
-              }}
-            />
           </Form>
         )}
       </Formik>

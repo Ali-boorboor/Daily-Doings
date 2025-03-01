@@ -60,13 +60,13 @@ function ForgotPasswordForm({
                 <Button
                   style="btn-secondary w-1/3 grow"
                   text={t("navToLogin")}
-                  linkTo="/auth/login"
+                  linkTo="/login"
                   isLink
                 />
                 <Button
                   style="btn-accent w-1/3 grow"
                   text={t("navToSignup")}
-                  linkTo="/auth/signup"
+                  linkTo="/signup"
                   isLink
                 />
               </div>

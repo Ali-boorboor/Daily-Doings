@@ -2,13 +2,14 @@ import Button from "@a/Button";
 import HeaderTitle from "@a/HeaderTitle";
 import RemoveModal from "@m/ModalsMolecules/RemoveModal";
 import EditModalInputs from "@m/ModalsMolecules/EditModalInputs";
+import { EditModalPropsType } from "@type/moleculesTypes";
 import { modalDetails } from "@st/globalStates";
 import { useTranslation } from "react-i18next";
 import { useRecoilState } from "recoil";
 import { Form, Formik } from "formik";
 import { memo } from "react";
 
-function EditModal() {
+function EditModal({ hasRemoveModal }: EditModalPropsType) {
   const [ModalDetails, setModalDetails] = useRecoilState(modalDetails);
   const { t } = useTranslation();
 
@@ -54,14 +55,16 @@ function EditModal() {
                 }}
               />
             </div>
-            <Button
-              type="button"
-              style="btn-error w-full grow ring ring-error ring-offset-2 ring-offset-base-100 drop-shadow-lg"
-              text={t("removeTodoBtn")}
-              onClickHandler={() => {
-                setModalDetails({ elements: <RemoveModal />, isShown: true });
-              }}
-            />
+            {hasRemoveModal && (
+              <Button
+                type="button"
+                style="btn-error w-full grow ring ring-error ring-offset-2 ring-offset-base-100 drop-shadow-lg"
+                text={t("removeTodoBtn")}
+                onClickHandler={() => {
+                  setModalDetails({ elements: <RemoveModal />, isShown: true });
+                }}
+              />
+            )}
           </Form>
         )}
       </Formik>

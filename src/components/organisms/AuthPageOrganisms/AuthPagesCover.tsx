@@ -34,15 +34,15 @@ function AuthPagesCover() {
         }`}
       />
       <div className="absolute w-full flex items-center justify-between py-6 px-8">
-        <MainLogo style="inline-block w-20 h-20" linkTo="/auth/login" />
+        <MainLogo style="inline-block w-20 h-20" linkTo="/login" />
         <p className="text-white text-lg sm:text-xl md:text-2xl hidden md:inline-block">
           {t("dailyDoingsText")}
         </p>
       </div>
       <p className="absolute bottom-20 text-center w-full text-2xl sm:text-3xl md:text-4xl text-white">
-        {pathname === "/auth/login"
+        {pathname === "/login"
           ? t("navToLogin")
-          : pathname === "/auth/signup"
+          : pathname === "/signup"
           ? t("navToSignup")
           : t("navToForgotPass")}
       </p>

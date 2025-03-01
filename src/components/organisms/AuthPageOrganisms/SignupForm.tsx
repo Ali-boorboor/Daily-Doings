@@ -96,13 +96,13 @@ function SignupForm({ initialValues, onSubmitHandler }: signupFormPropsType) {
                 <Button
                   style="btn-secondary w-1/3 grow"
                   text={t("navToLogin")}
-                  linkTo="/auth/login"
+                  linkTo="/login"
                   isLink
                 />
                 <Button
                   style="btn-accent w-1/3 grow"
                   text={t("navToForgotPass")}
-                  linkTo="/auth/forgot-password"
+                  linkTo="/forgot-password"
                   isLink
                 />
               </div>

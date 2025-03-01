@@ -12,6 +12,7 @@ function DescriptionPreview({ values }: any) {
         subject={values.todoSubject}
         style={`cursor-auto ${values.todoLabel}`}
         description={values.todoDescription}
+        hasNoOnClickModal
       />
     </div>
   );

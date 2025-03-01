@@ -20,7 +20,7 @@ function MainHeader() {
   const { mutate: postReq } = usePostReq({
     successTitle: t("successLogoutToast"),
     errorTitle: t("errorLogoutToast"),
-    navigateTo: "/auth/login",
+    navigateTo: "/login",
     url: "/logout",
   });
 
@@ -73,7 +73,7 @@ function MainHeader() {
                 style="btn-ghost"
                 text={t("settingsLink")}
                 isOutlineBtn
-                linkTo="/settings"
+                linkTo="/home/settings"
                 isLink
               />
               <Divider style="m-1" />

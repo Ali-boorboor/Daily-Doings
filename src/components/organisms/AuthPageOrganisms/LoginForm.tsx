@@ -55,13 +55,13 @@ function LoginForm({ initialValues, onSubmitHandler }: loginFormPropsType) {
                 <Button
                   style="btn-secondary w-1/3 grow"
                   text={t("navToSignup")}
-                  linkTo="/auth/signup"
+                  linkTo="/signup"
                   isLink
                 />
                 <Button
                   style="btn-accent w-1/3 grow"
                   text={t("navToForgotPass")}
-                  linkTo="/auth/forgot-password"
+                  linkTo="/forgot-password"
                   isLink
                 />
               </div>

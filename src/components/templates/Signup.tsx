@@ -13,7 +13,7 @@ function Signup() {
   const { mutate: postReq } = usePostReq({
     successTitle: t("successSignupToast"),
     errorTitle: t("errorSignupToast"),
-    navigateTo: "/auth/login",
+    navigateTo: "/login",
     url: "/signup",
   });
 

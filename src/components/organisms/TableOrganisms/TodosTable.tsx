@@ -3,6 +3,7 @@ import Pagination from "@m/Pagination";
 import PieChart from "@m/Charts/PieChart";
 import TableWrapper from "@m/TableWrapper";
 import EditModal from "@m/ModalsMolecules/EditModal";
+import RemoveModal from "@m/ModalsMolecules/RemoveModal";
 import { modalDetails } from "@st/globalStates";
 import { useTranslation } from "react-i18next";
 import { useRecoilState } from "recoil";
@@ -20,7 +21,7 @@ function TodosTable() {
           <Button
             text={t("dashboardStatusBtn")}
             style="btn-accent drop-shadow-lg"
-            linkTo="/form"
+            linkTo="/home/form"
             isLink
           />
         }
@@ -47,6 +48,9 @@ function TodosTable() {
               </th>
               <th className="border border-primary-content drop-shadow-lg">
                 {t("tablesEditField")}
+              </th>
+              <th className="border border-primary-content drop-shadow-lg">
+                {t("tablesRemoveField")}
               </th>
             </tr>
           </thead>
@@ -78,6 +82,19 @@ function TodosTable() {
                   onClickHandler={() => {
                     setModalDetails({
                       elements: <EditModal />,
+                      isShown: true,
+                    });
+                  }}
+                />
+              </td>
+              <td className="border border-base-content drop-shadow-lg">
+                <Button
+                  type="button"
+                  style="btn-error w-full grow ring ring-error ring-offset-2 ring-offset-base-100 drop-shadow-lg"
+                  text={t("tablesRemoveField")}
+                  onClickHandler={() => {
+                    setModalDetails({
+                      elements: <RemoveModal />,
                       isShown: true,
                     });
                   }}

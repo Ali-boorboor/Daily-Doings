@@ -63,6 +63,7 @@ const en = {
   tablesCreatedAtField: "Created At",
   tablesUpdatedAtField: "Updated At",
   tablesEditField: "Edit Todo",
+  tablesRemoveField: "Remove Todo",
   tableTitle: "Todos",
   prevBtnCalendar: "Prev",
   nextBtnCalendar: "Next",
