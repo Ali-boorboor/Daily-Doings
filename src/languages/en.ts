@@ -118,6 +118,8 @@ const en = {
   successLoginToast: "Logged In Successfully",
   errorLoginToast: "Login Failed",
   privateRouteFailed: "Access Denied",
+  successSignupToast: "Signed up Successfully",
+  errorSignupToast: "Signup Failed",
 };
 
 export default en;

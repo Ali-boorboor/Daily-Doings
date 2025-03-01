@@ -2,7 +2,7 @@ import * as Yup from "yup";
 
 const username = (t: (key: string) => string) => {
   return Yup.string()
-    .matches(/^[a-zA-Z]\S+$/, t("usernameRegexValidation"))
+    .matches(/^[a-zA-Z0-9_.]{1,20}$/, t("usernameRegexValidation"))
     .min(3, t("usernameMinValidation"))
     .required(t("usernameRequiredValidation"));
 };
@@ -22,8 +22,14 @@ const submitPassword = (t: (key: string) => string) => {
 
 const email = (t: (key: string) => string) => {
   return Yup.string()
-    .matches(/^\S+@\S+\.\S+$/, t("emailRegexValidation"))
+    .matches(/^(([^@\s]+)@([\w-]+\.)+[\w-]{2,5})$/, t("emailRegexValidation"))
     .required(t("emailRequiredValidation"));
 };
 
-export { username, password, submitPassword, email };
+const identifier = (t: (key: string) => string) => {
+  return Yup.string()
+    .matches(/^(([^@\s]+)@([\w-]+\.)+[\w-]{2,5})|^[a-zA-Z0-9_.]{1,20}$/)
+    .required();
+};
+
+export { username, password, submitPassword, email, identifier };

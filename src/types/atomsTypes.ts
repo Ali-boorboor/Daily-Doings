@@ -4,6 +4,7 @@ type buttonPropsType = {
   text: string;
   style?: string;
   isLink?: boolean;
+  disabled?: boolean;
   linkTo?: To | any;
   onClickHandler?: any;
   isOutlineBtn?: boolean;

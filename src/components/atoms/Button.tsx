@@ -8,6 +8,7 @@ function Button({
   style,
   linkTo,
   isLink,
+  disabled,
   isOutlineBtn,
   onClickHandler,
 }: buttonPropsType) {
@@ -23,6 +24,7 @@ function Button({
   }
   return (
     <button
+      disabled={disabled}
       className={`btn ${isOutlineBtn && "btn-outline"} ${style}`}
       onClick={onClickHandler}
       type={type}

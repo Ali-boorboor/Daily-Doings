@@ -118,6 +118,8 @@ const fa = {
   successLoginToast: "با موفقیت وارد شدید",
   errorLoginToast: "ورود ناموفق",
   privateRouteFailed: "دسترسی ممنوع شد",
+  successSignupToast: "با موفقیت ثبت نام شدید",
+  errorSignupToast: "ثبت نام ناموفق",
 };
 
 export default fa;

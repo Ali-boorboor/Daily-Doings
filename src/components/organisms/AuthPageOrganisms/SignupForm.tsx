@@ -82,6 +82,7 @@ function SignupForm({ initialValues, onSubmitHandler }: signupFormPropsType) {
             />
             <div>
               <Button
+                disabled={!values.agreeToTerms}
                 style="btn-success w-full mb-4 md:mb-0"
                 text={t("signupBtn")}
                 type="submit"
