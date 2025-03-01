@@ -41,14 +41,6 @@ const toastDetails = atom<toastDetailsStateType>({
   },
 });
 
-const userDetails = atom({
-  key: "userDetails",
-  default: {
-    username: "",
-    cover: "",
-  },
-});
-
 export {
   hasLoading,
   theme,
@@ -56,5 +48,4 @@ export {
   lang,
   modalDetails,
   toastDetails,
-  userDetails,
 };

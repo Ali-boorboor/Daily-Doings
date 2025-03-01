@@ -28,7 +28,7 @@ const fa = {
   emailRegexValidation: "لطفا ایمیل خود را به درستی وارد کنید",
   emailRequiredValidation: "لطفا ایمیل خود را وارد کنید",
   forgotPassText: "فراموشی کلمه عبور",
-  signupFileUploaderText: "(png، jpg) یک آواتار را انتخاب کنید",
+  signupFileUploaderText: "یک آواتار را انتخاب کنید (png، jpg)",
   loginText: "ورود به حساب کاربری",
   signupText: "ساخت حساب کاربری",
   usernameInput: "نام کاربری",
@@ -123,6 +123,14 @@ const fa = {
   errorSignupToast: "ثبت نام ناموفق",
   successLogoutToast: "با موفقیت خارج شدید",
   errorLogoutToast: "خروج ناموفق",
+  successForgotPassToast: "کلمه عبور جدید به ایمیل شما ارسال شد",
+  errorForgotPassToast: "عملیات ناموفق",
+  successChangeCoverToast: "عکس پروفایل با موفقیت تغییر یافت",
+  errorChangeCoverToast: "خطا در هنگام تغییر عکس پروفایل",
+  successChangeUsernameToast: "نام کاربری با موفقیت تغییر یافت",
+  errorChangeUsernameToast: "خطا در هنگام تغییر نام کاربری",
+  successChangePassToast: "کلمه عبور با موفقیت تغییر یافت",
+  errorChangePassToast: "خطا در هنگام تغییر کلمه عبور",
 };
 
 export default fa;

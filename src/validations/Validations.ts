@@ -26,9 +26,20 @@ const signupValidation = (t: (key: string) => string) => {
 
 const forgotPassValidation = (t: (key: string) => string) => {
   return Yup.object().shape({
-    username: username(t),
-    email: email(t),
+    identifier: identifier(t),
   });
 };
 
-export { loginValidation, signupValidation, forgotPassValidation };
+const changeCoverValidation = (t: (key: string) => string) => {
+  return Yup.object().shape({
+    cover: Yup.mixed().required(),
+    password: password(t),
+  });
+};
+
+export {
+  loginValidation,
+  signupValidation,
+  forgotPassValidation,
+  changeCoverValidation,
+};

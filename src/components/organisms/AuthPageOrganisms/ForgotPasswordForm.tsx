@@ -6,7 +6,6 @@ import { forgotPasswordFormPropsType } from "@type/organismsTypes";
 import { forgotPassValidation } from "@v/Validations";
 import { useTranslation } from "react-i18next";
 import { FaUserLarge } from "react-icons/fa6";
-import { MdEmail } from "react-icons/md";
 import { Form, Formik } from "formik";
 import { memo } from "react";
 
@@ -24,26 +23,17 @@ function ForgotPasswordForm({
     >
       {({ values, handleChange, setFieldTouched }) => (
         <Form className="h-full basis-full md:basis-1/2 w-full flex gap-4 flex-col justify-center items-center">
-          <AuthPageHeading name={values.username} text={t("forgotPassText")} />
+          <AuthPageHeading text={t("forgotPassText")} />
           <div className="max-w-screen-md w-full overflow-hidden flex flex-col gap-4 md:gap-8 p-4">
             <Input
-              name="username"
+              name="identifier"
               type="text"
-              value={values.username}
+              value={values.identifier}
               onChangeHandler={handleChange}
-              placeholder={t("usernameInput")}
+              placeholder={t("identifierInput")}
               icon={<FaUserLarge />}
               setFieldTouched={setFieldTouched}
               maxLength={20}
-            />
-            <Input
-              name="email"
-              type="email"
-              value={values.email}
-              onChangeHandler={handleChange}
-              placeholder={t("emailInput")}
-              icon={<MdEmail />}
-              setFieldTouched={setFieldTouched}
             />
             <div>
               <Button

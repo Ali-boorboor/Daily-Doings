@@ -4,14 +4,14 @@ import ThemePalette from "@m/ThemePalette";
 import docTitle from "@/utils/documentTitle";
 import NavigateBtns from "@m/SettingsMolecules/NavigateBtns";
 import LanguageSettings from "@m/SettingsMolecules/LanguageSettings";
-import { userDetails } from "@st/globalStates";
 import { useTranslation } from "react-i18next";
+import { useCookies } from "react-cookie";
+import { FaUser } from "react-icons/fa";
 import { memo, useEffect } from "react";
-import { useRecoilValue } from "recoil";
 
 function Settings() {
   const { t } = useTranslation();
-  const userInfo = useRecoilValue(userDetails);
+  const [cookies] = useCookies(["cover", "username"]);
 
   useEffect(() => {
     docTitle("Settings Page");
@@ -24,13 +24,17 @@ function Settings() {
         title={t("settingsLink")}
       />
       <div className="ring-accent ring-offset-base-100 w-40 h-40 my-6 mx-auto rounded-full overflow-hidden ring ring-offset-2">
-        <img
-          crossOrigin="anonymous"
-          className="object-cover w-full h-full"
-          src={userInfo?.cover}
-        />
+        {cookies?.cover ? (
+          <img
+            crossOrigin="anonymous"
+            className="w-full h-full object-cover"
+            src={cookies?.cover}
+          />
+        ) : (
+          <FaUser className="w-full h-full bg-cover" />
+        )}
       </div>
-      <p className="text-center text-lg font-bold">{userInfo?.username}</p>
+      <p className="text-center text-lg font-bold">{cookies?.username}</p>
       <div className="p-4 mt-4">
         <ThemePalette styleThemesContainer="justify-start gap-4 px-1" />
         <Divider />

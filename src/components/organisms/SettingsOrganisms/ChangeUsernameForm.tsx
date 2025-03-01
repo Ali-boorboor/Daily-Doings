@@ -1,12 +1,27 @@
 import Input from "@a/Input";
 import Button from "@a/Button";
 import HeaderTitle from "@a/HeaderTitle";
+import usePutReq from "@/hooks/usePutReq";
+import { ChangeUsernameFormOnSubmitValues } from "@type/organismsTypes";
 import { useTranslation } from "react-i18next";
 import { Form, Formik } from "formik";
 import { memo } from "react";
 
 function ChangeUsernameForm() {
   const { t } = useTranslation();
+  const { mutate: putReq } = usePutReq({
+    successTitle: t("successChangeUsernameToast"),
+    errorTitle: t("errorChangeUsernameToast"),
+    navigateTo: "/home/settings",
+    url: "/user/change-username",
+  });
+
+  const onSubmitHandler = (values: ChangeUsernameFormOnSubmitValues) => {
+    putReq({
+      newUsername: values.newUsername,
+      password: values.password,
+    });
+  };
 
   return (
     <Formik
@@ -14,7 +29,7 @@ function ChangeUsernameForm() {
         newUsername: "",
         password: "",
       }}
-      onSubmit={() => {}}
+      onSubmit={onSubmitHandler}
     >
       {({ values, handleChange, setFieldTouched }) => (
         <Form className="h-full m-auto max-w-screen-lg overflow-hidden flex flex-col gap-4 justify-center items-center badge-ghost ring ring-primary rounded-lg drop-shadow-lg ring-offset-2 ring-offset-base-100">

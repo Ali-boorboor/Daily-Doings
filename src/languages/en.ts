@@ -123,6 +123,14 @@ const en = {
   errorSignupToast: "Signup Failed",
   successLogoutToast: "Logged out Successfully",
   errorLogoutToast: "Logout Failed",
+  successForgotPassToast: "New Password Sent To Your Email",
+  errorForgotPassToast: "Operation Failed",
+  successChangeCoverToast: "Cover Changed Successfully",
+  errorChangeCoverToast: "Failed To Change Cover",
+  successChangeUsernameToast: "Username Changed Successfully",
+  errorChangeUsernameToast: "Failed To Change Username",
+  successChangePassToast: "Password Changed Successfully",
+  errorChangePassToast: "Failed To Change Password",
 };
 
 export default en;

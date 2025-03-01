@@ -1,4 +1,4 @@
-type usePostReqPropsType = {
+type useReqHooksPropsType = {
   refetchQueryKey?: string;
   successTitle?: string;
   navigateTo?: string;
@@ -6,4 +6,4 @@ type usePostReqPropsType = {
   url: string;
 };
 
-export type { usePostReqPropsType };
+export type { useReqHooksPropsType };

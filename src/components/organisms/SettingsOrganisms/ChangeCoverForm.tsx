@@ -1,12 +1,30 @@
 import Input from "@a/Input";
 import Button from "@a/Button";
 import HeaderTitle from "@a/HeaderTitle";
+import usePutReq from "@/hooks/usePutReq";
+import { changeCoverFormOnSubmitValues } from "@type/organismsTypes";
+import { changeCoverValidation } from "@v/Validations";
 import { useTranslation } from "react-i18next";
 import { Form, Formik } from "formik";
 import { memo } from "react";
 
 function ChangeCoverForm() {
   const { t } = useTranslation();
+  const { mutate: putReq } = usePutReq({
+    successTitle: t("successChangeCoverToast"),
+    errorTitle: t("errorChangeCoverToast"),
+    navigateTo: "/home/settings",
+    url: "/user/change-cover",
+  });
+
+  const onSubmitHandler = (values: changeCoverFormOnSubmitValues) => {
+    const formData = new FormData();
+
+    formData.append("cover", values.cover);
+    formData.append("password", values.password);
+
+    putReq(formData);
+  };
 
   return (
     <Formik
@@ -14,7 +32,8 @@ function ChangeCoverForm() {
         cover: null,
         password: "",
       }}
-      onSubmit={() => {}}
+      onSubmit={onSubmitHandler}
+      validationSchema={() => changeCoverValidation(t)}
     >
       {({ values, handleChange, setFieldValue, setFieldTouched }) => (
         <Form className="h-full m-auto max-w-screen-lg overflow-hidden flex flex-col gap-4 justify-center items-center badge-ghost ring ring-primary rounded-lg drop-shadow-lg ring-offset-2 ring-offset-base-100">
@@ -41,7 +60,12 @@ function ChangeCoverForm() {
               placeholder={t("passwordInput")}
               setFieldTouched={setFieldTouched}
             />
-            <Button style="btn-success w-full" text={t("submitBtn")} type="submit" isOutlineBtn />
+            <Button
+              style="btn-success w-full"
+              text={t("submitBtn")}
+              type="submit"
+              isOutlineBtn
+            />
           </div>
         </Form>
       )}

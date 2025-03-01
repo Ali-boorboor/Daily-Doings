@@ -5,16 +5,18 @@ import MainLogo from "@a/MainLogo";
 import SearchInput from "@m/SearchInput";
 import LangTogleBtn from "@m/LangTogleBtn";
 import usePostReq from "@/hooks/usePostReq";
-import { userDetails, isSideBarCollapse } from "@st/globalStates";
-import { useRecoilState, useRecoilValue } from "recoil";
+import { isSideBarCollapse } from "@st/globalStates";
+import { useRecoilState } from "recoil";
 import { useTranslation } from "react-i18next";
+import { useCookies } from "react-cookie";
 import { IoClose } from "react-icons/io5";
 import { LuMenu } from "react-icons/lu";
 import { memo } from "react";
+import { FaUser } from "react-icons/fa";
 
 function MainHeader() {
   const [isSideBarOpen, setIsSideBarOpen] = useRecoilState(isSideBarCollapse);
-  const userInfo = useRecoilValue(userDetails);
+  const [cookies] = useCookies(["cover", "username"]);
   const { t } = useTranslation();
   const { language } = i18next;
   const { mutate: postReq } = usePostReq({
@@ -60,14 +62,18 @@ function MainHeader() {
           <div className="dropdown dropdown-end">
             <div tabIndex={0} role="button" className="avatar online">
               <div className="ring-accent ring-offset-base-100 w-10 rounded-full ring ring-offset-2">
-                <img crossOrigin="anonymous" src={userInfo?.cover} />
+                {cookies?.cover ? (
+                  <img crossOrigin="anonymous" src={cookies?.cover} />
+                ) : (
+                  <FaUser className="w-full h-full bg-cover" />
+                )}
               </div>
             </div>
             <nav
               tabIndex={0}
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow ring-accent ring-offset-2 ring-offset-base-100 ring"
             >
-              <p className="text-lg font-bold">{userInfo?.username}</p>
+              <p className="text-lg font-bold">{cookies?.username}</p>
               <Divider style="m-1" />
               <Button
                 style="btn-ghost"

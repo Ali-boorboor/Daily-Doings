@@ -1,15 +1,12 @@
 import usePostReq from "@/hooks/usePostReq";
-import { useRecoilState } from "recoil";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
-import { userDetails } from "@st/globalStates";
 import { memo, useEffect, useState } from "react";
 
 function PrivateRoute({ children }: any) {
   const navigate = useNavigate();
   const { t } = useTranslation();
   const [IsAuth, setIsAuth] = useState(false);
-  const [, setUserInfo] = useRecoilState(userDetails);
   const {
     mutate: postReq,
     data,
@@ -27,7 +24,6 @@ function PrivateRoute({ children }: any) {
   useEffect(() => {
     if (isSuccess) {
       setIsAuth(true);
-      setUserInfo({ username: data?.data?.username, cover: data?.data?.cover });
     } else if (isError) {
       navigate("/login");
     }

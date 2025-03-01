@@ -5,7 +5,7 @@ import { useReqHooksPropsType } from "@type/hooksTypes";
 import { useNavigate } from "react-router-dom";
 import { useRecoilState } from "recoil";
 
-function usePostReq({
+function usePutReq({
   url,
   refetchQueryKey,
   successTitle,
@@ -19,7 +19,7 @@ function usePostReq({
 
   return useMutation(
     (reqOptions: any) =>
-      axiosInstance.post(url, reqOptions, { withCredentials: true }),
+      axiosInstance.put(url, reqOptions, { withCredentials: true }),
     {
       onMutate: () => setLoading(true),
       onSuccess: () => {
@@ -48,4 +48,4 @@ function usePostReq({
   );
 }
 
-export default usePostReq;
+export default usePutReq;

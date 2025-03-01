@@ -1,12 +1,21 @@
+import usePostReq from "@/hooks/usePostReq";
 import docTitle from "@/utils/documentTitle";
 import ForgotPasswordForm from "@o/AuthPageOrganisms/ForgotPasswordForm";
 import { forgotPassOnSubmitValues } from "@type/templatesTypes";
 import { AuthPagesCoverState } from "@st/organismsStates";
+import { useTranslation } from "react-i18next";
 import { useRecoilState } from "recoil";
 import { memo, useEffect } from "react";
 
 function ForgotPassword() {
+  const { t } = useTranslation();
   const [, setSrcIndex] = useRecoilState(AuthPagesCoverState);
+  const { mutate: postReq } = usePostReq({
+    successTitle: t("successForgotPassToast"),
+    errorTitle: t("errorForgotPassToast"),
+    navigateTo: "/login",
+    url: "/user/forgot-password",
+  });
 
   useEffect(() => {
     docTitle("Forgot Password Page");
@@ -16,11 +25,10 @@ function ForgotPassword() {
   return (
     <ForgotPasswordForm
       initialValues={{
-        username: "",
-        email: "",
+        identifier: "",
       }}
       onSubmitHandler={(values: forgotPassOnSubmitValues) => {
-        console.log(values);
+        postReq({ identifier: values.identifier });
       }}
     />
   );

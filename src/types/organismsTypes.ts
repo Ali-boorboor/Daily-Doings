@@ -41,8 +41,27 @@ type forgotPasswordFormPropsType = {
     ) => void | (Promise<any> & (() => void)));
 };
 
+type changeCoverFormOnSubmitValues = {
+  cover: any;
+  password: string;
+};
+
+type ChangeUsernameFormOnSubmitValues = {
+  newUsername: string;
+  password: string;
+};
+
+type ChangePasswordFormOnSubmitValues = {
+  currentPassword: string;
+  newPassword: string;
+  submitPassword: string;
+};
+
 export type {
   loginFormPropsType,
   signupFormPropsType,
   forgotPasswordFormPropsType,
+  changeCoverFormOnSubmitValues,
+  ChangeUsernameFormOnSubmitValues,
+  ChangePasswordFormOnSubmitValues,
 };

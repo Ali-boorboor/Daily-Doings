@@ -4,8 +4,7 @@ type loginOnSubmitValues = {
 };
 
 type forgotPassOnSubmitValues = {
-  username: string;
-  email: string;
+  identifier: string;
 };
 
 type signupOnSubmitValues = {
