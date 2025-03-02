@@ -1,4 +1,5 @@
 import HeaderTitle from "@a/HeaderTitle";
+import { BarChartPropsType } from "@type/moleculesTypes";
 import {
   Bar,
   CartesianGrid,
@@ -12,15 +13,8 @@ import {
 import { useTranslation } from "react-i18next";
 import { memo } from "react";
 
-function BarChart() {
+function BarChart({ foldersOverview }: BarChartPropsType) {
   const { t } = useTranslation();
-
-  const data = [
-    { name: "Folder A", doneTodos: 2400 },
-    { name: "Folder B", doneTodos: 1398 },
-    { name: "Folder C", doneTodos: 9800 },
-    { name: "Folder D", doneTodos: 3908 },
-  ];
 
   return (
     <div
@@ -32,7 +26,7 @@ function BarChart() {
         title={t("dashboardActivityOverview")}
       />
       <ResponsiveContainer width="100%" height={300}>
-        <Chart width={730} height={250} data={data}>
+        <Chart width={730} height={250} data={foldersOverview}>
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="name" />
           <YAxis />

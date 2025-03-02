@@ -17,32 +17,37 @@ function useGetReq({
   const [, setToastDetails] = useRecoilState(toastDetails);
   const [, setLoading] = useRecoilState(hasLoading);
 
-  useEffect(() => setLoading(true), []);
+  const { data, isFetching, isSuccess, isError } = useQuery(
+    queryKey,
+    () => axiosInstance.get(url),
+    {
+      cacheTime: cacheTime || 0,
+      staleTime: staleTime || 0,
+      refetchOnWindowFocus: refetchOnWindowFocus || false,
+      onSuccess: () => {
+        successTitle &&
+          setToastDetails({
+            title: successTitle,
+            toastState: "alert-success",
+            ringState: "ring-success",
+            isShown: true,
+          });
+      },
+      onError: () => {
+        errorTitle &&
+          setToastDetails({
+            title: errorTitle,
+            toastState: "alert-error",
+            ringState: "ring-error",
+            isShown: true,
+          });
+      },
+    }
+  );
 
-  return useQuery(queryKey, () => axiosInstance.get(url), {
-    cacheTime: cacheTime || 0,
-    staleTime: staleTime || 0,
-    refetchOnWindowFocus: refetchOnWindowFocus || false,
-    onSuccess: () => {
-      successTitle &&
-        setToastDetails({
-          title: successTitle,
-          toastState: "alert-success",
-          ringState: "ring-success",
-          isShown: true,
-        });
-    },
-    onError: () => {
-      errorTitle &&
-        setToastDetails({
-          title: errorTitle,
-          toastState: "alert-error",
-          ringState: "ring-error",
-          isShown: true,
-        });
-    },
-    onSettled: () => setLoading(false),
-  });
+  useEffect(() => setLoading(isFetching), [isFetching]);
+
+  return { data, isSuccess, isError };
 }
 
 export default useGetReq;

@@ -50,6 +50,37 @@ type paginationPropsType = { style?: string };
 
 type EditModalPropsType = { hasRemoveModal?: boolean };
 
+type PieChartPropsType = {
+  data: {
+    allTodosCount: number;
+    doneTodos: {
+      doneTodosCount: number;
+      doneTodosPercent: number;
+    };
+    notDoneTodos: {
+      notDoneTodosCount: number;
+      notDoneTodosPercent: number;
+    };
+    awaitTodos: {
+      awaitTodosCount: number;
+      awaitTodosPercent: number;
+    };
+    inProgressTodos: {
+      inProgressTodosCount: number;
+      inProgressTodosPercent: number;
+    };
+  };
+};
+
+type BarChartPropsType = {
+  foldersOverview: [
+    {
+      name: string;
+      doneTodos: number;
+    }
+  ];
+};
+
 export type {
   authPageHeadingPropsType,
   searchInputPropsType,
@@ -61,4 +92,6 @@ export type {
   tableWrapperPropsType,
   paginationPropsType,
   EditModalPropsType,
+  PieChartPropsType,
+  BarChartPropsType,
 };

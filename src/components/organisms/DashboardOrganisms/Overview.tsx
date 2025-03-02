@@ -1,10 +1,11 @@
-import OverviewProgress from "@m/DashboardMolecules/OverviewProgress";
-import HeaderTitle from "@a/HeaderTitle";
 import Button from "@a/Button";
+import HeaderTitle from "@a/HeaderTitle";
+import OverviewProgress from "@m/DashboardMolecules/OverviewProgress";
+import { PieChartPropsType } from "@type/moleculesTypes";
 import { useTranslation } from "react-i18next";
 import { memo } from "react";
 
-function Overview() {
+function Overview({ data }: PieChartPropsType) {
   const { t } = useTranslation();
 
   return (
@@ -23,36 +24,36 @@ function Overview() {
       </div>
       <div className="flex flex-wrap gap-4 justify-around p-4">
         <OverviewProgress
-          value={20}
+          value={data?.doneTodos?.doneTodosPercent}
           style="ring-success text-success"
-          text="20%"
+          text={`${data?.doneTodos?.doneTodosPercent}%`}
           title={t("doneTodos")}
-          count={2}
-          totalCount={10}
+          count={data?.doneTodos?.doneTodosCount}
+          totalCount={data?.allTodosCount}
         />
         <OverviewProgress
-          value={40}
+          value={data?.notDoneTodos?.notDoneTodosPercent}
           style="ring-error text-error"
-          text="40%"
+          text={`${data?.notDoneTodos?.notDoneTodosPercent}%`}
           title={t("notDoneTodos")}
-          count={4}
-          totalCount={10}
+          count={data?.notDoneTodos?.notDoneTodosCount}
+          totalCount={data?.allTodosCount}
         />
         <OverviewProgress
-          value={30}
+          value={data?.inProgressTodos?.inProgressTodosPercent}
           style="ring-info text-info"
-          text="30%"
+          text={`${data?.inProgressTodos?.inProgressTodosPercent}%`}
           title={t("inProgressTodos")}
-          count={3}
-          totalCount={10}
+          count={data?.inProgressTodos?.inProgressTodosCount}
+          totalCount={data?.allTodosCount}
         />
         <OverviewProgress
-          value={10}
+          value={data?.awaitTodos?.awaitTodosPercent}
           style="ring-warning text-warning"
-          text="10%"
+          text={`${data?.awaitTodos?.awaitTodosPercent}%`}
           title={t("awaitTodos")}
-          count={1}
-          totalCount={10}
+          count={data?.awaitTodos?.awaitTodosCount}
+          totalCount={data?.allTodosCount}
         />
       </div>
     </div>

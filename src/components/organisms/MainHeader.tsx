@@ -29,7 +29,9 @@ function MainHeader() {
   return (
     <div className="navbar z-50 fixed top-0 px-4 lg:px-6 bg-base-100 drop-shadow-lg border-b-primary border-b">
       <div
-        className="flex-none tooltip tooltip-bottom"
+        className={`flex-none tooltip ${
+          language === "en" ? "tooltip-right" : "tooltip-left"
+        }`}
         data-tip={
           isSideBarOpen ? t("sideBarCloseTitleBtn") : t("sideBarOpenTitleBtn")
         }

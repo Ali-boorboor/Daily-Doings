@@ -1,4 +1,4 @@
-import usePostReq from "@/hooks/usePostReq";
+import useGetReq from "@/hooks/useGetReq";
 import { useRecoilState } from "recoil";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -10,16 +10,10 @@ function PrivateRoute({ children }: any) {
   const { t } = useTranslation();
   const [IsAuth, setIsAuth] = useState(false);
   const [, setToastDetails] = useRecoilState(toastDetails);
-  const {
-    mutate: postReq,
-    data,
-    isSuccess,
-    isError,
-  } = usePostReq({ url: "/auth" });
-
-  useEffect(() => {
-    postReq({});
-  }, []);
+  const { data, isSuccess, isError } = useGetReq({
+    queryKey: "AUTH",
+    url: "/auth",
+  });
 
   useEffect(() => {
     if (isSuccess) {

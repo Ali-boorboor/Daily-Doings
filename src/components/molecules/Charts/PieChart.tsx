@@ -1,4 +1,5 @@
 import HeaderTitle from "@a/HeaderTitle";
+import { PieChartPropsType } from "@type/moleculesTypes";
 import {
   Cell,
   Pie,
@@ -10,15 +11,24 @@ import {
 import { useTranslation } from "react-i18next";
 import { memo } from "react";
 
-function PieChart() {
+function PieChart({ data }: PieChartPropsType) {
   const { t } = useTranslation();
   const COLORS = ["#34d399", "#f87171", "#38bdf8", "#fbbf24"];
 
-  const data = [
-    { name: t("doneTodos"), value: 20 },
-    { name: t("notDoneTodos"), value: 40 },
-    { name: t("inProgressTodos"), value: 30 },
-    { name: t("awaitTodos"), value: 10 },
+  const datas = [
+    { name: `${t("doneTodos")} %`, value: data?.doneTodos?.doneTodosPercent },
+    {
+      name: `${t("notDoneTodos")} %`,
+      value: data?.notDoneTodos?.notDoneTodosPercent,
+    },
+    {
+      name: `${t("inProgressTodos")} %`,
+      value: data?.inProgressTodos?.inProgressTodosPercent,
+    },
+    {
+      name: `${t("awaitTodos")} %`,
+      value: data?.awaitTodos?.awaitTodosPercent,
+    },
   ];
 
   return (
@@ -29,8 +39,8 @@ function PieChart() {
       />
       <ResponsiveContainer width="100%" height={300}>
         <Chart>
-          <Pie data={data} cx="50%" cy="50%" outerRadius={100} dataKey="value">
-            {data.map((_, index) => (
+          <Pie data={datas} cx="50%" cy="50%" outerRadius={100} dataKey="value">
+            {datas.map((_, index) => (
               <Cell
                 key={`cell-${index}`}
                 fill={COLORS[index % COLORS.length]}
