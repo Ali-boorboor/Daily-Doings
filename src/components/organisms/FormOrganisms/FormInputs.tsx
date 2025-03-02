@@ -34,13 +34,13 @@ function FormInputs({ values, handleChange, setFieldTouched }: any) {
           styleInput="select-primary"
           options={
             <>
-              <option value={0} disabled>
+              <option value={""} disabled>
                 {t("formNoFolderOption")}
               </option>
-              <option value={1}>Folder A</option>
-              <option value={2}>Folder B</option>
-              <option value={3}>Folder C</option>
-              <option value={4}>Folder D</option>
+              <option value={"1"}>Folder A</option>
+              <option value={"2"}>Folder B</option>
+              <option value={"3"}>Folder C</option>
+              <option value={"4"}>Folder D</option>
             </>
           }
           isSelectBox
@@ -56,10 +56,18 @@ function FormInputs({ values, handleChange, setFieldTouched }: any) {
           styleInput="select-primary"
           options={
             <>
-              <option value={1}>{t("todayTodosVeryLowPriority")}</option>
-              <option value={2}>{t("todayTodosLowPriority")}</option>
-              <option value={3}>{t("todayTodosMediumPriority")}</option>
-              <option value={4}>{t("todayTodosHighPriority")}</option>
+              <option value={"67bc5bf2a74538ab87c5a911"}>
+                {t("todayTodosVeryLowPriority")}
+              </option>
+              <option value={"67bc5c85a74538ab87c5a912"}>
+                {t("todayTodosLowPriority")}
+              </option>
+              <option value={"67bc5ca9a74538ab87c5a913"}>
+                {t("todayTodosMediumPriority")}
+              </option>
+              <option value={"67bc5cc9a74538ab87c5a914"}>
+                {t("todayTodosHighPriority")}
+              </option>
             </>
           }
           isSelectBox

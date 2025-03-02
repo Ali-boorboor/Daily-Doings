@@ -131,6 +131,8 @@ const en = {
   errorChangeUsernameToast: "Failed To Change Username",
   successChangePassToast: "Password Changed Successfully",
   errorChangePassToast: "Failed To Change Password",
+  successAddTodoFormToast: "Todo Added Successfully",
+  errorAddTodoFormToast: "Failed To Add Todo",
 };
 
 export default en;

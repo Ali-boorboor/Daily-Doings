@@ -57,6 +57,15 @@ type ChangePasswordFormOnSubmitValues = {
   submitPassword: string;
 };
 
+type FormsFromOnSubmitValues = {
+  todoSubject: string;
+  todoFolder: string;
+  todoPriority: string;
+  isListTodo: boolean;
+  todoDescription: string;
+  todoLabel: string;
+};
+
 export type {
   loginFormPropsType,
   signupFormPropsType,
@@ -64,4 +73,5 @@ export type {
   changeCoverFormOnSubmitValues,
   ChangeUsernameFormOnSubmitValues,
   ChangePasswordFormOnSubmitValues,
+  FormsFromOnSubmitValues,
 };

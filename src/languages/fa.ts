@@ -131,6 +131,8 @@ const fa = {
   errorChangeUsernameToast: "خطا در هنگام تغییر نام کاربری",
   successChangePassToast: "کلمه عبور با موفقیت تغییر یافت",
   errorChangePassToast: "خطا در هنگام تغییر کلمه عبور",
+  successAddTodoFormToast: "کار با موفقیت اضافه شد",
+  errorAddTodoFormToast: "خطا در هنگام اضافه کردن کار",
 };
 
 export default fa;
