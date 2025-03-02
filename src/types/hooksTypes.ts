@@ -6,4 +6,14 @@ type useReqHooksPropsType = {
   url: string;
 };
 
-export type { useReqHooksPropsType };
+type useGetReqHookPropsType = {
+  queryKey: string;
+  successTitle?: string;
+  errorTitle?: string;
+  url: string;
+  cacheTime?: number;
+  staleTime?: number;
+  refetchOnWindowFocus?: boolean;
+};
+
+export type { useReqHooksPropsType, useGetReqHookPropsType };

@@ -13,7 +13,7 @@ function ChangeCoverForm() {
   const { mutate: putReq } = usePutReq({
     successTitle: t("successChangeCoverToast"),
     errorTitle: t("errorChangeCoverToast"),
-    navigateTo: "/home/settings",
+    navigateTo: "/settings",
     url: "/user/change-cover",
   });
 

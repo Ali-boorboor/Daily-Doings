@@ -17,7 +17,7 @@ function FormsFrom() {
   const { mutate: putReq } = usePostReq({
     successTitle: t("successAddTodoFormToast"),
     errorTitle: t("errorAddTodoFormToast"),
-    navigateTo: "/home/table",
+    navigateTo: "/table",
     url: "/todo",
   });
 

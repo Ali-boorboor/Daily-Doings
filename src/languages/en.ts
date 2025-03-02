@@ -118,7 +118,7 @@ const en = {
   removeFolderBtn: "Remove Folder",
   successLoginToast: "Logged In Successfully",
   errorLoginToast: "Login Failed",
-  privateRouteFailed: "Access Denied",
+  privateRouteFailed: "Access Denied, Please Login First",
   successSignupToast: "Signed up Successfully",
   errorSignupToast: "Signup Failed",
   successLogoutToast: "Logged out Successfully",
@@ -133,6 +133,11 @@ const en = {
   errorChangePassToast: "Failed To Change Password",
   successAddTodoFormToast: "Todo Added Successfully",
   errorAddTodoFormToast: "Failed To Add Todo",
+  noDataAlertText: "No Data",
+  notDoneStatus: "Not Done",
+  doneStatus: "Done",
+  awaitStatus: "Await",
+  inProgressStatus: "In Progress",
 };
 
 export default en;

@@ -20,7 +20,7 @@ function FolderTodosTable() {
           <Button
             text={t("dashboardStatusBtn")}
             style="btn-accent drop-shadow-lg"
-            linkTo="/home/form"
+            linkTo="/form"
             isLink
           />
         }

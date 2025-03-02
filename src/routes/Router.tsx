@@ -32,7 +32,7 @@ const HomePage = lazy(() => import("@/pages/HomePage"));
 
 const Routes = [
   {
-    path: "/",
+    path: "/auth",
     element: (
       <SuspenseWrapper>
         <AuthPage />
@@ -46,7 +46,7 @@ const Routes = [
     ],
   },
   {
-    path: "/home",
+    path: "/",
     element: (
       <SuspenseWrapper>
         <PrivateRoute>

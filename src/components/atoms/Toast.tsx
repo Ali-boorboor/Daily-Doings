@@ -23,7 +23,7 @@ function Toast() {
       }`}
     >
       <div
-        className={`alert ${ToastDetails.toastState} ring ${ToastDetails.ringState} ring-offset-2 ring-offset-base-100 drop-shadow-lg`}
+        className={`alert block text-center ${ToastDetails.toastState} ring ${ToastDetails.ringState} ring-offset-2 ring-offset-base-100 drop-shadow-lg`}
       >
         <span>{ToastDetails.title}</span>
       </div>

@@ -12,7 +12,7 @@ function ChangeUsernameForm() {
   const { mutate: putReq } = usePutReq({
     successTitle: t("successChangeUsernameToast"),
     errorTitle: t("errorChangeUsernameToast"),
-    navigateTo: "/home/settings",
+    navigateTo: "/settings",
     url: "/user/change-username",
   });
 

@@ -66,6 +66,29 @@ type FormsFromOnSubmitValues = {
   todoLabel: string;
 };
 
+type RecentTableTodos = {
+  _id: string;
+  subject: string;
+  priority: {
+    _id: string;
+    priority: string;
+  };
+  status: {
+    _id: string;
+    status: string;
+  };
+  folder?: {
+    _id: string;
+    name: string;
+  };
+  labelColor: string;
+  isListTodo: number;
+  description?: string;
+  listItems: string[];
+  createdAt: Date;
+  updatedAt: Date;
+};
+
 export type {
   loginFormPropsType,
   signupFormPropsType,
@@ -74,4 +97,5 @@ export type {
   ChangeUsernameFormOnSubmitValues,
   ChangePasswordFormOnSubmitValues,
   FormsFromOnSubmitValues,
+  RecentTableTodos,
 };

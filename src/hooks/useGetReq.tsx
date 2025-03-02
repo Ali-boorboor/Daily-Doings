@@ -1,28 +1,29 @@
 import axiosInstance from "@/services/axiosInstance";
 import { hasLoading, toastDetails } from "@st/globalStates";
-import { useMutation, useQueryClient } from "react-query";
-import { useReqHooksPropsType } from "@type/hooksTypes";
-import { useNavigate } from "react-router-dom";
+import { useGetReqHookPropsType } from "@type/hooksTypes";
 import { useRecoilState } from "recoil";
+import { useQuery } from "react-query";
+import { useEffect } from "react";
 
-function usePutReq({
+function useGetReq({
   url,
-  refetchQueryKey,
+  queryKey,
   successTitle,
   errorTitle,
-  navigateTo,
-}: useReqHooksPropsType) {
+  cacheTime,
+  staleTime,
+  refetchOnWindowFocus,
+}: useGetReqHookPropsType) {
   const [, setToastDetails] = useRecoilState(toastDetails);
   const [, setLoading] = useRecoilState(hasLoading);
-  const queryClient = useQueryClient();
-  const navigate = useNavigate();
 
-  return useMutation((reqOptions: any) => axiosInstance.put(url, reqOptions), {
-    onMutate: () => setLoading(true),
+  useEffect(() => setLoading(true), []);
+
+  return useQuery(queryKey, () => axiosInstance.get(url), {
+    cacheTime: cacheTime || 0,
+    staleTime: staleTime || 0,
+    refetchOnWindowFocus: refetchOnWindowFocus || false,
     onSuccess: () => {
-      refetchQueryKey && queryClient.invalidateQueries(refetchQueryKey);
-      navigateTo && navigate(navigateTo);
-
       successTitle &&
         setToastDetails({
           title: successTitle,
@@ -44,4 +45,4 @@ function usePutReq({
   });
 }
 
-export default usePutReq;
+export default useGetReq;

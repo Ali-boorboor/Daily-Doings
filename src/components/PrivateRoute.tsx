@@ -1,21 +1,21 @@
 import usePostReq from "@/hooks/usePostReq";
-import { useTranslation } from "react-i18next";
+import { useRecoilState } from "recoil";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import { toastDetails } from "@st/globalStates";
 import { memo, useEffect, useState } from "react";
 
 function PrivateRoute({ children }: any) {
   const navigate = useNavigate();
   const { t } = useTranslation();
   const [IsAuth, setIsAuth] = useState(false);
+  const [, setToastDetails] = useRecoilState(toastDetails);
   const {
     mutate: postReq,
     data,
     isSuccess,
     isError,
-  } = usePostReq({
-    errorTitle: t("privateRouteFailed"),
-    url: "/auth",
-  });
+  } = usePostReq({ url: "/auth" });
 
   useEffect(() => {
     postReq({});
@@ -25,7 +25,13 @@ function PrivateRoute({ children }: any) {
     if (isSuccess) {
       setIsAuth(true);
     } else if (isError) {
-      navigate("/login");
+      setToastDetails({
+        title: t("privateRouteFailed"),
+        ringState: "ring-warning",
+        toastState: "alert-warning",
+        isShown: true,
+      });
+      navigate("/auth/login");
     }
   }, [data, isSuccess, isError]);
 

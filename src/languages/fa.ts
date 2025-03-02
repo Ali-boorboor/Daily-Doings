@@ -118,7 +118,7 @@ const fa = {
   removeFolderBtn: "حذف پوشه",
   successLoginToast: "با موفقیت وارد شدید",
   errorLoginToast: "ورود ناموفق",
-  privateRouteFailed: "دسترسی ممنوع شد",
+  privateRouteFailed: "دسترسی ممنوع، لطفا ابتدا ورود کنید",
   successSignupToast: "با موفقیت ثبت نام شدید",
   errorSignupToast: "ثبت نام ناموفق",
   successLogoutToast: "با موفقیت خارج شدید",
@@ -133,6 +133,11 @@ const fa = {
   errorChangePassToast: "خطا در هنگام تغییر کلمه عبور",
   successAddTodoFormToast: "کار با موفقیت اضافه شد",
   errorAddTodoFormToast: "خطا در هنگام اضافه کردن کار",
+  noDataAlertText: "اطلاعاتی وجود ندارد",
+  notDoneStatus: "انجام نشده",
+  doneStatus: "انجام شده",
+  awaitStatus: "حالت انتظار",
+  inProgressStatus: "در دست انجام",
 };
 
 export default fa;

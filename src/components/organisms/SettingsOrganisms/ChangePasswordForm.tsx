@@ -12,7 +12,7 @@ function ChangePasswordForm() {
   const { mutate: putReq } = usePutReq({
     successTitle: t("successChangePassToast"),
     errorTitle: t("errorChangePassToast"),
-    navigateTo: "/home/settings",
+    navigateTo: "/settings",
     url: "/user/change-password",
   });
 

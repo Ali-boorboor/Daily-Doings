@@ -67,6 +67,16 @@ type headerTitlePropsType = {
   style: string;
 };
 
+type alertPropsType = {
+  text: string | JSX.Element;
+  alertStatus: "alert-success" | "alert-error" | "alert-warning" | "alert-info";
+};
+
+type badgePropsType = {
+  text: string | JSX.Element;
+  badgeStatus: "badge-success" | "badge-error" | "badge-warning" | "badge-info";
+};
+
 export type {
   buttonPropsType,
   inputPropsType,
@@ -76,4 +86,6 @@ export type {
   themeCirclePropsType,
   circleProgressPropsType,
   headerTitlePropsType,
+  alertPropsType,
+  badgePropsType,
 };

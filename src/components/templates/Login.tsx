@@ -13,7 +13,7 @@ function Login() {
   const { mutate: postReq } = usePostReq({
     successTitle: t("successLoginToast"),
     errorTitle: t("errorLoginToast"),
-    navigateTo: "/home/dashboard",
+    navigateTo: "/dashboard",
     url: "/login",
   });
 
