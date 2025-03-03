@@ -27,8 +27,9 @@ function ForgotPassword() {
       initialValues={{
         identifier: "",
       }}
-      onSubmitHandler={(values: forgotPassOnSubmitValues) => {
+      onSubmitHandler={(values: forgotPassOnSubmitValues, { resetForm }) => {
         postReq({ reqOptions: { identifier: values.identifier } });
+        resetForm();
       }}
     />
   );

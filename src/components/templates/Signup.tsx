@@ -32,7 +32,7 @@ function Signup() {
         submitPassword: "",
         agreeToTerms: false,
       }}
-      onSubmitHandler={(values: signupOnSubmitValues) => {
+      onSubmitHandler={(values: signupOnSubmitValues, { resetForm }) => {
         if (values.agreeToTerms) {
           const formData = new FormData();
 
@@ -42,6 +42,7 @@ function Signup() {
           formData.append("cover", values.cover);
 
           postReq({ reqOptions: formData });
+          resetForm();
         }
       }}
     />

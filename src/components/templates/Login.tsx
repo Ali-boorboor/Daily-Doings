@@ -28,13 +28,14 @@ function Login() {
         identifier: "",
         password: "",
       }}
-      onSubmitHandler={(values: loginOnSubmitValues) => {
+      onSubmitHandler={(values: loginOnSubmitValues, { resetForm }) => {
         postReq({
           reqOptions: {
             identifier: values.identifier,
             password: values.password,
           },
         });
+        resetForm();
       }}
     />
   );

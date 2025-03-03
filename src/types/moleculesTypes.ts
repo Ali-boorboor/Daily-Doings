@@ -81,6 +81,12 @@ type BarChartPropsType = {
   ];
 };
 
+type RemoveModalPropsType = {
+  url: string;
+  refetchQueryKey?: string;
+  refetchQueries?: string[];
+};
+
 export type {
   authPageHeadingPropsType,
   searchInputPropsType,
@@ -94,4 +100,5 @@ export type {
   EditModalPropsType,
   PieChartPropsType,
   BarChartPropsType,
+  RemoveModalPropsType,
 };

@@ -76,8 +76,6 @@ const en = {
   notFoundPageText: "It Seems You Are On The Wrong Track",
   notFoundPageBtn: "Dashboard Page",
   todayTodosTitle: "Today Todos",
-  todayCheckAllBtn: "Check All Todos",
-  todayRemoveAllBtn: "Remove All Todos",
   todayTodosPriorityTitle: "Priority",
   todayTodosVeryLowPriority: "Very Low",
   todayTodosLowPriority: "Low",
@@ -138,9 +136,11 @@ const en = {
   doneStatus: "Done",
   awaitStatus: "Await",
   inProgressStatus: "In Progress",
-  saveTodayTodos: "Save Checked Todos",
+  saveTodayTodos: "Save Changes",
   successCheckedTodoToast: "Datas Saved Successfully",
   errorCheckedTodoToast: "Failed To Save Datas",
+  successDeleteReqToast: "Deleted Successfully",
+  errorDeleteReqToast: "Failed To Delete",
 };
 
 export default en;

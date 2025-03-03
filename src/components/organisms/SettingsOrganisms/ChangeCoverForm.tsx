@@ -17,13 +17,17 @@ function ChangeCoverForm() {
     url: "/user/change-cover",
   });
 
-  const onSubmitHandler = (values: changeCoverFormOnSubmitValues) => {
+  const onSubmitHandler = (
+    values: changeCoverFormOnSubmitValues,
+    { resetForm }: any
+  ) => {
     const formData = new FormData();
 
     formData.append("cover", values.cover);
     formData.append("password", values.password);
 
-    putReq(formData);
+    putReq({ reqOptions: formData });
+    resetForm();
   };
 
   return (

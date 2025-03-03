@@ -16,11 +16,17 @@ function ChangeUsernameForm() {
     url: "/user/change-username",
   });
 
-  const onSubmitHandler = (values: ChangeUsernameFormOnSubmitValues) => {
+  const onSubmitHandler = (
+    values: ChangeUsernameFormOnSubmitValues,
+    { resetForm }: any
+  ) => {
     putReq({
-      newUsername: values.newUsername,
-      password: values.password,
+      reqOptions: {
+        newUsername: values.newUsername,
+        password: values.password,
+      },
     });
+    resetForm();
   };
 
   return (

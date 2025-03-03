@@ -1,27 +1,31 @@
 import Input from "@a/Input";
 import Button from "@a/Button";
 import Divider from "@a/Divider";
+import RemoveModal from "@m/ModalsMolecules/RemoveModal";
 import { getAllTodayTodosResType } from "@type/organismsTypes";
+import { modalDetails } from "@st/globalStates";
 import { useTranslation } from "react-i18next";
 import { MdDelete } from "react-icons/md";
+import { useRecoilState } from "recoil";
 import { Form, Formik } from "formik";
 import { memo } from "react";
 
 function TodayTodosContainer({
-  data,
   onSubmitHandler,
+  data,
 }: getAllTodayTodosResType) {
   const { t } = useTranslation();
+  const [, setModalDetails] = useRecoilState(modalDetails);
 
   return (
     <Formik
       initialValues={{ checkedTodos: [] as string[] }}
       onSubmit={onSubmitHandler}
     >
-      {({ values, handleChange, setFieldValue }) => (
+      {({ values, handleChange }) => (
         <Form className="p-6">
           <div className="flex flex-wrap gap-4 justify-center items-center p-4 mt-4 rounded-lg ring ring-primary ring-offset-2 ring-offset-base-100 drop-shadow-lg">
-            {data?.todayTodos?.map((todo, index) => {
+            {data?.todayTodos.map((todo, index) => {
               return (
                 <div
                   key={++index}
@@ -54,35 +58,30 @@ function TodayTodosContainer({
                     isCheckBox
                   />
                   <Divider style="divider-horizontal  m-0" />
-                  <MdDelete className="w-6 h-6 fill-error cursor-pointer" />
+                  <MdDelete
+                    className="w-6 h-6 fill-error cursor-pointer"
+                    onClick={() => {
+                      setModalDetails({
+                        elements: (
+                          <RemoveModal
+                            url={`/today-todo/${todo?._id}`}
+                            refetchQueryKey="ALL-TODAY-TODOS"
+                          />
+                        ),
+                        isShown: true,
+                      });
+                    }}
+                  />
                 </div>
               );
             })}
           </div>
           <Button
-            style="btn-success w-full grow mt-8 mb-4"
+            style="btn-success w-full grow mt-8"
             text={t("saveTodayTodos")}
             type="submit"
             isOutlineBtn
           />
-          <div className="flex flex-wrap gap-4">
-            <Button
-              style="btn-primary basis-1/3 grow"
-              text={t("todayCheckAllBtn")}
-              type="button"
-              onClickHandler={() => {
-                setFieldValue("checkedTodos", ["0", "1", "2", "3"]);
-              }}
-              isOutlineBtn
-            />
-            <Button
-              style="btn-error basis-1/3 grow"
-              text={t("todayRemoveAllBtn")}
-              type="button"
-              onClickHandler={() => {}}
-              isOutlineBtn
-            />
-          </div>
         </Form>
       )}
     </Formik>

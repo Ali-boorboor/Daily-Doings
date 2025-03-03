@@ -35,7 +35,10 @@ function Form() {
         title={t("formTitle")}
       />
       <FormsFrom
-        onSubmitHandler={(values: FormsFromOnSubmitValues) => {
+        onSubmitHandler={(
+          values: FormsFromOnSubmitValues,
+          { resetForm }: any
+        ) => {
           putReq({
             reqOptions: {
               subject: values.todoSubject,
@@ -47,6 +50,7 @@ function Form() {
               labelColor: values.todoLabel,
             },
           });
+          resetForm();
         }}
       />
     </div>

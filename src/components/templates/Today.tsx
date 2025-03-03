@@ -44,13 +44,17 @@ function Today() {
           style="bg-primary text-primary-content text-xl md:text-2xl text-center p-2 rounded-b-full"
         />
         <AddTodayTodoForm
-          onSubmitHandler={(values: TodayOnSubmitValues) => {
+          onSubmitHandler={(
+            values: TodayOnSubmitValues,
+            { resetForm }: any
+          ) => {
             postReq({
               reqOptions: {
                 subject: values.addTodoInput,
                 priority: values.addTodoPriorityInput,
               },
             });
+            resetForm();
           }}
         />
         <TodayTodoPriorityGuide />
@@ -59,10 +63,11 @@ function Today() {
         ) : (
           <TodayTodosContainer
             data={data?.data}
-            onSubmitHandler={(values: any) => {
+            onSubmitHandler={(values: any, { resetForm }: any) => {
               putCheckedTodosReq({
                 reqOptions: { checked: values?.checkedTodos },
               });
+              resetForm();
             }}
           />
         )}

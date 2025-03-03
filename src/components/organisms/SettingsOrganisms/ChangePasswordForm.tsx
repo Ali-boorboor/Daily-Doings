@@ -16,11 +16,17 @@ function ChangePasswordForm() {
     url: "/user/change-password",
   });
 
-  const onSubmitHandler = (values: ChangePasswordFormOnSubmitValues) => {
+  const onSubmitHandler = (
+    values: ChangePasswordFormOnSubmitValues,
+    { resetForm }: any
+  ) => {
     putReq({
-      currentPassword: values.currentPassword,
-      newPassword: values.newPassword,
+      reqOptions: {
+        currentPassword: values.currentPassword,
+        newPassword: values.newPassword,
+      },
     });
+    resetForm();
   };
 
   return (

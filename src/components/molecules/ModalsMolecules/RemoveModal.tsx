@@ -1,13 +1,26 @@
 import Button from "@a/Button";
 import HeaderTitle from "@a/HeaderTitle";
+import useDeleteReq from "@/hooks/useDeleteReq";
+import { RemoveModalPropsType } from "@type/moleculesTypes";
 import { modalDetails } from "@st/globalStates";
 import { useTranslation } from "react-i18next";
 import { useRecoilState } from "recoil";
 import { memo } from "react";
 
-function RemoveModal() {
+function RemoveModal({
+  url,
+  refetchQueryKey,
+  refetchQueries,
+}: RemoveModalPropsType) {
   const [ModalDetails, setModalDetails] = useRecoilState(modalDetails);
   const { t } = useTranslation();
+  const { mutate: deleteReq } = useDeleteReq({
+    successTitle: t("successDeleteReqToast"),
+    errorTitle: t("errorDeleteReqToast"),
+    refetchQueryKey,
+    refetchQueries,
+    url,
+  });
 
   return (
     <div className="flex flex-col gap-4 items-center justify-center">
@@ -21,6 +34,7 @@ function RemoveModal() {
           style="btn-success w-1/3 grow ring ring-success ring-offset-2 ring-offset-base-100 drop-shadow-lg"
           text={t("removeModalYesBtn")}
           onClickHandler={() => {
+            deleteReq({});
             setModalDetails({ ...ModalDetails, isShown: false });
           }}
         />

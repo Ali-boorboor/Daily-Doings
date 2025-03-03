@@ -76,8 +76,6 @@ const fa = {
   notFoundPageText: "بنظر میاد شما در مسیر اشتباهی هستید",
   notFoundPageBtn: "صفحه داشبورد",
   todayTodosTitle: "کار های امروز",
-  todayCheckAllBtn: "چک کردن همه کارها",
-  todayRemoveAllBtn: "حذف همه کارها",
   todayTodosPriorityTitle: "اولویت",
   todayTodosVeryLowPriority: "خیلی کم",
   todayTodosLowPriority: "کم",
@@ -138,9 +136,11 @@ const fa = {
   doneStatus: "انجام شده",
   awaitStatus: "حالت انتظار",
   inProgressStatus: "در دست انجام",
-  saveTodayTodos: "ذخیره سازی کار های چک شده",
+  saveTodayTodos: "ذخیره سازی تغییرات",
   successCheckedTodoToast: "با موفقیت ذخیره شد",
   errorCheckedTodoToast: "خطا در هنگام ذخیره سازی اطلاعات",
+  successDeleteReqToast: "با موفقیت حذف شد",
+  errorDeleteReqToast: "خطا در هنگام حذف",
 };
 
 export default fa;
