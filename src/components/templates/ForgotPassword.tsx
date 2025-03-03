@@ -13,7 +13,7 @@ function ForgotPassword() {
   const { mutate: postReq } = usePostReq({
     successTitle: t("successForgotPassToast"),
     errorTitle: t("errorForgotPassToast"),
-    navigateTo: "/login",
+    navigateTo: "/auth/login",
     url: "/user/forgot-password",
   });
 
@@ -28,7 +28,7 @@ function ForgotPassword() {
         identifier: "",
       }}
       onSubmitHandler={(values: forgotPassOnSubmitValues) => {
-        postReq({ identifier: values.identifier });
+        postReq({ reqOptions: { identifier: values.identifier } });
       }}
     />
   );

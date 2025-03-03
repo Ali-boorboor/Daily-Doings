@@ -16,8 +16,14 @@ type signupOnSubmitValues = {
   agreeToTerms: boolean;
 };
 
+type TodayOnSubmitValues = {
+  addTodoInput: string;
+  addTodoPriorityInput: string;
+};
+
 export type {
   loginOnSubmitValues,
   forgotPassOnSubmitValues,
   signupOnSubmitValues,
+  TodayOnSubmitValues,
 };

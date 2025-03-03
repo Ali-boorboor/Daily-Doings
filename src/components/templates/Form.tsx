@@ -37,13 +37,15 @@ function Form() {
       <FormsFrom
         onSubmitHandler={(values: FormsFromOnSubmitValues) => {
           putReq({
-            subject: values.todoSubject,
-            folder: values.todoFolder ? values.todoFolder : null,
-            priority: values.todoPriority,
-            isListTodo: values.isListTodo ? 1 : 0,
-            description: values.isListTodo ? null : values.todoDescription,
-            listItems: values.isListTodo ? todoItemsList : null,
-            labelColor: values.todoLabel,
+            reqOptions: {
+              subject: values.todoSubject,
+              folder: values.todoFolder ? values.todoFolder : null,
+              priority: values.todoPriority,
+              isListTodo: values.isListTodo ? 1 : 0,
+              description: values.isListTodo ? null : values.todoDescription,
+              listItems: values.isListTodo ? todoItemsList : null,
+              labelColor: values.todoLabel,
+            },
           });
         }}
       />

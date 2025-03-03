@@ -2,7 +2,7 @@ import ThemeCircle from "@a/ThemeCircle";
 import { useTranslation } from "react-i18next";
 import { memo } from "react";
 
-function TodayTodoPriority() {
+function TodayTodoPriorityGuide() {
   const { t } = useTranslation();
 
   return (
@@ -30,4 +30,4 @@ function TodayTodoPriority() {
   );
 }
 
-export default memo(TodayTodoPriority);
+export default memo(TodayTodoPriorityGuide);

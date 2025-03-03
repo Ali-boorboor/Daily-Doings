@@ -138,6 +138,9 @@ const en = {
   doneStatus: "Done",
   awaitStatus: "Await",
   inProgressStatus: "In Progress",
+  saveTodayTodos: "Save Checked Todos",
+  successCheckedTodoToast: "Datas Saved Successfully",
+  errorCheckedTodoToast: "Failed To Save Datas",
 };
 
 export default en;

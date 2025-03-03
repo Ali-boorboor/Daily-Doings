@@ -13,7 +13,7 @@ function Signup() {
   const { mutate: postReq } = usePostReq({
     successTitle: t("successSignupToast"),
     errorTitle: t("errorSignupToast"),
-    navigateTo: "/login",
+    navigateTo: "/auth/login",
     url: "/signup",
   });
 
@@ -41,7 +41,7 @@ function Signup() {
           formData.append("password", values.password);
           formData.append("cover", values.cover);
 
-          postReq(formData);
+          postReq({ reqOptions: formData });
         }
       }}
     />

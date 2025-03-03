@@ -30,8 +30,10 @@ function Login() {
       }}
       onSubmitHandler={(values: loginOnSubmitValues) => {
         postReq({
-          identifier: values.identifier,
-          password: values.password,
+          reqOptions: {
+            identifier: values.identifier,
+            password: values.password,
+          },
         });
       }}
     />

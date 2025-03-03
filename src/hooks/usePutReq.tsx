@@ -6,48 +6,55 @@ import { useNavigate } from "react-router-dom";
 import { useRecoilState } from "recoil";
 
 function usePutReq({
-  url,
   refetchQueryKey,
   refetchQueries,
   successTitle,
   errorTitle,
   navigateTo,
+  hasParams,
+  url,
 }: useReqHooksPropsType) {
   const [, setToastDetails] = useRecoilState(toastDetails);
   const [, setLoading] = useRecoilState(hasLoading);
   const queryClient = useQueryClient();
   const navigate = useNavigate();
 
-  return useMutation((reqOptions: any) => axiosInstance.put(url, reqOptions), {
-    onMutate: () => setLoading(true),
-    onSuccess: () => {
-      if (refetchQueries) {
-        refetchQueries.forEach((queryKey) => {
-          queryClient.invalidateQueries(queryKey);
-        });
-      }
-      refetchQueryKey && queryClient.invalidateQueries(refetchQueryKey);
-      navigateTo && navigate(navigateTo);
+  return useMutation(
+    ({ reqOptions, urlString }: { reqOptions?: any; urlString?: any }) => {
+      const URL = hasParams ? urlString : url;
 
-      successTitle &&
-        setToastDetails({
-          title: successTitle,
-          toastState: "alert-success",
-          ringState: "ring-success",
-          isShown: true,
-        });
+      return axiosInstance.put(URL, reqOptions);
     },
-    onError: () => {
-      errorTitle &&
-        setToastDetails({
-          title: errorTitle,
-          toastState: "alert-error",
-          ringState: "ring-error",
-          isShown: true,
-        });
-    },
-    onSettled: () => setLoading(false),
-  });
+    {
+      onMutate: () => setLoading(true),
+      onSuccess: () => {
+        refetchQueries &&
+          refetchQueries.forEach((queryKey) => {
+            queryClient.invalidateQueries(queryKey);
+          });
+        refetchQueryKey && queryClient.invalidateQueries(refetchQueryKey);
+        navigateTo && navigate(navigateTo);
+
+        successTitle &&
+          setToastDetails({
+            title: successTitle,
+            toastState: "alert-success",
+            ringState: "ring-success",
+            isShown: true,
+          });
+      },
+      onError: () => {
+        errorTitle &&
+          setToastDetails({
+            title: errorTitle,
+            toastState: "alert-error",
+            ringState: "ring-error",
+            isShown: true,
+          });
+      },
+      onSettled: () => setLoading(false),
+    }
+  );
 }
 
 export default usePutReq;

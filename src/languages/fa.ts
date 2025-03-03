@@ -138,6 +138,9 @@ const fa = {
   doneStatus: "انجام شده",
   awaitStatus: "حالت انتظار",
   inProgressStatus: "در دست انجام",
+  saveTodayTodos: "ذخیره سازی کار های چک شده",
+  successCheckedTodoToast: "با موفقیت ذخیره شد",
+  errorCheckedTodoToast: "خطا در هنگام ذخیره سازی اطلاعات",
 };
 
 export default fa;

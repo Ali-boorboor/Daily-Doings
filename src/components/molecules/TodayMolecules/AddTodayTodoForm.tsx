@@ -4,13 +4,16 @@ import { useTranslation } from "react-i18next";
 import { Form, Formik } from "formik";
 import { memo } from "react";
 
-function AddTodayTodo() {
+function AddTodayTodoForm({ onSubmitHandler }: any) {
   const { t } = useTranslation();
 
   return (
     <Formik
-      initialValues={{ addTodoInput: "", addTodoPriorityInput: 0 }}
-      onSubmit={(values) => console.log(values)}
+      initialValues={{
+        addTodoInput: "",
+        addTodoPriorityInput: "67bc5bf2a74538ab87c5a911",
+      }}
+      onSubmit={onSubmitHandler}
     >
       {({ values, handleChange }) => (
         <Form className="p-6 pb-0 flex flex-wrap sm:flex-nowrap gap-4">
@@ -31,18 +34,18 @@ function AddTodayTodo() {
             styleInput="select-primary"
             options={
               <>
-                <option value={0}>
+                <option value={"67bc5bf2a74538ab87c5a911"}>
                   {t("todayTodosVeryLowPriority")} (
                   {t("todayTodosPriorityTitle")})
                 </option>
-                <option value={1}>
+                <option value={"67bc5c85a74538ab87c5a912"}>
                   {t("todayTodosLowPriority")} ({t("todayTodosPriorityTitle")})
                 </option>
-                <option value={2}>
+                <option value={"67bc5ca9a74538ab87c5a913"}>
                   {t("todayTodosMediumPriority")} (
                   {t("todayTodosPriorityTitle")})
                 </option>
-                <option value={3}>
+                <option value={"67bc5cc9a74538ab87c5a914"}>
                   {t("todayTodosHighPriority")} ({t("todayTodosPriorityTitle")})
                 </option>
               </>
@@ -61,4 +64,4 @@ function AddTodayTodo() {
   );
 }
 
-export default memo(AddTodayTodo);
+export default memo(AddTodayTodoForm);

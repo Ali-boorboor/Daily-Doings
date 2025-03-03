@@ -1,10 +1,11 @@
 type useReqHooksPropsType = {
-  refetchQueryKey?: string;
   refetchQueries?: string[];
+  refetchQueryKey?: string;
   successTitle?: string;
   navigateTo?: string;
   errorTitle?: string;
-  url: string;
+  hasParams?: boolean;
+  url?: string;
 };
 
 type useGetReqHookPropsType = {

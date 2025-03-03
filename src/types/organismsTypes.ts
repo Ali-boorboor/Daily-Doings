@@ -120,6 +120,28 @@ type getAllTodosResType = {
   };
 };
 
+type getAllTodayTodosResType = {
+  data: {
+    todayTodos: [
+      {
+        _id: string;
+        subject: string;
+        priority: {
+          _id: string;
+          priority: string;
+        };
+        status: {
+          _id: string;
+          status: string;
+        };
+        createdAt: Date;
+        updatedAt: Date;
+      }
+    ];
+  };
+  onSubmitHandler: any;
+};
+
 export type {
   loginFormPropsType,
   signupFormPropsType,
@@ -130,4 +152,5 @@ export type {
   FormsFromOnSubmitValues,
   RecentTableTodos,
   getAllTodosResType,
+  getAllTodayTodosResType,
 };
