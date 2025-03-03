@@ -4,7 +4,7 @@ import dayGridPlugin from "@fullcalendar/daygrid";
 import { useTranslation } from "react-i18next";
 import { memo, useEffect, useState } from "react";
 
-const Calendar = () => {
+const Calendar = ({ data }: any) => {
   const { language } = i18next;
   const { i18n, t } = useTranslation();
   const [buttonText, setButtonText] = useState({});
@@ -36,44 +36,7 @@ const Calendar = () => {
       <FullCalendar
         plugins={[dayGridPlugin]}
         initialView="dayGridMonth"
-        events={[
-          {
-            title: "Event 1",
-            start: "2025-02-09T10:00:00",
-            end: "2025-02-09T12:00:00",
-            allDay: true,
-          },
-          {
-            title: "Event 2",
-            start: "2025-02-10T14:00:00",
-            end: "2025-02-10T16:00:00",
-            allDay: true,
-          },
-          {
-            title: "Event 2",
-            start: "2025-02-10T14:00:00",
-            end: "2025-02-10T16:00:00",
-            allDay: true,
-          },
-          {
-            title: "Event 2",
-            start: "2025-02-10T14:00:00",
-            end: "2025-02-10T16:00:00",
-            allDay: true,
-          },
-          {
-            title: "Event 2",
-            start: "2025-02-10T14:00:00",
-            end: "2025-02-10T16:00:00",
-            allDay: true,
-          },
-          {
-            title: "Event 2",
-            start: "2025-02-10T14:00:00",
-            end: "2025-02-10T16:00:00",
-            allDay: true,
-          },
-        ]}
+        events={data}
         headerToolbar={{
           left: "prev,next today",
           center: "title",

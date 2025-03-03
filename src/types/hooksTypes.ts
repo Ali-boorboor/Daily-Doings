@@ -1,5 +1,6 @@
 type useReqHooksPropsType = {
   refetchQueryKey?: string;
+  refetchQueries?: string[];
   successTitle?: string;
   navigateTo?: string;
   errorTitle?: string;

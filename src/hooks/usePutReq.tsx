@@ -8,6 +8,7 @@ import { useRecoilState } from "recoil";
 function usePutReq({
   url,
   refetchQueryKey,
+  refetchQueries,
   successTitle,
   errorTitle,
   navigateTo,
@@ -20,6 +21,11 @@ function usePutReq({
   return useMutation((reqOptions: any) => axiosInstance.put(url, reqOptions), {
     onMutate: () => setLoading(true),
     onSuccess: () => {
+      if (refetchQueries) {
+        refetchQueries.forEach((queryKey) => {
+          queryClient.invalidateQueries(queryKey);
+        });
+      }
       refetchQueryKey && queryClient.invalidateQueries(refetchQueryKey);
       navigateTo && navigate(navigateTo);
 

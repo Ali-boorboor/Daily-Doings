@@ -32,7 +32,10 @@ function RecentTable({ data }: any) {
       tbody={
         <tbody>
           {data?.map((todo: RecentTableTodos, index: number) => (
-            <tr className="border border-base-content drop-shadow-lg">
+            <tr
+              key={++index}
+              className="border border-base-content drop-shadow-lg"
+            >
               <th>{++index}</th>
               <td className="border border-base-content drop-shadow-lg">
                 {todo?.subject}

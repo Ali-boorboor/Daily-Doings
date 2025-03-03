@@ -1,37 +1,14 @@
 import Input from "@a/Input";
 import Button from "@a/Button";
-import usePostReq from "@/hooks/usePostReq";
 import FormInputs from "@o/FormOrganisms/FormInputs";
 import ListPreview from "@o/FormOrganisms/ListPreview";
 import DescriptionPreview from "@o/FormOrganisms/DescriptionPreview";
-import { FormsFromOnSubmitValues } from "@type/organismsTypes";
 import { Formik, Form as FormikForm } from "formik";
-import { TodoItemsList } from "@st/organismsStates";
 import { useTranslation } from "react-i18next";
-import { useRecoilValue } from "recoil";
 import { memo } from "react";
 
-function FormsFrom() {
+function FormsFrom({ onSubmitHandler }: any) {
   const { t } = useTranslation();
-  const todoItemsList = useRecoilValue(TodoItemsList);
-  const { mutate: putReq } = usePostReq({
-    successTitle: t("successAddTodoFormToast"),
-    errorTitle: t("errorAddTodoFormToast"),
-    navigateTo: "/table",
-    url: "/todo",
-  });
-
-  const onSubmitHandler = (values: FormsFromOnSubmitValues) => {
-    putReq({
-      subject: values.todoSubject,
-      folder: values.todoFolder ? values.todoFolder : null,
-      priority: values.todoPriority,
-      isListTodo: values.isListTodo ? 1 : 0,
-      description: values.isListTodo ? null : values.todoDescription,
-      listItems: values.isListTodo ? todoItemsList : null,
-      labelColor: values.todoLabel,
-    });
-  };
 
   return (
     <Formik

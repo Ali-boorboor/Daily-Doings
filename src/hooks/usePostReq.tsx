@@ -8,6 +8,7 @@ import { useRecoilState } from "recoil";
 function usePostReq({
   url,
   refetchQueryKey,
+  refetchQueries,
   successTitle,
   errorTitle,
   navigateTo,
@@ -20,6 +21,10 @@ function usePostReq({
   return useMutation((reqOptions: any) => axiosInstance.post(url, reqOptions), {
     onMutate: () => setLoading(true),
     onSuccess: () => {
+      refetchQueries &&
+        refetchQueries.forEach((queryKey) => {
+          queryClient.invalidateQueries(queryKey);
+        });
       refetchQueryKey && queryClient.invalidateQueries(refetchQueryKey);
       navigateTo && navigate(navigateTo);
 
