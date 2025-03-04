@@ -7,12 +7,19 @@ import { useRecoilState } from "recoil";
 import { Form, Formik } from "formik";
 import { memo } from "react";
 
-function AddFolderModalForm() {
+function AddFolderModalForm({ onSubmitHandler }: any) {
   const [ModalDetails, setModalDetails] = useRecoilState(modalDetails);
   const { t } = useTranslation();
 
   return (
-    <Formik initialValues={{ folderName: "" }} onSubmit={() => {}}>
+    <Formik
+      initialValues={{ folderName: "" }}
+      onSubmit={(values, { resetForm }) => {
+        onSubmitHandler({ reqOptions: { name: values?.folderName } });
+        setModalDetails({ ...ModalDetails, isShown: false });
+        resetForm();
+      }}
+    >
       {({ values, handleChange, setFieldTouched }) => (
         <Form className="overflow-hidden flex flex-col gap-4 justify-center items-center badge-ghost ring ring-primary rounded-lg drop-shadow-lg ring-offset-2 ring-offset-base-100">
           <HeaderTitle

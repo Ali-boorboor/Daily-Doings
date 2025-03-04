@@ -1,21 +1,20 @@
 import FolderBox from "@m/FoldersMolecules/FolderBox";
+import { getAllFoldersResType } from "@type/organismsTypes";
 import { memo } from "react";
 
-function FolderBoxs() {
+function FolderBoxs({ data }: getAllFoldersResType) {
   return (
     <div className="flex gap-4 lg:gap-10 justify-center items-center flex-wrap p-4 lg:p-8">
-      <FolderBox
-        folderName="Folder A"
-        folderID="1"
-        folderProgressValue="80"
-        index={1}
-      />
-      <FolderBox
-        folderName="Folder B"
-        folderID="2"
-        folderProgressValue="50"
-        index={2}
-      />
+      {data?.folders?.map((folder, index) => {
+        return (
+          <FolderBox
+            key={++index}
+            folderName={folder?.name}
+            folderID={folder?._id}
+            index={++index}
+          />
+        );
+      })}
     </div>
   );
 }

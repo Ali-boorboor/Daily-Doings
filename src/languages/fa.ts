@@ -141,6 +141,10 @@ const fa = {
   errorCheckedTodoToast: "خطا در هنگام ذخیره سازی اطلاعات",
   successDeleteReqToast: "با موفقیت حذف شد",
   errorDeleteReqToast: "خطا در هنگام حذف",
+  successAddFolderToast: "پوشه با موفقیت ساخته شد",
+  errorAddFolderToast: "خطا در هنگام ساخت پوشه",
+  successEditFolderToast: "پوشه با موفقیت ویرایش یافت",
+  errorEditFolderToast: "خطا در هنگام ویرایش پوشه",
 };
 
 export default fa;

@@ -1,5 +1,6 @@
 import Input from "@a/Input";
 import Button from "@a/Button";
+import usePutReq from "@/hooks/usePutReq";
 import HeaderTitle from "@a/HeaderTitle";
 import { modalDetails } from "@st/globalStates";
 import { useTranslation } from "react-i18next";
@@ -7,9 +8,15 @@ import { useRecoilState } from "recoil";
 import { Form, Formik } from "formik";
 import { memo } from "react";
 
-function EditFolderModal() {
+function EditFolderModal({ folderID }: any) {
   const [ModalDetails, setModalDetails] = useRecoilState(modalDetails);
   const { t } = useTranslation();
+  const { mutate: putReq } = usePutReq({
+    successTitle: t("successEditFolderToast"),
+    errorTitle: t("errorEditFolderToast"),
+    refetchQueryKey: "ALL-FOLDERS",
+    hasParams: true,
+  });
 
   return (
     <div className="flex flex-col gap-4 items-center justify-center w-full">
@@ -21,7 +28,13 @@ function EditFolderModal() {
         initialValues={{
           folderName: "",
         }}
-        onSubmit={(values) => console.log(values)}
+        onSubmit={(values) => {
+          putReq({
+            urlString: `/folder/${folderID}`,
+            reqOptions: { name: values?.folderName },
+          });
+          setModalDetails({ ...ModalDetails, isShown: false });
+        }}
       >
         {({ values, handleChange, setFieldTouched }) => (
           <Form className="flex flex-col gap-4 w-full">
@@ -41,12 +54,9 @@ function EditFolderModal() {
             </div>
             <div className="flex justify-center items-center gap-4 w-full">
               <Button
-                type="button"
+                type="submit"
                 style="btn-success w-1/3 grow ring ring-success ring-offset-2 ring-offset-base-100 drop-shadow-lg"
                 text={t("submitBtn")}
-                onClickHandler={() => {
-                  setModalDetails({ ...ModalDetails, isShown: false });
-                }}
               />
               <Button
                 type="button"

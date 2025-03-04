@@ -142,6 +142,19 @@ type getAllTodayTodosResType = {
   onSubmitHandler: any;
 };
 
+type getAllFoldersResType = {
+  data: {
+    folders: [
+      {
+        _id: string;
+        name: string;
+        createdAt: Date;
+        updatedAt: Date;
+      }
+    ];
+  };
+};
+
 export type {
   loginFormPropsType,
   signupFormPropsType,
@@ -153,4 +166,5 @@ export type {
   RecentTableTodos,
   getAllTodosResType,
   getAllTodayTodosResType,
+  getAllFoldersResType,
 };

@@ -1,5 +1,6 @@
 import Input from "@a/Input";
 import ThemeCircle from "@a/ThemeCircle";
+import useGetReq from "@/hooks/useGetReq";
 import { PiListBulletsFill } from "react-icons/pi";
 import { useTranslation } from "react-i18next";
 import { MdDescription } from "react-icons/md";
@@ -7,6 +8,12 @@ import { memo } from "react";
 
 function FormInputs({ values, handleChange, setFieldTouched }: any) {
   const { t } = useTranslation();
+  const { data } = useGetReq({
+    queryKey: "ALL-FOLDERS",
+    url: "/folder",
+    cacheTime: 86400000,
+    staleTime: 86400000,
+  });
 
   return (
     <>
@@ -37,10 +44,9 @@ function FormInputs({ values, handleChange, setFieldTouched }: any) {
               <option value={""} disabled>
                 {t("formNoFolderOption")}
               </option>
-              <option value={"1"}>Folder A</option>
-              <option value={"2"}>Folder B</option>
-              <option value={"3"}>Folder C</option>
-              <option value={"4"}>Folder D</option>
+              {data?.data?.folders?.map((folder: any) => {
+                return <option value={folder?._id}>{folder?.name}</option>;
+              })}
             </>
           }
           isSelectBox

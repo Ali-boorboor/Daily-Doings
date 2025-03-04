@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 import { useRecoilState } from "recoil";
 import { memo } from "react";
 
-function FolderBox({ folderName, folderProgressValue, folderID, index }: any) {
+function FolderBox({ folderName, folderID, index }: any) {
   const { t } = useTranslation();
   const [, setModalDetails] = useRecoilState(modalDetails);
 
@@ -16,13 +16,6 @@ function FolderBox({ folderName, folderProgressValue, folderID, index }: any) {
         index % 2 === 0 ? "ring-secondary" : "ring-primary"
       } ring-offset-2 ring-offset-base-100 drop-shadow-lg`}
     >
-      <progress
-        className={`progress ${
-          index % 2 === 0 ? "progress-secondary" : "progress-primary"
-        } max-w-56`}
-        value={folderProgressValue}
-        max="100"
-      ></progress>
       <p>{folderName}</p>
       <Button
         style={`${
@@ -38,7 +31,7 @@ function FolderBox({ folderName, folderProgressValue, folderID, index }: any) {
           type="button"
           onClickHandler={() => {
             setModalDetails({
-              elements: <EditFolderModal />,
+              elements: <EditFolderModal folderID={folderID} />,
               isShown: true,
             });
           }}
@@ -51,7 +44,15 @@ function FolderBox({ folderName, folderProgressValue, folderID, index }: any) {
           style="btn-error grow basis-full lg:basis-1/3"
           text={t("removeFolderBtn")}
           onClickHandler={() => {
-            setModalDetails({ elements: <RemoveModal />, isShown: true });
+            setModalDetails({
+              elements: (
+                <RemoveModal
+                  url={`/folder/${folderID}`}
+                  refetchQueryKey="ALL-FOLDERS"
+                />
+              ),
+              isShown: true,
+            });
           }}
           isOutlineBtn
         />

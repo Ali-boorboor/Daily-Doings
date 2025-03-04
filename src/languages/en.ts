@@ -141,6 +141,10 @@ const en = {
   errorCheckedTodoToast: "Failed To Save Datas",
   successDeleteReqToast: "Deleted Successfully",
   errorDeleteReqToast: "Failed To Delete",
+  successAddFolderToast: "Folder Created Successfully",
+  errorAddFolderToast: "Failed To Create Folder",
+  successEditFolderToast: "Folder Edited Successfully",
+  errorEditFolderToast: "Failed To Edit Folder",
 };
 
 export default en;

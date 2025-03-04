@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 import { useRecoilState } from "recoil";
 import { memo } from "react";
 
-function FolderHeader() {
+function FolderHeader({ onSubmitHandler }: any) {
   const [, setModalDetails] = useRecoilState(modalDetails);
   const { t } = useTranslation();
 
@@ -22,7 +22,7 @@ function FolderHeader() {
         style="btn-accent drop-shadow-lg"
         onClickHandler={() => {
           setModalDetails({
-            elements: <AddFolderModalForm />,
+            elements: <AddFolderModalForm onSubmitHandler={onSubmitHandler} />,
             isShown: true,
           });
         }}

@@ -11,7 +11,7 @@ import { memo, useEffect } from "react";
 function Form() {
   const { t } = useTranslation();
   const todoItemsList = useRecoilValue(TodoItemsList);
-  const { mutate: putReq } = usePostReq({
+  const { mutate: postReq } = usePostReq({
     successTitle: t("successAddTodoFormToast"),
     errorTitle: t("errorAddTodoFormToast"),
     refetchQueries: [
@@ -39,7 +39,7 @@ function Form() {
           values: FormsFromOnSubmitValues,
           { resetForm }: any
         ) => {
-          putReq({
+          postReq({
             reqOptions: {
               subject: values.todoSubject,
               folder: values.todoFolder ? values.todoFolder : null,
