@@ -95,6 +95,7 @@ const en = {
   formIsListTodoText: "Is List Todo ?",
   formDescriptionToggleBtn: "Description",
   formListToggleBtn: "List",
+  formStatus: "Todo Status",
   settingsChangePasswordBtn: "Change Password",
   settingsChangeUsernameBtn: "Change Username",
   settingsChangeCoverBtn: "Change Cover",
@@ -145,6 +146,8 @@ const en = {
   errorAddFolderToast: "Failed To Create Folder",
   successEditFolderToast: "Folder Edited Successfully",
   errorEditFolderToast: "Failed To Edit Folder",
+  successEditTodoToast: "Todo Edited Successfully",
+  errorEditTodoToast: "Failed To Edit Todo",
 };
 
 export default en;

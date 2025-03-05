@@ -25,6 +25,7 @@ type stickyWallPropsType = {
   isList?: boolean;
   listItems?: stickyWallListItemsType[];
   hasNoOnClickModal?: boolean;
+  todoID?: string;
 };
 
 type stickyWallListItemsType = string;
@@ -48,7 +49,10 @@ type tableWrapperPropsType = {
 
 type paginationPropsType = { style?: string };
 
-type EditModalPropsType = { hasRemoveModal?: boolean };
+type EditModalPropsType = {
+  hasRemoveModal?: boolean;
+  todoID?: string;
+};
 
 type PieChartPropsType = {
   data: {
@@ -83,6 +87,7 @@ type BarChartPropsType = {
 
 type RemoveModalPropsType = {
   url: string;
+  navigateTo?: string;
   refetchQueryKey?: string;
   refetchQueries?: string[];
 };

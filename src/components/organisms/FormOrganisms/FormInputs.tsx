@@ -44,8 +44,12 @@ function FormInputs({ values, handleChange, setFieldTouched }: any) {
               <option value={""} disabled>
                 {t("formNoFolderOption")}
               </option>
-              {data?.data?.folders?.map((folder: any) => {
-                return <option value={folder?._id}>{folder?.name}</option>;
+              {data?.data?.folders?.map((folder: any, index: number) => {
+                return (
+                  <option key={++index} value={folder?._id}>
+                    {folder?.name}
+                  </option>
+                );
               })}
             </>
           }

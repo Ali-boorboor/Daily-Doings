@@ -9,14 +9,16 @@ import { memo } from "react";
 
 function RemoveModal({
   url,
-  refetchQueryKey,
+  navigateTo,
   refetchQueries,
+  refetchQueryKey,
 }: RemoveModalPropsType) {
   const [ModalDetails, setModalDetails] = useRecoilState(modalDetails);
   const { t } = useTranslation();
   const { mutate: deleteReq } = useDeleteReq({
     successTitle: t("successDeleteReqToast"),
     errorTitle: t("errorDeleteReqToast"),
+    navigateTo: navigateTo,
     refetchQueryKey,
     refetchQueries,
     url,

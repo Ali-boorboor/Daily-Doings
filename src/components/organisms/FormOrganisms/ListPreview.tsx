@@ -46,7 +46,7 @@ function ListPreview({ values, setFieldValue }: any) {
           isOutlineBtn
         />
       </div>
-      {todoItemsList.length > 0 && (
+      {todoItemsList?.length > 0 && (
         <div className="flex flex-col gap-4 justify-center items-center p-2 rounded-lg ring ring-primary ring-offset-2 ring-offset-base-100 drop-shadow-lg">
           <p>{t("formPreviewTitle")} :</p>
           <TodoStickyWall

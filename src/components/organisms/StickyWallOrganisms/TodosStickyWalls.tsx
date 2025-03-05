@@ -23,6 +23,7 @@ function TodosStickyWalls({ data }: getAllTodosResType) {
           return (
             <TodoStickyWall
               key={++index}
+              todoID={todo?._id}
               style={todo?.labelColor}
               subject={todo?.subject}
               description={todo?.description}

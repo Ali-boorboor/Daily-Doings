@@ -5,6 +5,7 @@ import NoDataAlert from "@m/NoDataAlert";
 import useGetReq from "@/hooks/useGetReq";
 import TableWrapper from "@m/TableWrapper";
 import EditModal from "@m/ModalsMolecules/EditModal";
+import RemoveModal from "@m/ModalsMolecules/RemoveModal";
 import { modalDetails } from "@st/globalStates";
 import { useTranslation } from "react-i18next";
 import { useParams } from "react-router-dom";
@@ -19,8 +20,6 @@ function FolderTodosTable() {
   const { data } = useGetReq({
     queryKey: `FOLDER-${folderID}`,
     url: `/folder/${folderID}`,
-    cacheTime: 86400000,
-    staleTime: 86400000,
   });
 
   if (data?.status !== 204) {
@@ -138,7 +137,19 @@ function FolderTodosTable() {
                         text={t("tablesRemoveField")}
                         onClickHandler={() => {
                           setModalDetails({
-                            elements: <RemoveModal />,
+                            elements: (
+                              <RemoveModal
+                                navigateTo="/folder"
+                                url={`/todo/${todo?._id}`}
+                                refetchQueries={[
+                                  "FOLDERS-OVERVIEW",
+                                  "TODOS-OVERVIEW",
+                                  "RECENT-TODOS",
+                                  "ALL-FOLDERS",
+                                  "ALL-TODOS",
+                                ]}
+                              />
+                            ),
                             isShown: true,
                           });
                         }}

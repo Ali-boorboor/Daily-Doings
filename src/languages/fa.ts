@@ -95,6 +95,7 @@ const fa = {
   formIsListTodoText: "آیا کار بصورت لیست است ؟",
   formDescriptionToggleBtn: "توضیحات",
   formListToggleBtn: "لیست",
+  formStatus: "وضعیت کار",
   settingsChangePasswordBtn: "تغییر کلمه عبور",
   settingsChangeUsernameBtn: "تغییر نام کاربری",
   settingsChangeCoverBtn: "تغییر عکس پروفایل",
@@ -145,6 +146,8 @@ const fa = {
   errorAddFolderToast: "خطا در هنگام ساخت پوشه",
   successEditFolderToast: "پوشه با موفقیت ویرایش یافت",
   errorEditFolderToast: "خطا در هنگام ویرایش پوشه",
+  successEditTodoToast: "کار با موفقیت ویرایش یافت",
+  errorEditTodoToast: "خطا در هنگام ویرایش کار",
 };
 
 export default fa;

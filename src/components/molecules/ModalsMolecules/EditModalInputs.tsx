@@ -1,6 +1,7 @@
 import Input from "@a/Input";
 import Button from "@a/Button";
 import ThemeCircle from "@a/ThemeCircle";
+import useGetReq from "@/hooks/useGetReq";
 import { TodoItem, TodoItemsList } from "@st/organismsStates";
 import { useTranslation } from "react-i18next";
 import { useRecoilState } from "recoil";
@@ -10,6 +11,12 @@ function EditModalInputs({ values, handleChange, setFieldTouched }: any) {
   const [todoItemsList, setTodoItemsList]: any = useRecoilState(TodoItemsList);
   const [todoItem, setTodoItem] = useRecoilState(TodoItem);
   const { t } = useTranslation();
+  const { data } = useGetReq({
+    queryKey: "ALL-FOLDERS",
+    url: "/folder",
+    cacheTime: 86400000,
+    staleTime: 86400000,
+  });
 
   return (
     <>
@@ -37,13 +44,43 @@ function EditModalInputs({ values, handleChange, setFieldTouched }: any) {
           styleInput="select-primary"
           options={
             <>
-              <option value={0} disabled>
+              <option value={""} disabled>
                 {t("formNoFolderOption")}
               </option>
-              <option value={1}>Folder A</option>
-              <option value={2}>Folder B</option>
-              <option value={3}>Folder C</option>
-              <option value={4}>Folder D</option>
+              {data?.data?.folders?.map((folder: any, index: number) => {
+                return (
+                  <option key={++index} value={folder?._id}>
+                    {folder?.name}
+                  </option>
+                );
+              })}
+            </>
+          }
+          isSelectBox
+        />
+      </div>
+      <div className="flex lg:flex-nowrap flex-wrap gap-4 items-center justify-center">
+        <p className="basis-1/2 grow">{t("formStatus")} :</p>
+        <Input
+          name="todoStatus"
+          value={values.todoStatus}
+          onChangeHandler={handleChange}
+          styleLabel="grow basis-5/6 grow"
+          styleInput="select-primary"
+          options={
+            <>
+              <option value={"67bc63eca74538ab87c5a922"}>
+                {t("doneStatus")}
+              </option>
+              <option value={"67bc643ca74538ab87c5a923"}>
+                {t("notDoneStatus")}
+              </option>
+              <option value={"67bc6447a74538ab87c5a924"}>
+                {t("awaitStatus")}
+              </option>
+              <option value={"67bc6464a74538ab87c5a925"}>
+                {t("inProgressStatus")}
+              </option>
             </>
           }
           isSelectBox
@@ -59,10 +96,18 @@ function EditModalInputs({ values, handleChange, setFieldTouched }: any) {
           styleInput="select-primary"
           options={
             <>
-              <option value={1}>{t("todayTodosVeryLowPriority")}</option>
-              <option value={2}>{t("todayTodosLowPriority")}</option>
-              <option value={3}>{t("todayTodosMediumPriority")}</option>
-              <option value={4}>{t("todayTodosHighPriority")}</option>
+              <option value={"67bc5bf2a74538ab87c5a911"}>
+                {t("todayTodosVeryLowPriority")}
+              </option>
+              <option value={"67bc5c85a74538ab87c5a912"}>
+                {t("todayTodosLowPriority")}
+              </option>
+              <option value={"67bc5ca9a74538ab87c5a913"}>
+                {t("todayTodosMediumPriority")}
+              </option>
+              <option value={"67bc5cc9a74538ab87c5a914"}>
+                {t("todayTodosHighPriority")}
+              </option>
             </>
           }
           isSelectBox
@@ -109,7 +154,7 @@ function EditModalInputs({ values, handleChange, setFieldTouched }: any) {
       {values.isListTodo ? (
         <div className="flex flex-col lg:flex-nowrap flex-wrap gap-4 items-center justify-center">
           <div className="flex lg:flex-nowrap flex-wrap gap-4 items-center justify-center w-full">
-            <p className="basis-1/6 grow">{t("formTodoItem")} :</p>
+            <p className="basis-1/2 grow">{t("formTodoItem")} :</p>
             <Input
               name="todoItem"
               value={todoItem}

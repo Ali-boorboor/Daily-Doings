@@ -16,9 +16,10 @@ function Form() {
     errorTitle: t("errorAddTodoFormToast"),
     refetchQueries: [
       "ALL-TODOS",
+      "ALL-FOLDERS",
       "RECENT-TODOS",
-      "FOLDERS-OVERVIEW",
       "TODOS-OVERVIEW",
+      "FOLDERS-OVERVIEW",
     ],
     navigateTo: "/table",
     url: "/todo",

@@ -13,6 +13,7 @@ function TodoStickyWall({
   description,
   listItems,
   subject,
+  todoID,
   isList,
   style,
 }: stickyWallPropsType) {
@@ -24,7 +25,7 @@ function TodoStickyWall({
       onClick={() => {
         hasNoOnClickModal ||
           setModalDetails({
-            elements: <EditModal hasRemoveModal />,
+            elements: <EditModal todoID={todoID} hasRemoveModal />,
             isShown: true,
           });
       }}

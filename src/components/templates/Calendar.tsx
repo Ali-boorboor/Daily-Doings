@@ -15,7 +15,7 @@ function Calendar() {
   useEffect(() => {
     docTitle("Calendar Page");
 
-    const todoDates = data?.data?.todos.map((todo: any) => ({
+    const todoDates = data?.data?.todos?.map((todo: any) => ({
       title: todo.subject,
       start: todo.createdAt,
     }));
