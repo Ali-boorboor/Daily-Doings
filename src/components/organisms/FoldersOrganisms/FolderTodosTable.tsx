@@ -139,9 +139,9 @@ function FolderTodosTable() {
                           setModalDetails({
                             elements: (
                               <RemoveModal
-                                navigateTo="/folder"
                                 url={`/todo/${todo?._id}`}
                                 refetchQueries={[
+                                  `FOLDER-${folderID}`,
                                   "FOLDERS-OVERVIEW",
                                   "TODOS-OVERVIEW",
                                   "RECENT-TODOS",

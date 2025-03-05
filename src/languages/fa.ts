@@ -148,6 +148,8 @@ const fa = {
   errorEditFolderToast: "خطا در هنگام ویرایش پوشه",
   successEditTodoToast: "کار با موفقیت ویرایش یافت",
   errorEditTodoToast: "خطا در هنگام ویرایش کار",
+  wrongPassOrUsername: "کلمه عبور یا نام کاربری (ایمیل) اشتباه است",
+  repeatedUsernameEmail: "ایمیل یا نام کاربری قبلا ثبت شده است",
 };
 
 export default fa;

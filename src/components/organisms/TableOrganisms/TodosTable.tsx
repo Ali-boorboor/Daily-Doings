@@ -1,17 +1,19 @@
+import Badge from "@a/Badge";
+import i18next from "i18next";
 import Button from "@a/Button";
-import Pagination from "@m/Pagination";
-import PieChart from "@m/Charts/PieChart";
 import TableWrapper from "@m/TableWrapper";
 import EditModal from "@m/ModalsMolecules/EditModal";
 import RemoveModal from "@m/ModalsMolecules/RemoveModal";
+import { getAllTodosResType } from "@type/organismsTypes";
 import { modalDetails } from "@st/globalStates";
 import { useTranslation } from "react-i18next";
 import { useRecoilState } from "recoil";
 import { memo } from "react";
 
-function TodosTable() {
+function TodosTable({ data }: getAllTodosResType) {
   const [, setModalDetails] = useRecoilState(modalDetails);
   const { t } = useTranslation();
+  const { language } = i18next;
 
   return (
     <div className="max-w-screen-2xl m-auto flex flex-col gap-4 lg:gap-10">
@@ -57,201 +59,111 @@ function TodosTable() {
         }
         tbody={
           <tbody>
-            <tr className="border border-base-content drop-shadow-lg">
-              <th>1</th>
-              <td className="border border-base-content drop-shadow-lg">
-                Cy Ganderton
-              </td>
-              <td className="border border-base-content drop-shadow-lg">
-                Quality Control Specialist
-              </td>
-              <td className="border border-base-content drop-shadow-lg">
-                Blue
-              </td>
-              <td className="border border-base-content drop-shadow-lg">
-                2024/02/10
-              </td>
-              <td className="border border-base-content drop-shadow-lg">
-                2024/02/11
-              </td>
-              <td className="border border-base-content drop-shadow-lg">
-                <Button
-                  type="button"
-                  style="btn-info w-full grow ring ring-info ring-offset-2 ring-offset-base-100 drop-shadow-lg"
-                  text={t("tablesEditField")}
-                  onClickHandler={() => {
-                    setModalDetails({
-                      elements: <EditModal />,
-                      isShown: true,
-                    });
-                  }}
-                />
-              </td>
-              <td className="border border-base-content drop-shadow-lg">
-                <Button
-                  type="button"
-                  style="btn-error w-full grow ring ring-error ring-offset-2 ring-offset-base-100 drop-shadow-lg"
-                  text={t("tablesRemoveField")}
-                  onClickHandler={() => {
-                    setModalDetails({
-                      elements: <RemoveModal />,
-                      isShown: true,
-                    });
-                  }}
-                />
-              </td>
-            </tr>
-            <tr className="border border-base-content drop-shadow-lg">
-              <th>2</th>
-              <td className="border border-base-content drop-shadow-lg">
-                Hart Hagerty
-              </td>
-              <td className="border border-base-content drop-shadow-lg">
-                Desktop Support Technician
-              </td>
-              <td className="border border-base-content drop-shadow-lg">
-                Purple
-              </td>
-              <td className="border border-base-content drop-shadow-lg">
-                2024/02/12
-              </td>
-              <td className="border border-base-content drop-shadow-lg">
-                2024/02/13
-              </td>
-            </tr>
-            <tr className="border border-base-content drop-shadow-lg">
-              <th>3</th>
-              <td className="border border-base-content drop-shadow-lg">
-                Brice Swyre
-              </td>
-              <td className="border border-base-content drop-shadow-lg">
-                Tax Accountant
-              </td>
-              <td className="border border-base-content drop-shadow-lg">Red</td>
-              <td className="border border-base-content drop-shadow-lg">
-                2024/02/8
-              </td>
-              <td className="border border-base-content drop-shadow-lg">
-                2024/02/8
-              </td>
-            </tr>
-            <tr className="border border-base-content drop-shadow-lg">
-              <th>4</th>
-              <td className="border border-base-content drop-shadow-lg">
-                Brice Swyre
-              </td>
-              <td className="border border-base-content drop-shadow-lg">
-                Tax Accountant
-              </td>
-              <td className="border border-base-content drop-shadow-lg">Red</td>
-              <td className="border border-base-content drop-shadow-lg">
-                2024/02/8
-              </td>
-              <td className="border border-base-content drop-shadow-lg">
-                2024/02/8
-              </td>
-            </tr>
-            <tr className="border border-base-content drop-shadow-lg">
-              <th>5</th>
-              <td className="border border-base-content drop-shadow-lg">
-                Brice Swyre
-              </td>
-              <td className="border border-base-content drop-shadow-lg">
-                Tax Accountant
-              </td>
-              <td className="border border-base-content drop-shadow-lg">Red</td>
-              <td className="border border-base-content drop-shadow-lg">
-                2024/02/8
-              </td>
-              <td className="border border-base-content drop-shadow-lg">
-                2024/02/8
-              </td>
-            </tr>
-            <tr className="border border-base-content drop-shadow-lg">
-              <th>6</th>
-              <td className="border border-base-content drop-shadow-lg">
-                Brice Swyre
-              </td>
-              <td className="border border-base-content drop-shadow-lg">
-                Tax Accountant
-              </td>
-              <td className="border border-base-content drop-shadow-lg">Red</td>
-              <td className="border border-base-content drop-shadow-lg">
-                2024/02/8
-              </td>
-              <td className="border border-base-content drop-shadow-lg">
-                2024/02/8
-              </td>
-            </tr>
-            <tr className="border border-base-content drop-shadow-lg">
-              <th>7</th>
-              <td className="border border-base-content drop-shadow-lg">
-                Brice Swyre
-              </td>
-              <td className="border border-base-content drop-shadow-lg">
-                Tax Accountant
-              </td>
-              <td className="border border-base-content drop-shadow-lg">Red</td>
-              <td className="border border-base-content drop-shadow-lg">
-                2024/02/8
-              </td>
-              <td className="border border-base-content drop-shadow-lg">
-                2024/02/8
-              </td>
-            </tr>
-            <tr className="border border-base-content drop-shadow-lg">
-              <th>8</th>
-              <td className="border border-base-content drop-shadow-lg">
-                Brice Swyre
-              </td>
-              <td className="border border-base-content drop-shadow-lg">
-                Tax Accountant
-              </td>
-              <td className="border border-base-content drop-shadow-lg">Red</td>
-              <td className="border border-base-content drop-shadow-lg">
-                2024/02/8
-              </td>
-              <td className="border border-base-content drop-shadow-lg">
-                2024/02/8
-              </td>
-            </tr>
-            <tr className="border border-base-content drop-shadow-lg">
-              <th>9</th>
-              <td className="border border-base-content drop-shadow-lg">
-                Brice Swyre
-              </td>
-              <td className="border border-base-content drop-shadow-lg">
-                Tax Accountant
-              </td>
-              <td className="border border-base-content drop-shadow-lg">Red</td>
-              <td className="border border-base-content drop-shadow-lg">
-                2024/02/8
-              </td>
-              <td className="border border-base-content drop-shadow-lg">
-                2024/02/8
-              </td>
-            </tr>
-            <tr className="border border-base-content drop-shadow-lg">
-              <th>10</th>
-              <td className="border border-base-content drop-shadow-lg">
-                Brice Swyre
-              </td>
-              <td className="border border-base-content drop-shadow-lg">
-                Tax Accountant
-              </td>
-              <td className="border border-base-content drop-shadow-lg">Red</td>
-              <td className="border border-base-content drop-shadow-lg">
-                2024/02/8
-              </td>
-              <td className="border border-base-content drop-shadow-lg">
-                2024/02/8
-              </td>
-            </tr>
+            {data?.todos?.map((todo: any, index: number) => {
+              return (
+                <tr
+                  key={++index}
+                  className="border border-base-content drop-shadow-lg"
+                >
+                  <th>{++index}</th>
+                  <td className="border border-base-content drop-shadow-lg">
+                    {todo?.subject}
+                  </td>
+                  <td className="border border-base-content drop-shadow-lg">
+                    {todo?.status?.status === "Done" ? (
+                      <Badge
+                        text={t("doneStatus")}
+                        badgeStatus="badge-success"
+                      />
+                    ) : todo?.status?.status === "Not Done" ? (
+                      <Badge
+                        text={t("notDoneStatus")}
+                        badgeStatus="badge-error"
+                      />
+                    ) : todo?.status?.status === "Await" ? (
+                      <Badge
+                        text={t("awaitStatus")}
+                        badgeStatus="badge-warning"
+                      />
+                    ) : (
+                      <Badge
+                        text={t("inProgressStatus")}
+                        badgeStatus="badge-info"
+                      />
+                    )}
+                  </td>
+                  <td className="border border-base-content drop-shadow-lg">
+                    {todo?.folder?.name ? (
+                      <Button
+                        style={`${
+                          index % 2 === 0 ? "btn-secondary" : "btn-primary"
+                        } grow w-full`}
+                        text={todo?.folder?.name}
+                        isOutlineBtn
+                        linkTo="/folder"
+                        isLink
+                      />
+                    ) : (
+                      "- - -"
+                    )}
+                  </td>
+                  <td className="border border-base-content drop-shadow-lg">
+                    {language === "fa"
+                      ? new Date(todo?.createdAt).toLocaleDateString(
+                          "fa-IR-u-nu-latn"
+                        )
+                      : new Date(todo?.createdAt).toLocaleDateString()}
+                  </td>
+                  <td className="border border-base-content drop-shadow-lg">
+                    {language === "fa"
+                      ? new Date(todo?.updatedAt).toLocaleDateString(
+                          "fa-IR-u-nu-latn"
+                        )
+                      : new Date(todo?.updatedAt).toLocaleDateString()}
+                  </td>
+                  <td className="border border-base-content drop-shadow-lg">
+                    <Button
+                      type="button"
+                      style="btn-info w-full grow ring ring-info ring-offset-2 ring-offset-base-100 drop-shadow-lg"
+                      text={t("tablesEditField")}
+                      onClickHandler={() => {
+                        setModalDetails({
+                          elements: <EditModal todoID={todo?._id} />,
+                          isShown: true,
+                        });
+                      }}
+                    />
+                  </td>
+                  <td className="border border-base-content drop-shadow-lg">
+                    <Button
+                      type="button"
+                      style="btn-error w-full grow ring ring-error ring-offset-2 ring-offset-base-100 drop-shadow-lg"
+                      text={t("tablesRemoveField")}
+                      onClickHandler={() => {
+                        setModalDetails({
+                          elements: (
+                            <RemoveModal
+                              url={`/todo/${todo?._id}`}
+                              refetchQueries={[
+                                "FOLDERS-OVERVIEW",
+                                "TODOS-OVERVIEW",
+                                "RECENT-TODOS",
+                                "ALL-FOLDERS",
+                                "ALL-TODOS",
+                              ]}
+                            />
+                          ),
+                          isShown: true,
+                        });
+                      }}
+                    />
+                  </td>
+                </tr>
+              );
+            })}
           </tbody>
         }
-        pagination={<Pagination style="rounded-none" />}
       />
-      <PieChart />
     </div>
   );
 }

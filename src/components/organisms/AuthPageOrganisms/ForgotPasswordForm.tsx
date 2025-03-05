@@ -33,7 +33,6 @@ function ForgotPasswordForm({
               placeholder={t("identifierInput")}
               icon={<FaUserLarge />}
               setFieldTouched={setFieldTouched}
-              maxLength={20}
             />
             <div>
               <Button

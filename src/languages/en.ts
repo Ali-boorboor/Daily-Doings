@@ -148,6 +148,8 @@ const en = {
   errorEditFolderToast: "Failed To Edit Folder",
   successEditTodoToast: "Todo Edited Successfully",
   errorEditTodoToast: "Failed To Edit Todo",
+  wrongPassOrUsername: "Password Or Username (Email) Is Wrong",
+  repeatedUsernameEmail: "Email Or Username Is Already Registered",
 };
 
 export default en;

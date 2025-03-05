@@ -47,7 +47,7 @@ function EditModal({ hasRemoveModal, todoID }: EditModalPropsType) {
         enableReinitialize
         initialValues={{
           todoSubject: data?.data?.result?.subject,
-          todoFolder: data?.data?.result?.folder?._id,
+          todoFolder: data?.data?.result?.folder?._id || ("" as string),
           todoStatus: data?.data?.result?.status?._id,
           todoPriority: data?.data?.result?.priority?._id,
           isListTodo: data?.data?.result?.isListTodo === 1 ? true : false,

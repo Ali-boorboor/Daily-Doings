@@ -3,6 +3,7 @@ import docTitle from "@/utils/documentTitle";
 import SignupForm from "@o/AuthPageOrganisms/SignupForm";
 import { signupOnSubmitValues } from "@type/templatesTypes";
 import { AuthPagesCoverState } from "@st/organismsStates";
+import { toastDetails } from "@st/globalStates";
 import { useTranslation } from "react-i18next";
 import { useRecoilState } from "recoil";
 import { memo, useEffect } from "react";
@@ -10,7 +11,8 @@ import { memo, useEffect } from "react";
 function Signup() {
   const { t } = useTranslation();
   const [, setSrcIndex] = useRecoilState(AuthPagesCoverState);
-  const { mutate: postReq } = usePostReq({
+  const [, setToastDetails] = useRecoilState(toastDetails);
+  const { mutate: postReq, error }: any = usePostReq({
     successTitle: t("successSignupToast"),
     errorTitle: t("errorSignupToast"),
     navigateTo: "/auth/login",
@@ -21,6 +23,17 @@ function Signup() {
     docTitle("Signup Page");
     setSrcIndex(2);
   }, []);
+
+  useEffect(() => {
+    if (+error?.status === 409) {
+      setToastDetails({
+        title: t("repeatedUsernameEmail"),
+        toastState: "alert-error",
+        ringState: "ring-error",
+        isShown: true,
+      });
+    }
+  }, [error]);
 
   return (
     <SignupForm
