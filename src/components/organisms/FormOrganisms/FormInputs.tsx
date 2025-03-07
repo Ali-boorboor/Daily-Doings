@@ -10,7 +10,7 @@ function FormInputs({ values, handleChange, setFieldTouched }: any) {
   const { t } = useTranslation();
   const { data } = useGetReq({
     queryKey: "ALL-FOLDERS",
-    url: "/folder",
+    url: "/folder?limit=2000",
     cacheTime: 86400000,
     staleTime: 86400000,
   });

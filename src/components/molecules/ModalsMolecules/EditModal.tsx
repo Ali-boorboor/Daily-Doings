@@ -28,6 +28,7 @@ function EditModal({ hasRemoveModal, todoID }: EditModalPropsType) {
     errorTitle: t("errorEditTodoToast"),
     url: `/todo/${todoID}`,
     refetchQueries: [
+      "SEARCH",
       "ALL-TODOS",
       "ALL-FOLDERS",
       "RECENT-TODOS",

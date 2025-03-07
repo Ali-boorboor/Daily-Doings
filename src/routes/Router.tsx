@@ -20,6 +20,7 @@ const StickyWall = lazy(() => import("@t/StickyWall"));
 const Dashboard = lazy(() => import("@t/Dashboard"));
 const Calendar = lazy(() => import("@t/Calendar"));
 const Settings = lazy(() => import("@t/Settings"));
+const Search = lazy(() => import("@t/Search"));
 const Signup = lazy(() => import("@t/Signup"));
 const Folder = lazy(() => import("@t/Folder"));
 const Table = lazy(() => import("@t/Table"));
@@ -90,6 +91,7 @@ const Routes = [
           },
         ],
       },
+      { path: "search", element: <Search /> },
     ],
   },
   { path: "*", element: <Page404 /> },

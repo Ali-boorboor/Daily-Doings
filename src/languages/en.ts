@@ -151,6 +151,8 @@ const en = {
   wrongPassOrUsername: "Password Or Username (Email) Is Wrong",
   repeatedUsernameEmail: "Email Or Username Is Already Registered",
   errorFailedGetData: "Failed To Get Data",
+  searchTableTitle: "Search Result",
+  searchWarningToast: "Please Type Something To Search",
 };
 
 export default en;

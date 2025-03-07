@@ -151,6 +151,8 @@ const fa = {
   wrongPassOrUsername: "کلمه عبور یا نام کاربری (ایمیل) اشتباه است",
   repeatedUsernameEmail: "ایمیل یا نام کاربری قبلا ثبت شده است",
   errorFailedGetData: "خطا در هنگام دریافت اطلاعات",
+  searchTableTitle: "نتایج سرچ",
+  searchWarningToast: "لطفا برای جستجو تایپ کنید",
 };
 
 export default fa;

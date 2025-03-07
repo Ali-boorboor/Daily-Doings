@@ -1,7 +1,7 @@
 import { To } from "react-router-dom";
 
 type buttonPropsType = {
-  text: string;
+  text: string | JSX.Element;
   style?: string;
   isLink?: boolean;
   disabled?: boolean;
