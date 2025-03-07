@@ -150,6 +150,7 @@ const fa = {
   errorEditTodoToast: "خطا در هنگام ویرایش کار",
   wrongPassOrUsername: "کلمه عبور یا نام کاربری (ایمیل) اشتباه است",
   repeatedUsernameEmail: "ایمیل یا نام کاربری قبلا ثبت شده است",
+  errorFailedGetData: "خطا در هنگام دریافت اطلاعات",
 };
 
 export default fa;

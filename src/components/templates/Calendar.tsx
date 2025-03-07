@@ -6,8 +6,8 @@ import { memo, useEffect, useState } from "react";
 function Calendar() {
   const [todosDate, setTodosDate] = useState([]);
   const { data } = useGetReq({
-    queryKey: "ALL-TODOS",
-    url: "/todo/get-all",
+    queryKey: ["ALL-TODOS"],
+    url: "/todo/get-all?limit=20",
     cacheTime: 86400000,
     staleTime: 86400000,
   });

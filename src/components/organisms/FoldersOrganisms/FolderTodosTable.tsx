@@ -18,8 +18,10 @@ function FolderTodosTable() {
   const { t } = useTranslation();
   const { language } = i18next;
   const { data } = useGetReq({
-    queryKey: `FOLDER-${folderID}`,
+    queryKey: ["ALL-FOLDERS", `FOLDER-${folderID}`],
     url: `/folder/${folderID}`,
+    cacheTime: 86400000,
+    staleTime: 86400000,
   });
 
   if (data?.status !== 204) {

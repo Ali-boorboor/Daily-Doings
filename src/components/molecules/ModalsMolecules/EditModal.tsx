@@ -18,7 +18,7 @@ function EditModal({ hasRemoveModal, todoID }: EditModalPropsType) {
   const [, setTodoItem] = useRecoilState(TodoItem);
   const { t } = useTranslation();
   const { data } = useGetReq({
-    queryKey: `TODO-${todoID}`,
+    queryKey: ["ALL-TODOS", `TODO-${todoID}`],
     url: `/todo/${todoID}`,
     cacheTime: 86400000,
     staleTime: 86400000,
@@ -59,14 +59,14 @@ function EditModal({ hasRemoveModal, todoID }: EditModalPropsType) {
             reqOptions: {
               subject: values.todoSubject,
               priority: values.todoPriority,
-              folder: values.todoFolder,
+              folder: values.todoFolder || null,
               status: values.todoStatus,
               labelColor: values.todoLabel,
               isListTodo: values.isListTodo ? 1 : 0,
               description: values.todoDescription,
               listItems:
                 todoItemsList.length === 0
-                  ? data?.data?.result?.listItems
+                  ? data?.data?.result?.listItems || null
                   : todoItemsList,
             },
           });

@@ -47,7 +47,7 @@ type tableWrapperPropsType = {
   pagination?: JSX.Element;
 };
 
-type paginationPropsType = { style?: string };
+type paginationPropsType = { style?: string; data: any };
 
 type EditModalPropsType = {
   hasRemoveModal?: boolean;

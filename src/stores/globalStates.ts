@@ -41,6 +41,11 @@ const toastDetails = atom<toastDetailsStateType>({
   },
 });
 
+const page = atom({
+  key: "page",
+  default: 1,
+});
+
 export {
   hasLoading,
   theme,
@@ -48,4 +53,5 @@ export {
   lang,
   modalDetails,
   toastDetails,
+  page,
 };

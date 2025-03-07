@@ -9,7 +9,7 @@ type useReqHooksPropsType = {
 };
 
 type useGetReqHookPropsType = {
-  queryKey: string;
+  queryKey: string | string[];
   successTitle?: string;
   errorTitle?: string;
   url: string;

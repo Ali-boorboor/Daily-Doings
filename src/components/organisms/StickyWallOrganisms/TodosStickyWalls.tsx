@@ -19,7 +19,7 @@ function TodosStickyWalls({ data }: getAllTodosResType) {
         title={t("stickyWallTitle")}
       />
       <div className="flex flex-wrap gap-4 lg:gap-10 justify-center items-center p-4 lg:p-8">
-        {data?.todos?.map((todo, index) => {
+        {data?.data?.todos?.map((todo, index) => {
           return (
             <TodoStickyWall
               key={++index}
@@ -34,7 +34,7 @@ function TodosStickyWalls({ data }: getAllTodosResType) {
         })}
         <AddStickyWall />
       </div>
-      <Pagination />
+      {data?.status !== 204 ? <Pagination data={data?.data} /> : null}
     </div>
   );
 }

@@ -150,6 +150,7 @@ const en = {
   errorEditTodoToast: "Failed To Edit Todo",
   wrongPassOrUsername: "Password Or Username (Email) Is Wrong",
   repeatedUsernameEmail: "Email Or Username Is Already Registered",
+  errorFailedGetData: "Failed To Get Data",
 };
 
 export default en;

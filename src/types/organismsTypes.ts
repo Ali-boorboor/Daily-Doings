@@ -91,32 +91,35 @@ type RecentTableTodos = {
 
 type getAllTodosResType = {
   data: {
-    todos: [
-      {
-        _id: string;
-        subject: string;
-        priority: {
+    data: {
+      todos: [
+        {
           _id: string;
-          priority: string;
-        };
-        status: {
-          _id: string;
-          status: string;
-        };
-        folder: {
-          _id: string;
-          name: string;
+          subject: string;
+          priority: {
+            _id: string;
+            priority: string;
+          };
+          status: {
+            _id: string;
+            status: string;
+          };
+          folder: {
+            _id: string;
+            name: string;
+            createdAt: string;
+            updatedAt: string;
+          };
+          labelColor: string;
+          isListTodo: number;
+          description: string;
+          listItems: string[];
           createdAt: string;
           updatedAt: string;
-        };
-        labelColor: string;
-        isListTodo: number;
-        description: string;
-        listItems: string[];
-        createdAt: string;
-        updatedAt: string;
-      }
-    ];
+        }
+      ];
+    };
+    status: number;
   };
 };
 
