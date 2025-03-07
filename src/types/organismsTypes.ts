@@ -147,14 +147,16 @@ type getAllTodayTodosResType = {
 
 type getAllFoldersResType = {
   data: {
-    folders: [
-      {
-        _id: string;
-        name: string;
-        createdAt: Date;
-        updatedAt: Date;
-      }
-    ];
+    data: {
+      folders: [
+        {
+          _id: string;
+          name: string;
+          createdAt: Date;
+          updatedAt: Date;
+        }
+      ];
+    };
   };
 };
 

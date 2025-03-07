@@ -8,7 +8,7 @@ import { useRecoilState } from "recoil";
 import { Form, Formik } from "formik";
 import { memo } from "react";
 
-function EditFolderModal({ folderID }: any) {
+function EditFolderModal({ folderID, folderName }: any) {
   const [ModalDetails, setModalDetails] = useRecoilState(modalDetails);
   const { t } = useTranslation();
   const { mutate: putReq } = usePutReq({
@@ -25,8 +25,9 @@ function EditFolderModal({ folderID }: any) {
         style="badge-primary rounded-lg text-xl md:text-2xl p-2 w-full text-center ring ring-primary ring-offset-2 ring-offset-base-100 drop-shadow-lg"
       />
       <Formik
+        enableReinitialize
         initialValues={{
-          folderName: "",
+          folderName,
         }}
         onSubmit={(values) => {
           putReq({

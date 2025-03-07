@@ -34,7 +34,7 @@ function TodosStickyWalls({ data }: getAllTodosResType) {
         })}
         <AddStickyWall />
       </div>
-      {data?.status !== 204 ? <Pagination data={data?.data} /> : null}
+      {data?.status !== 204 && <Pagination data={data?.data} />}
     </div>
   );
 }

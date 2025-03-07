@@ -2,7 +2,7 @@ import Button from "@a/Button";
 import HeaderTitle from "@a/HeaderTitle";
 import useDeleteReq from "@/hooks/useDeleteReq";
 import { RemoveModalPropsType } from "@type/moleculesTypes";
-import { modalDetails } from "@st/globalStates";
+import { modalDetails, page } from "@st/globalStates";
 import { useTranslation } from "react-i18next";
 import { useRecoilState } from "recoil";
 import { memo } from "react";
@@ -13,6 +13,7 @@ function RemoveModal({
   refetchQueries,
   refetchQueryKey,
 }: RemoveModalPropsType) {
+  const [, setPageCount] = useRecoilState(page);
   const [ModalDetails, setModalDetails] = useRecoilState(modalDetails);
   const { t } = useTranslation();
   const { mutate: deleteReq } = useDeleteReq({
@@ -37,6 +38,7 @@ function RemoveModal({
           text={t("removeModalYesBtn")}
           onClickHandler={() => {
             deleteReq({});
+            setPageCount(1);
             setModalDetails({ ...ModalDetails, isShown: false });
           }}
         />

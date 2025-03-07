@@ -31,7 +31,9 @@ function FolderBox({ folderName, folderID, index }: any) {
           type="button"
           onClickHandler={() => {
             setModalDetails({
-              elements: <EditFolderModal folderID={folderID} />,
+              elements: (
+                <EditFolderModal folderID={folderID} folderName={folderName} />
+              ),
               isShown: true,
             });
           }}

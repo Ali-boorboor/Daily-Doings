@@ -38,25 +38,27 @@ function Today() {
 
   return (
     <div className="max-w-screen-2xl m-auto">
-      <div className="badge-ghost rounded-lg ring ring-primary ring-offset-2 ring-offset-base-100 drop-shadow-lg">
+      <div className="flex flex-col gap-4 badge-ghost rounded-lg ring ring-primary ring-offset-2 ring-offset-base-100 drop-shadow-lg">
         <HeaderTitle
           title={t("todayTodosTitle")}
           style="bg-primary text-primary-content text-xl md:text-2xl text-center p-2 rounded-b-full"
         />
-        <AddTodayTodoForm
-          onSubmitHandler={(
-            values: TodayOnSubmitValues,
-            { resetForm }: any
-          ) => {
-            postReq({
-              reqOptions: {
-                subject: values.addTodoInput,
-                priority: values.addTodoPriorityInput,
-              },
-            });
-            resetForm();
-          }}
-        />
+        {data?.data?.todayTodos.length < 20 && (
+          <AddTodayTodoForm
+            onSubmitHandler={(
+              values: TodayOnSubmitValues,
+              { resetForm }: any
+            ) => {
+              postReq({
+                reqOptions: {
+                  subject: values.addTodoInput,
+                  priority: values.addTodoPriorityInput,
+                },
+              });
+              resetForm();
+            }}
+          />
+        )}
         <TodayTodoPriorityGuide />
         {data?.status === 204 ? (
           <NoDataAlert />

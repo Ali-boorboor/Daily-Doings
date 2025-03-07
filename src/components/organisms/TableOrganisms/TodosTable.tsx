@@ -79,9 +79,7 @@ function TodosTable() {
                       key={pagesIndex + ++index}
                       className="border border-base-content drop-shadow-lg"
                     >
-                      <th>{`${
-                        pagesIndex === 0 ? "" : pagesIndex
-                      }${++index}`}</th>
+                      <th>{pagesIndex * +data?.data?.limit + ++index}</th>
                       <td className="border border-base-content drop-shadow-lg">
                         {todo?.subject}
                       </td>
@@ -111,9 +109,7 @@ function TodosTable() {
                       <td className="border border-base-content drop-shadow-lg">
                         {todo?.folder?.name ? (
                           <Button
-                            style={`${
-                              index % 2 === 0 ? "btn-secondary" : "btn-primary"
-                            } grow w-full`}
+                            style="btn-primary grow w-full"
                             text={todo?.folder?.name}
                             isOutlineBtn
                             linkTo="/folder"

@@ -7,7 +7,7 @@ function Calendar() {
   const [todosDate, setTodosDate] = useState([]);
   const { data } = useGetReq({
     queryKey: ["ALL-TODOS"],
-    url: "/todo/get-all?limit=20",
+    url: "/todo/get-all?limit=10",
     cacheTime: 86400000,
     staleTime: 86400000,
   });

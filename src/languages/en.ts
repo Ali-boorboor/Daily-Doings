@@ -53,7 +53,7 @@ const en = {
   notDoneTodos: "Not Done Todos",
   inProgressTodos: "In Progress Todos",
   awaitTodos: "Await Todos",
-  dashboardActivityOverview: "Activity Overview",
+  dashboardActivityOverview: "Folders Overview",
   dashboardTodosOverview: "Todos Overview ( % )",
   dashboardRecentTodos: "Recent Todos",
   tablesNumberField: "Number",

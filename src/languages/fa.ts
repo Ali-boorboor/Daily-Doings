@@ -53,7 +53,7 @@ const fa = {
   notDoneTodos: "کارهای انجام نشده",
   inProgressTodos: "کارهای در دست انجام",
   awaitTodos: "کارهای در حالت انتظار",
-  dashboardActivityOverview: "نمای کلی فعالیت",
+  dashboardActivityOverview: "نمای کلی پوشه ها",
   dashboardTodosOverview: "نمای کلی کارها (%)",
   dashboardRecentTodos: "کارهای اخیر",
   tablesNumberField: "شماره",

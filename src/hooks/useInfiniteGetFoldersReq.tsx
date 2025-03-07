@@ -5,16 +5,16 @@ import { useTranslation } from "react-i18next";
 import { useRecoilState } from "recoil";
 import { useEffect } from "react";
 
-function useInfiniteGetTodosReq() {
+function useInfiniteGetFoldersReq() {
   const { t } = useTranslation();
   const [, setToastDetails] = useRecoilState(toastDetails);
   const [, setLoading] = useRecoilState(hasLoading);
 
   const { data, isFetching, isSuccess, isError, fetchNextPage, hasNextPage } =
     useInfiniteQuery(
-      ["ALL-TODOS", "INFINITE"],
+      ["ALL-FOLDERS"],
       ({ pageParam = 1 }) => {
-        return axiosInstance.get(`/todo/get-all?limit=15&page=${pageParam}`);
+        return axiosInstance.get(`/folder?limit=20&page=${pageParam}`);
       },
       {
         getNextPageParam: (lastPage, pages) => {
@@ -43,4 +43,4 @@ function useInfiniteGetTodosReq() {
   return { data, isSuccess, isError, fetchNextPage, hasNextPage };
 }
 
-export default useInfiniteGetTodosReq;
+export default useInfiniteGetFoldersReq;
