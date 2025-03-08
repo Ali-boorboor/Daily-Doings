@@ -13,6 +13,7 @@ type buttonPropsType = {
 
 type inputPropsType = {
   value?: any;
+  ref?: any;
   name: string;
   disabled?: boolean;
   isSearch?: boolean;

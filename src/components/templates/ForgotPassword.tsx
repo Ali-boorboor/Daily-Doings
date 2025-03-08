@@ -27,7 +27,7 @@ function ForgotPassword() {
   useEffect(() => {
     if (+error?.status === 404 || +error?.status === 401) {
       setToastDetails({
-        title: t("wrongPassOrUsername"),
+        title: t("forgotPassIDWrong"),
         toastState: "alert-error",
         ringState: "ring-error",
         isShown: true,

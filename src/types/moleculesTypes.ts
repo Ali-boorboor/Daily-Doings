@@ -128,7 +128,7 @@ type AddTodayTodoFormValues = {
 };
 
 type AddTodayTodoFormProps = {
-  onSubmitHandler: (values: AddTodayTodoFormValues) => void;
+  onSubmitHandler: (values: AddTodayTodoFormValues, { resetForm }: any) => void;
 };
 
 export type {

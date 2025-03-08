@@ -43,7 +43,7 @@ function Today() {
           title={t("todayTodosTitle")}
           style="bg-primary text-primary-content text-xl md:text-2xl text-center p-2 rounded-b-full"
         />
-        {data?.data?.todayTodos.length < 20 && (
+        {data?.data?.todayTodos?.length < 20 || data?.status === 204 ? (
           <AddTodayTodoForm
             onSubmitHandler={(
               values: TodayOnSubmitValues,
@@ -58,7 +58,7 @@ function Today() {
               resetForm();
             }}
           />
-        )}
+        ) : null}
         <TodayTodoPriorityGuide />
         {data?.status === 204 ? (
           <NoDataAlert />

@@ -153,6 +153,9 @@ const en = {
   errorFailedGetData: "Failed To Get Data",
   searchTableTitle: "Search Result",
   searchWarningToast: "Please Type Something To Search",
+  forgotPassIDWrong: "Username (Email) Is Wrong",
+  errorPassWrong: "Password Is Wrong",
+  repeatedUsername: "Username Is Already Registered",
 };
 
 export default en;

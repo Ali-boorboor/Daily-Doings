@@ -1,6 +1,7 @@
 import Input from "@a/Input";
 import Button from "@a/Button";
 import { AddTodayTodoFormProps } from "@type/moleculesTypes";
+import { todayTodoFormValidation } from "@v/Validations";
 import { useTranslation } from "react-i18next";
 import { Form, Formik } from "formik";
 import { memo } from "react";
@@ -15,6 +16,7 @@ function AddTodayTodoForm({ onSubmitHandler }: AddTodayTodoFormProps) {
         addTodoPriorityInput: "67bc5bf2a74538ab87c5a911",
       }}
       onSubmit={onSubmitHandler}
+      validationSchema={() => todayTodoFormValidation(t)}
     >
       {({ values, handleChange }) => (
         <Form className="p-6 pb-0 flex flex-wrap sm:flex-nowrap gap-4">

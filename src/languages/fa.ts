@@ -153,6 +153,9 @@ const fa = {
   errorFailedGetData: "خطا در هنگام دریافت اطلاعات",
   searchTableTitle: "نتایج سرچ",
   searchWarningToast: "لطفا برای جستجو تایپ کنید",
+  forgotPassIDWrong: "نام کاربری (ایمیل) اشتباه است",
+  errorPassWrong: "کلمه عبور اشتباه است",
+  repeatedUsername: "نام کاربری قبلا ثبت شده است",
 };
 
 export default fa;

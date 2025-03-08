@@ -34,6 +34,7 @@ function AddFolderModalForm({ onSubmitHandler }: any) {
               onChangeHandler={handleChange}
               placeholder={t("folderNameInput")}
               setFieldTouched={setFieldTouched}
+              maxLength={10}
             />
             <div className="flex justify-center items-center flex-wrap w-full gap-4">
               <Button

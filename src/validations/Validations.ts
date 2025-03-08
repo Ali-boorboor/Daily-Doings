@@ -37,9 +37,35 @@ const changeCoverValidation = (t: (key: string) => string) => {
   });
 };
 
+const changePasswordValidation = (t: (key: string) => string) => {
+  return Yup.object().shape({
+    currentPassword: password(t),
+    newPassword: password(t),
+    submitPassword: Yup.string()
+      .oneOf([Yup.ref("newPassword")], t("submitPasswordRefValidation"))
+      .required(t("submitPasswordRequiredValidation")),
+  });
+};
+
+const changeUsernameValidation = (t: (key: string) => string) => {
+  return Yup.object().shape({
+    newUsername: username(t),
+    password: password(t),
+  });
+};
+
+const todayTodoFormValidation = (t: (key: string) => string) => {
+  return Yup.object().shape({
+    addTodoInput: Yup.string().required(),
+  });
+};
+
 export {
   loginValidation,
   signupValidation,
   forgotPassValidation,
   changeCoverValidation,
+  changePasswordValidation,
+  changeUsernameValidation,
+  todayTodoFormValidation,
 };

@@ -25,7 +25,7 @@ function TodayTodosContainer({
       {({ values, handleChange }) => (
         <Form className="p-6 pt-0">
           <div className="flex flex-wrap gap-4 md:gap-8 justify-center items-center p-4 mt-4 rounded-lg ring ring-primary ring-offset-2 ring-offset-base-100 drop-shadow-lg">
-            {data?.todayTodos.map((todo, index) => {
+            {data?.todayTodos?.map((todo, index) => {
               return (
                 <div
                   key={++index}

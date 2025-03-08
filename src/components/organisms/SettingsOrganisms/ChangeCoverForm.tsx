@@ -4,13 +4,17 @@ import HeaderTitle from "@a/HeaderTitle";
 import usePutReq from "@/hooks/usePutReq";
 import { changeCoverFormOnSubmitValues } from "@type/organismsTypes";
 import { changeCoverValidation } from "@v/Validations";
+import { toastDetails } from "@st/globalStates";
 import { useTranslation } from "react-i18next";
+import { useRecoilState } from "recoil";
 import { Form, Formik } from "formik";
-import { memo } from "react";
+import { memo, useEffect, useRef } from "react";
 
 function ChangeCoverForm() {
+  const fileInputRef: any = useRef(null);
   const { t } = useTranslation();
-  const { mutate: putReq } = usePutReq({
+  const [, setToastDetails] = useRecoilState(toastDetails);
+  const { mutate: putReq, error }: any = usePutReq({
     successTitle: t("successChangeCoverToast"),
     errorTitle: t("errorChangeCoverToast"),
     navigateTo: "/settings",
@@ -30,6 +34,20 @@ function ChangeCoverForm() {
     resetForm();
   };
 
+  useEffect(() => {
+    if (+error?.status === 401) {
+      setToastDetails({
+        title: t("errorPassWrong"),
+        toastState: "alert-error",
+        ringState: "ring-error",
+        isShown: true,
+      });
+      if (fileInputRef.current) {
+        fileInputRef.current.value = "";
+      }
+    }
+  }, [error]);
+
   return (
     <Formik
       initialValues={{
@@ -48,6 +66,7 @@ function ChangeCoverForm() {
           <div className="flex flex-col gap-4 md:gap-8 justify-center items-center p-4 w-full">
             <Input
               name="cover"
+              ref={fileInputRef}
               styleLabel="max-w-full"
               styleInput="max-w-full file-input-bordered file-input-primary"
               placeholder={t("signupFileUploaderText")}
