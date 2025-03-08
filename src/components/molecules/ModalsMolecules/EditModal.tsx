@@ -6,7 +6,8 @@ import RemoveModal from "@m/ModalsMolecules/RemoveModal";
 import EditModalInputs from "@m/ModalsMolecules/EditModalInputs";
 import { EditModalPropsType } from "@type/moleculesTypes";
 import { TodoItem, TodoItemsList } from "@st/organismsStates";
-import { modalDetails } from "@st/globalStates";
+import { formsFormValidation } from "@v/Validations";
+import { modalDetails, toastDetails } from "@st/globalStates";
 import { useTranslation } from "react-i18next";
 import { useRecoilState } from "recoil";
 import { Form, Formik } from "formik";
@@ -15,6 +16,7 @@ import { memo } from "react";
 function EditModal({ hasRemoveModal, todoID }: EditModalPropsType) {
   const [ModalDetails, setModalDetails] = useRecoilState(modalDetails);
   const [todoItemsList, setTodoItemsList] = useRecoilState(TodoItemsList);
+  const [, setToastDetails] = useRecoilState(toastDetails);
   const [, setTodoItem] = useRecoilState(TodoItem);
   const { t } = useTranslation();
   const { data } = useGetReq({
@@ -55,25 +57,36 @@ function EditModal({ hasRemoveModal, todoID }: EditModalPropsType) {
           todoDescription: data?.data?.result?.description,
           todoLabel: data?.data?.result?.labelColor,
         }}
+        validationSchema={() => formsFormValidation(t)}
         onSubmit={(values, { resetForm }) => {
-          putReq({
-            reqOptions: {
-              subject: values.todoSubject,
-              priority: values.todoPriority,
-              folder: values.todoFolder || null,
-              status: values.todoStatus,
-              labelColor: values.todoLabel,
-              isListTodo: values.isListTodo ? 1 : 0,
-              description: values.todoDescription,
-              listItems:
-                todoItemsList.length === 0
-                  ? data?.data?.result?.listItems || null
-                  : todoItemsList,
-            },
-          });
-          setTodoItemsList([]);
-          setTodoItem("");
-          resetForm();
+          if (values.isListTodo && todoItemsList.length < 1) {
+            setToastDetails({
+              title: t("listItemWarningToast"),
+              toastState: "alert-warning",
+              ringState: "ring-warning",
+              isShown: true,
+            });
+          } else {
+            putReq({
+              reqOptions: {
+                subject: values.todoSubject,
+                priority: values.todoPriority,
+                folder: values.todoFolder || null,
+                status: values.todoStatus,
+                labelColor: values.todoLabel,
+                isListTodo: values.isListTodo ? 1 : 0,
+                description: values.todoDescription,
+                listItems:
+                  todoItemsList.length === 0
+                    ? data?.data?.result?.listItems || null
+                    : todoItemsList,
+              },
+            });
+            setModalDetails({ ...ModalDetails, isShown: false });
+            setTodoItemsList([]);
+            setTodoItem("");
+            resetForm();
+          }
         }}
       >
         {({ values, handleChange, setFieldTouched }) => (
@@ -88,9 +101,6 @@ function EditModal({ hasRemoveModal, todoID }: EditModalPropsType) {
                 type="submit"
                 style="btn-success w-1/3 grow ring ring-success ring-offset-2 ring-offset-base-100 drop-shadow-lg"
                 text={t("submitBtn")}
-                onClickHandler={() => {
-                  setModalDetails({ ...ModalDetails, isShown: false });
-                }}
               />
               <Button
                 type="button"

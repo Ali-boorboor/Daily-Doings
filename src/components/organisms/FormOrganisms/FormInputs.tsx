@@ -28,7 +28,6 @@ function FormInputs({ values, handleChange, setFieldTouched }: any) {
           placeholder={t("formSubject")}
           maxLength={10}
           type="text"
-          hasNoError
         />
       </div>
       <div className="flex lg:flex-nowrap flex-wrap gap-4 items-center justify-center">

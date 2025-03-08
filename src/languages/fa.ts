@@ -156,6 +156,7 @@ const fa = {
   forgotPassIDWrong: "نام کاربری (ایمیل) اشتباه است",
   errorPassWrong: "کلمه عبور اشتباه است",
   repeatedUsername: "نام کاربری قبلا ثبت شده است",
+  listItemWarningToast: "لیست کارها خالی است",
 };
 
 export default fa;

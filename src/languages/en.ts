@@ -156,6 +156,7 @@ const en = {
   forgotPassIDWrong: "Username (Email) Is Wrong",
   errorPassWrong: "Password Is Wrong",
   repeatedUsername: "Username Is Already Registered",
+  listItemWarningToast: "Todo Items List Is Empty",
 };
 
 export default en;

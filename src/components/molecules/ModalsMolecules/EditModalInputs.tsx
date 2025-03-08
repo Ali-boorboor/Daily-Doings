@@ -37,7 +37,6 @@ function EditModalInputs({
           placeholder={t("formSubject")}
           maxLength={10}
           type="text"
-          hasNoError
         />
       </div>
       <div className="flex lg:flex-nowrap flex-wrap gap-4 items-center justify-center">

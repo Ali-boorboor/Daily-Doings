@@ -3,6 +3,7 @@ import Button from "@a/Button";
 import FormInputs from "@o/FormOrganisms/FormInputs";
 import ListPreview from "@o/FormOrganisms/ListPreview";
 import DescriptionPreview from "@o/FormOrganisms/DescriptionPreview";
+import { formsFormValidation } from "@v/Validations";
 import { Formik, Form as FormikForm } from "formik";
 import { useTranslation } from "react-i18next";
 import { memo } from "react";
@@ -21,6 +22,7 @@ function FormsFrom({ onSubmitHandler }: any) {
         todoLabel: "badge-primary",
       }}
       onSubmit={onSubmitHandler}
+      validationSchema={() => formsFormValidation(t)}
     >
       {({ values, handleChange, setFieldValue, setFieldTouched }) => (
         <FormikForm className="flex flex-col gap-4 lg:gap-10 p-4 lg:px-8 lg:py-4">

@@ -2,6 +2,7 @@ import Input from "@a/Input";
 import Button from "@a/Button";
 import usePutReq from "@/hooks/usePutReq";
 import HeaderTitle from "@a/HeaderTitle";
+import { FolderModalFormValidation } from "@v/Validations";
 import { EditFolderModalProps } from "@type/moleculesTypes";
 import { modalDetails } from "@st/globalStates";
 import { useTranslation } from "react-i18next";
@@ -27,6 +28,7 @@ function EditFolderModal({ folderID, folderName }: EditFolderModalProps) {
       />
       <Formik
         enableReinitialize
+        validationSchema={() => FolderModalFormValidation(t)}
         initialValues={{
           folderName,
         }}
@@ -51,7 +53,6 @@ function EditFolderModal({ folderID, folderName }: EditFolderModalProps) {
                 placeholder={t("folderNameInput")}
                 maxLength={10}
                 type="text"
-                hasNoError
               />
             </div>
             <div className="flex justify-center items-center gap-4 w-full">

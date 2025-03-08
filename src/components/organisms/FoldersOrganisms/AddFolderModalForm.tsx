@@ -1,6 +1,7 @@
 import Input from "@a/Input";
 import Button from "@a/Button";
 import HeaderTitle from "@a/HeaderTitle";
+import { FolderModalFormValidation } from "@v/Validations";
 import { modalDetails } from "@st/globalStates";
 import { useTranslation } from "react-i18next";
 import { useRecoilState } from "recoil";
@@ -14,6 +15,7 @@ function AddFolderModalForm({ onSubmitHandler }: any) {
   return (
     <Formik
       initialValues={{ folderName: "" }}
+      validationSchema={() => FolderModalFormValidation(t)}
       onSubmit={(values, { resetForm }) => {
         onSubmitHandler({ reqOptions: { name: values?.folderName } });
         setModalDetails({ ...ModalDetails, isShown: false });

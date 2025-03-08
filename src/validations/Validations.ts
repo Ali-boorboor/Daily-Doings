@@ -60,6 +60,24 @@ const todayTodoFormValidation = (t: (key: string) => string) => {
   });
 };
 
+const formsFormValidation = (t: (key: string) => string) => {
+  return Yup.object().shape({
+    todoSubject: Yup.string().required(),
+    isListTodo: Yup.boolean().default(false),
+    todoDescription: Yup.string().when("isListTodo", {
+      is: false,
+      then: () => Yup.string().required(),
+      otherwise: () => Yup.string().notRequired(),
+    }),
+  });
+};
+
+const FolderModalFormValidation = (t: (key: string) => string) => {
+  return Yup.object().shape({
+    folderName: Yup.string().required(),
+  });
+};
+
 export {
   loginValidation,
   signupValidation,
@@ -68,4 +86,6 @@ export {
   changePasswordValidation,
   changeUsernameValidation,
   todayTodoFormValidation,
+  formsFormValidation,
+  FolderModalFormValidation,
 };
