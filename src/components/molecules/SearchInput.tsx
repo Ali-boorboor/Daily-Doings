@@ -15,9 +15,9 @@ function SearchInput({ style }: searchInputPropsType) {
 
   const initialValues = { search: "" };
 
-  const onSubmitHandler: any = (
+  const onSubmitHandler = (
     values: { search: string },
-    { resetForm }: any
+    { resetForm }: { resetForm: () => void }
   ) => {
     if (values.search) {
       navigate(`/search?subject=${values.search}`);

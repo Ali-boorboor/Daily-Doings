@@ -2,13 +2,14 @@ import Input from "@a/Input";
 import Button from "@a/Button";
 import usePutReq from "@/hooks/usePutReq";
 import HeaderTitle from "@a/HeaderTitle";
+import { EditFolderModalProps } from "@type/moleculesTypes";
 import { modalDetails } from "@st/globalStates";
 import { useTranslation } from "react-i18next";
 import { useRecoilState } from "recoil";
 import { Form, Formik } from "formik";
 import { memo } from "react";
 
-function EditFolderModal({ folderID, folderName }: any) {
+function EditFolderModal({ folderID, folderName }: EditFolderModalProps) {
   const [ModalDetails, setModalDetails] = useRecoilState(modalDetails);
   const { t } = useTranslation();
   const { mutate: putReq } = usePutReq({

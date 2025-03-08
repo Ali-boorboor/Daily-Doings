@@ -28,7 +28,7 @@ function Input({
   onKeyDownHandler,
 }: inputPropsType) {
   const [isPasswordShown, setIsPasswordShown] = useState(false);
-  const [file, setFile]: any = useState(null);
+  const [file, setFile] = useState<string | null>(null);
 
   if (isUploader) {
     return (
@@ -45,9 +45,10 @@ function Input({
               value={value}
               disabled={disabled}
               accept="image/png, image/jpeg, image/jpg"
-              onChange={(e: any) => {
-                if (e.target.files[0]) {
-                  setFile(URL.createObjectURL(e.target.files[0]));
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                const files = e.target.files;
+                if (files && files.length > 0) {
+                  setFile(URL.createObjectURL(files[0]));
                 } else {
                   setFile(null);
                 }
@@ -160,7 +161,7 @@ function Input({
             onChange={onChangeHandler}
             className={`grow ${styleInput}`}
             maxLength={maxLength}
-            onKeyDown={(e: any) => {
+            onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => {
               setFieldTouched && setFieldTouched(name);
               onKeyDownHandler && onKeyDownHandler(e);
             }}
@@ -188,7 +189,7 @@ function Input({
           onChange={onChangeHandler}
           className={`grow ${styleInput}`}
           maxLength={maxLength}
-          onKeyDown={(e: any) => {
+          onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => {
             setFieldTouched && setFieldTouched(name);
             onKeyDownHandler && onKeyDownHandler(e);
           }}

@@ -14,7 +14,7 @@ import { memo } from "react";
 
 function EditModal({ hasRemoveModal, todoID }: EditModalPropsType) {
   const [ModalDetails, setModalDetails] = useRecoilState(modalDetails);
-  const [todoItemsList, setTodoItemsList]: any = useRecoilState(TodoItemsList);
+  const [todoItemsList, setTodoItemsList] = useRecoilState(TodoItemsList);
   const [, setTodoItem] = useRecoilState(TodoItem);
   const { t } = useTranslation();
   const { data } = useGetReq({

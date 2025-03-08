@@ -3,12 +3,18 @@ import Button from "@a/Button";
 import ThemeCircle from "@a/ThemeCircle";
 import useGetReq from "@/hooks/useGetReq";
 import { TodoItem, TodoItemsList } from "@st/organismsStates";
+import { EditModalInputsProps } from "@type/moleculesTypes";
 import { useTranslation } from "react-i18next";
 import { useRecoilState } from "recoil";
 import { memo } from "react";
 
-function EditModalInputs({ values, handleChange, setFieldTouched }: any) {
-  const [todoItemsList, setTodoItemsList]: any = useRecoilState(TodoItemsList);
+function EditModalInputs({
+  values,
+  handleChange,
+  setFieldTouched,
+}: EditModalInputsProps) {
+  const [todoItemsList, setTodoItemsList] =
+    useRecoilState<string[]>(TodoItemsList);
   const [todoItem, setTodoItem] = useRecoilState(TodoItem);
   const { t } = useTranslation();
   const { data } = useGetReq({
@@ -47,13 +53,15 @@ function EditModalInputs({ values, handleChange, setFieldTouched }: any) {
               <option value={""} disabled>
                 {t("formNoFolderOption")}
               </option>
-              {data?.data?.folders?.map((folder: any, index: number) => {
-                return (
-                  <option key={++index} value={folder?._id}>
-                    {folder?.name}
-                  </option>
-                );
-              })}
+              {data?.data?.folders?.map(
+                (folder: { name: string; _id: string }, index: number) => {
+                  return (
+                    <option key={++index} value={folder?._id}>
+                      {folder?.name}
+                    </option>
+                  );
+                }
+              )}
             </>
           }
           isSelectBox
@@ -158,7 +166,9 @@ function EditModalInputs({ values, handleChange, setFieldTouched }: any) {
             <Input
               name="todoItem"
               value={todoItem}
-              onChangeHandler={(e: any) => setTodoItem(e.target.value)}
+              onChangeHandler={(e: React.ChangeEvent<HTMLInputElement>) =>
+                setTodoItem(e.target.value)
+              }
               styleLabel="input-primary grow"
               placeholder={t("formTodoItem")}
               maxLength={18}

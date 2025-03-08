@@ -1,10 +1,11 @@
 import Input from "@a/Input";
 import Button from "@a/Button";
+import { AddTodayTodoFormProps } from "@type/moleculesTypes";
 import { useTranslation } from "react-i18next";
 import { Form, Formik } from "formik";
 import { memo } from "react";
 
-function AddTodayTodoForm({ onSubmitHandler }: any) {
+function AddTodayTodoForm({ onSubmitHandler }: AddTodayTodoFormProps) {
   const { t } = useTranslation();
 
   return (

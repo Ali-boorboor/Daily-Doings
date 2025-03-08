@@ -10,7 +10,7 @@ const TodoItem = atom({
   default: "",
 });
 
-const TodoItemsList = atom({
+const TodoItemsList = atom<string[]>({
   key: "TodoItemsList",
   default: [],
 });

@@ -1,12 +1,13 @@
 import Button from "@a/Button";
 import RemoveModal from "@m/ModalsMolecules/RemoveModal";
 import EditFolderModal from "@m/ModalsMolecules/EditFolderModal";
+import { FolderBoxProps } from "@type/moleculesTypes";
 import { modalDetails } from "@st/globalStates";
 import { useTranslation } from "react-i18next";
 import { useRecoilState } from "recoil";
 import { memo } from "react";
 
-function FolderBox({ folderName, folderID, index }: any) {
+function FolderBox({ folderName, folderID, index }: FolderBoxProps) {
   const { t } = useTranslation();
   const [, setModalDetails] = useRecoilState(modalDetails);
 

@@ -10,4 +10,8 @@ type toastDetailsStateType = {
   isShown: boolean;
 };
 
-export type { modalDetailsStateType, toastDetailsStateType };
+interface FileInputEvent extends React.ChangeEvent<HTMLInputElement> {
+  target: HTMLInputElement & { files: FileList | null };
+}
+
+export type { modalDetailsStateType, toastDetailsStateType, FileInputEvent };

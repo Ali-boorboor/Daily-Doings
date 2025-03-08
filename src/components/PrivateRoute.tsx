@@ -3,9 +3,13 @@ import { useRecoilState } from "recoil";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { toastDetails } from "@st/globalStates";
-import { memo, useEffect, useState } from "react";
+import { memo, ReactNode, useEffect, useState } from "react";
 
-function PrivateRoute({ children }: any) {
+type PrivateRouteProps = {
+  children: ReactNode;
+};
+
+function PrivateRoute({ children }: PrivateRouteProps) {
   const navigate = useNavigate();
   const { t } = useTranslation();
   const [IsAuth, setIsAuth] = useState(false);

@@ -3,9 +3,10 @@ import Button from "@a/Button";
 import Divider from "@a/Divider";
 import AuthPageHeading from "@m/AuthPageHeading";
 import { signupFormPropsType } from "@type/organismsTypes";
+import { FileInputEvent } from "@type/globalTypes";
 import { signupValidation } from "@v/Validations";
-import { FaUserLarge } from "react-icons/fa6";
 import { useTranslation } from "react-i18next";
+import { FaUserLarge } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 import { Form, Formik } from "formik";
 import { memo } from "react";
@@ -49,8 +50,10 @@ function SignupForm({ initialValues, onSubmitHandler }: signupFormPropsType) {
               styleLabel="max-w-full"
               styleInput="max-w-full file-input-bordered file-input-primary"
               placeholder={t("signupFileUploaderText")}
-              setFieldValue={(e: any) => {
-                setFieldValue("cover", e.target.files[0]);
+              setFieldValue={(e: FileInputEvent) => {
+                if (e.target.files && e.target.files[0]) {
+                  setFieldValue("cover", e.target.files[0]);
+                }
               }}
               isUploader
             />

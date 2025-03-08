@@ -160,6 +160,16 @@ type getAllFoldersResType = {
   };
 };
 
+type EventData = {
+  title: string;
+  start: string;
+  end: string;
+};
+
+type CalendarProps = {
+  data: EventData[];
+};
+
 export type {
   loginFormPropsType,
   signupFormPropsType,
@@ -172,4 +182,5 @@ export type {
   getAllTodosResType,
   getAllTodayTodosResType,
   getAllFoldersResType,
+  CalendarProps,
 };

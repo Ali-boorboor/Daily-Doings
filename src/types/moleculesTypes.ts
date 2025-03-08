@@ -92,6 +92,45 @@ type RemoveModalPropsType = {
   refetchQueries?: string[];
 };
 
+type FolderBoxProps = {
+  folderName: string;
+  folderID: string;
+  index: number;
+};
+
+type EditFolderModalProps = {
+  folderName: string;
+  folderID: string;
+};
+
+type EditModalInputsPropsFormValues = {
+  todoSubject: string;
+  todoFolder: string;
+  todoStatus: string;
+  todoPriority: string;
+  todoLabel: string;
+  todoItem?: string;
+  todoDescription?: string;
+  isListTodo: boolean;
+};
+
+type EditModalInputsProps = {
+  values: EditModalInputsPropsFormValues;
+  handleChange: (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => void;
+  setFieldTouched: (field: string) => void;
+};
+
+type AddTodayTodoFormValues = {
+  addTodoInput: string;
+  addTodoPriorityInput: string;
+};
+
+type AddTodayTodoFormProps = {
+  onSubmitHandler: (values: AddTodayTodoFormValues) => void;
+};
+
 export type {
   authPageHeadingPropsType,
   searchInputPropsType,
@@ -106,4 +145,8 @@ export type {
   PieChartPropsType,
   BarChartPropsType,
   RemoveModalPropsType,
+  FolderBoxProps,
+  EditFolderModalProps,
+  EditModalInputsProps,
+  AddTodayTodoFormProps,
 };

@@ -1,10 +1,11 @@
 import i18next from "i18next";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
+import { CalendarProps } from "@type/organismsTypes";
 import { useTranslation } from "react-i18next";
 import { memo, useEffect, useState } from "react";
 
-const Calendar = ({ data }: any) => {
+const Calendar = ({ data }: CalendarProps) => {
   const { language } = i18next;
   const { i18n, t } = useTranslation();
   const [buttonText, setButtonText] = useState({});
