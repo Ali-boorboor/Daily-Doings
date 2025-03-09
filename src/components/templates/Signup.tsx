@@ -6,10 +6,11 @@ import { AuthPagesCoverState } from "@st/organismsStates";
 import { toastDetails } from "@st/globalStates";
 import { useTranslation } from "react-i18next";
 import { useRecoilState } from "recoil";
-import { memo, useEffect } from "react";
+import { memo, useEffect, useRef } from "react";
 
 function Signup() {
   const { t } = useTranslation();
+  const fileInputRef: any = useRef(null);
   const [, setSrcIndex] = useRecoilState(AuthPagesCoverState);
   const [, setToastDetails] = useRecoilState(toastDetails);
   const { mutate: postReq, error }: any = usePostReq({
@@ -33,10 +34,14 @@ function Signup() {
         isShown: true,
       });
     }
+    if (fileInputRef.current) {
+      fileInputRef.current.value = "";
+    }
   }, [error]);
 
   return (
     <SignupForm
+      ref={fileInputRef}
       initialValues={{
         username: "",
         email: "",

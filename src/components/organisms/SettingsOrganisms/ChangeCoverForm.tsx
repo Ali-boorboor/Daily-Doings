@@ -11,8 +11,8 @@ import { Form, Formik } from "formik";
 import { memo, useEffect, useRef } from "react";
 
 function ChangeCoverForm() {
-  const fileInputRef: any = useRef(null);
   const { t } = useTranslation();
+  const fileInputRef: any = useRef(null);
   const [, setToastDetails] = useRecoilState(toastDetails);
   const { mutate: putReq, error }: any = usePutReq({
     successTitle: t("successChangeCoverToast"),

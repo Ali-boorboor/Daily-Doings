@@ -135,7 +135,7 @@ const Input = forwardRef(
                 disabled={disabled}
                 onChange={onChangeHandler}
                 className={`checkbox ${styleInput}`}
-                defaultChecked={isDefaultChecked}
+                checked={isDefaultChecked}
               />
               <span className="label-text">{placeholder}</span>
             </label>

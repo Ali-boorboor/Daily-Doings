@@ -56,25 +56,27 @@ const changeUsernameValidation = (t: (key: string) => string) => {
 
 const todayTodoFormValidation = (t: (key: string) => string) => {
   return Yup.object().shape({
-    addTodoInput: Yup.string().required(),
+    addTodoInput: Yup.string().trim().required(),
   });
 };
 
 const formsFormValidation = (t: (key: string) => string) => {
   return Yup.object().shape({
-    todoSubject: Yup.string().required(),
+    todoSubject: Yup.string().trim().required(),
     isListTodo: Yup.boolean().default(false),
-    todoDescription: Yup.string().when("isListTodo", {
-      is: false,
-      then: () => Yup.string().required(),
-      otherwise: () => Yup.string().notRequired(),
-    }),
+    todoDescription: Yup.string()
+      .trim()
+      .when("isListTodo", {
+        is: false,
+        then: () => Yup.string().required(),
+        otherwise: () => Yup.string().notRequired(),
+      }),
   });
 };
 
 const FolderModalFormValidation = (t: (key: string) => string) => {
   return Yup.object().shape({
-    folderName: Yup.string().required(),
+    folderName: Yup.string().trim().required(),
   });
 };
 

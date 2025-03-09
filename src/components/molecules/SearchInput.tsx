@@ -19,7 +19,7 @@ function SearchInput({ style }: searchInputPropsType) {
     values: { search: string },
     { resetForm }: { resetForm: () => void }
   ) => {
-    if (values.search) {
+    if (values.search.trim().length >= 1) {
       navigate(`/search?subject=${values.search}`);
       resetForm();
     } else {
