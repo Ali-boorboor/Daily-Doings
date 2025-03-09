@@ -19,8 +19,9 @@ function SearchInput({ style }: searchInputPropsType) {
     values: { search: string },
     { resetForm }: { resetForm: () => void }
   ) => {
-    if (values.search.trim().length >= 1) {
-      navigate(`/search?subject=${values.search}`);
+    const searchValue = values.search.trim();
+    if (searchValue.length >= 1) {
+      navigate(`/search?subject=${searchValue}`);
       resetForm();
     } else {
       setToastDetails({

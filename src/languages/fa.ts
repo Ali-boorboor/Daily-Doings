@@ -27,6 +27,13 @@ const fa = {
   submitPasswordRefValidation: "کلمات عبور تفاوت دارند",
   emailRegexValidation: "لطفا ایمیل خود را به درستی وارد کنید",
   emailRequiredValidation: "لطفا ایمیل خود را وارد کنید",
+  identifierRegexValidation:
+    "لطفا ایمیل (نام کاربری) خود را به درستی وارد کنید",
+  identifierRequiredValidation: "لطفا ایمیل (نام کاربری) خود را وارد کنید",
+  coverRequiredValidation: "لطفا عکس پروفایل خود را انتخاب کنید",
+  addTodoInputRequiredValidation: "لطفا عنوان کار را مشخص کنید",
+  addTodoDescInputRequiredValidation: "لطفا توضیحات کار را مشخص کنید",
+  addFolderInputRequiredValidation: "لطفا نام پوشه را مشخص کنید",
   forgotPassText: "فراموشی کلمه عبور",
   signupFileUploaderText: "یک آواتار را انتخاب کنید (png، jpg)",
   loginText: "ورود به حساب کاربری",

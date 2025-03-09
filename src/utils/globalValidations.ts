@@ -28,8 +28,11 @@ const email = (t: (key: string) => string) => {
 
 const identifier = (t: (key: string) => string) => {
   return Yup.string()
-    .matches(/^(([^@\s]+)@([\w-]+\.)+[\w-]{2,5})|^[a-zA-Z0-9_.]{1,20}$/)
-    .required();
+    .matches(
+      /^(([^@\s]+)@([\w-]+\.)+[\w-]{2,5})|^[a-zA-Z0-9_.]{1,20}$/,
+      t("identifierRegexValidation")
+    )
+    .required(t("identifierRequiredValidation"));
 };
 
 export { username, password, submitPassword, email, identifier };

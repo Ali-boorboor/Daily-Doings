@@ -32,7 +32,7 @@ const forgotPassValidation = (t: (key: string) => string) => {
 
 const changeCoverValidation = (t: (key: string) => string) => {
   return Yup.object().shape({
-    cover: Yup.mixed().required(),
+    cover: Yup.mixed().required(t("coverRequiredValidation")),
     password: password(t),
   });
 };
@@ -56,19 +56,24 @@ const changeUsernameValidation = (t: (key: string) => string) => {
 
 const todayTodoFormValidation = (t: (key: string) => string) => {
   return Yup.object().shape({
-    addTodoInput: Yup.string().trim().required(),
+    addTodoInput: Yup.string()
+      .trim()
+      .required(t("addTodoInputRequiredValidation")),
   });
 };
 
 const formsFormValidation = (t: (key: string) => string) => {
   return Yup.object().shape({
-    todoSubject: Yup.string().trim().required(),
+    todoSubject: Yup.string()
+      .trim()
+      .required(t("addTodoInputRequiredValidation")),
     isListTodo: Yup.boolean().default(false),
     todoDescription: Yup.string()
       .trim()
       .when("isListTodo", {
         is: false,
-        then: () => Yup.string().required(),
+        then: () =>
+          Yup.string().required(t("addTodoDescInputRequiredValidation")),
         otherwise: () => Yup.string().notRequired(),
       }),
   });
@@ -76,7 +81,9 @@ const formsFormValidation = (t: (key: string) => string) => {
 
 const FolderModalFormValidation = (t: (key: string) => string) => {
   return Yup.object().shape({
-    folderName: Yup.string().trim().required(),
+    folderName: Yup.string()
+      .trim()
+      .required(t("addFolderInputRequiredValidation")),
   });
 };
 
