@@ -65,7 +65,11 @@ function MainHeader() {
             <div tabIndex={0} role="button" className="avatar online">
               <div className="ring-accent ring-offset-base-100 w-10 rounded-full ring ring-offset-2">
                 {cookies?.cover ? (
-                  <img crossOrigin="anonymous" src={cookies?.cover} />
+                  <img
+                    alt="profile-cover"
+                    crossOrigin="anonymous"
+                    src={cookies?.cover}
+                  />
                 ) : (
                   <FaUser className="w-full h-full bg-cover" />
                 )}

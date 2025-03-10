@@ -26,6 +26,7 @@ function Settings() {
       <div className="ring-accent ring-offset-base-100 w-40 h-40 my-6 mx-auto rounded-full overflow-hidden ring ring-offset-2">
         {cookies?.cover ? (
           <img
+            alt="profile-cover"
             crossOrigin="anonymous"
             className="w-full h-full object-cover"
             src={cookies?.cover}
