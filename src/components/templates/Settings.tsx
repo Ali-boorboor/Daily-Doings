@@ -5,13 +5,14 @@ import docTitle from "@/utils/documentTitle";
 import NavigateBtns from "@m/SettingsMolecules/NavigateBtns";
 import LanguageSettings from "@m/SettingsMolecules/LanguageSettings";
 import { useTranslation } from "react-i18next";
-import { useCookies } from "react-cookie";
+import { get } from "@/utils/localStorage";
 import { FaUser } from "react-icons/fa";
 import { memo, useEffect } from "react";
 
 function Settings() {
   const { t } = useTranslation();
-  const [cookies] = useCookies(["cover", "username"]);
+  const username = get("username");
+  const cover = get("cover");
 
   useEffect(() => {
     docTitle("Settings Page");
@@ -24,18 +25,18 @@ function Settings() {
         title={t("settingsLink")}
       />
       <div className="ring-accent ring-offset-base-100 w-40 h-40 my-6 mx-auto rounded-full overflow-hidden ring ring-offset-2">
-        {cookies?.cover ? (
+        {cover ? (
           <img
             alt="profile-cover"
             crossOrigin="anonymous"
             className="w-full h-full object-cover"
-            src={cookies?.cover}
+            src={cover}
           />
         ) : (
           <FaUser className="w-full h-full bg-cover" />
         )}
       </div>
-      <p className="text-center text-lg font-bold">{cookies?.username}</p>
+      <p className="text-center text-lg font-bold">{username}</p>
       <div className="p-4 mt-4">
         <ThemePalette styleThemesContainer="justify-start gap-4 px-1" />
         <Divider />

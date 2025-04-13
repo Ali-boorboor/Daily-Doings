@@ -4,6 +4,7 @@ import LoginForm from "@o/AuthPageOrganisms/LoginForm";
 import { loginOnSubmitValues } from "@type/templatesTypes";
 import { AuthPagesCoverState } from "@st/organismsStates";
 import { toastDetails } from "@st/globalStates";
+import { set } from "@/utils/localStorage";
 import { useTranslation } from "react-i18next";
 import { useRecoilState } from "recoil";
 import { memo, useEffect } from "react";
@@ -12,7 +13,12 @@ function Login() {
   const { t } = useTranslation();
   const [, setSrcIndex] = useRecoilState(AuthPagesCoverState);
   const [, setToastDetails] = useRecoilState(toastDetails);
-  const { mutate: postReq, error }: any = usePostReq({
+  const {
+    mutate: postReq,
+    error,
+    isSuccess,
+    data,
+  }: any = usePostReq({
     successTitle: t("successLoginToast"),
     errorTitle: t("errorLoginToast"),
     navigateTo: "/dashboard",
@@ -23,6 +29,13 @@ function Login() {
     docTitle("Login Page");
     setSrcIndex(1);
   }, []);
+
+  useEffect(() => {
+    if (isSuccess) {
+      set("username", data?.data?.data?.username);
+      set("cover", data?.data?.data?.cover);
+    }
+  }, [isSuccess]);
 
   useEffect(() => {
     if (+error?.status === 404 || +error?.status === 401) {

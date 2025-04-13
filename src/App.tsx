@@ -6,12 +6,10 @@ import langChangeHandler from "@/utils/langChangeHandler";
 import { validateLang } from "@/utils/validateSettings";
 import { hasLoading, lang, theme } from "@st/globalStates";
 import { useRoutes } from "react-router-dom";
-import { useCookies } from "react-cookie";
 import { useRecoilValue } from "recoil";
 import { memo, useEffect } from "react";
 
 function App() {
-  useCookies(["cover", "username"]);
   const isLoading = useRecoilValue(hasLoading);
   const Theme = useRecoilValue(theme);
   const Lang = useRecoilValue(lang);

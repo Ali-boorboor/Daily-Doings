@@ -8,15 +8,14 @@ import usePostReq from "@/hooks/usePostReq";
 import { isSideBarCollapse } from "@st/globalStates";
 import { useRecoilState } from "recoil";
 import { useTranslation } from "react-i18next";
-import { useCookies } from "react-cookie";
+import { get } from "@/utils/localStorage";
 import { IoClose } from "react-icons/io5";
 import { LuMenu } from "react-icons/lu";
-import { memo } from "react";
 import { FaUser } from "react-icons/fa";
+import { memo } from "react";
 
 function MainHeader() {
   const [isSideBarOpen, setIsSideBarOpen] = useRecoilState(isSideBarCollapse);
-  const [cookies] = useCookies(["cover", "username"]);
   const { t } = useTranslation();
   const { language } = i18next;
   const { mutate: postReq } = usePostReq({
@@ -25,6 +24,8 @@ function MainHeader() {
     navigateTo: "/auth/login",
     url: "/logout",
   });
+  const username = get("username");
+  const cover = get("cover");
 
   return (
     <div className="navbar z-50 fixed top-0 px-4 lg:px-6 bg-base-100 drop-shadow-lg border-b-primary border-b">
@@ -64,11 +65,11 @@ function MainHeader() {
           <div className="dropdown dropdown-end">
             <div tabIndex={0} role="button" className="avatar online">
               <div className="ring-accent ring-offset-base-100 w-10 rounded-full ring ring-offset-2">
-                {cookies?.cover ? (
+                {cover ? (
                   <img
                     alt="profile-cover"
                     crossOrigin="anonymous"
-                    src={cookies?.cover}
+                    src={cover}
                   />
                 ) : (
                   <FaUser className="w-full h-full bg-cover" />
@@ -79,7 +80,7 @@ function MainHeader() {
               tabIndex={0}
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow ring-accent ring-offset-2 ring-offset-base-100 ring"
             >
-              <p className="text-lg font-bold">{cookies?.username}</p>
+              <p className="text-lg font-bold">{username}</p>
               <Divider style="m-1" />
               <Button
                 style="btn-ghost"
